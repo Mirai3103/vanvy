@@ -1,0 +1,141 @@
+/* Đặt khoảng cách mặc định và định dạng toàn trang */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('your-image-url.jpg'); /* Thay 'your-image-url.jpg' bằng đường dẫn đến hình ảnh của bạn */
+  background-size: cover; /* Kéo dài hình ảnh để bao phủ toàn bộ trang */
+  background-position: center center; /* Căn giữa hình ảnh */
+}
+
+/* Định dạng tiêu đề */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #94b3d4;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Định dạng hình ảnh trên đầu trang */
+.image-container_top {
+  display: flex;
+  justify-content: center;
+  gap: 350px; /* Khoảng cách giữa các hình ảnh theo chiều ngang */
+  margin: 20px 0;
+}
+
+.image-container_top img {
+  border-radius: 50%; /* Cắt hình ảnh thành hình tròn */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Định dạng thông tin thành viên */
+.top, .bottom {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Khoảng cách giữa các danh sách thông tin theo chiều ngang */
+  margin: 20px 0;
+}
+
+.top ul, .bottom ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #E3F2FD;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Kích thước mặc định của danh sách thông tin */
+}
+
+.top li, .bottom li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  word-break: break-word; /* Đảm bảo văn bản dài không vượt quá giới hạn */
+}
+
+.top li:last-child, .bottom li:last-child {
+  border-bottom: none;
+}
+
+/* Tăng chiều rộng của phần chứa email */
+.information_1 li:nth-child(2),
+.information_2 li:nth-child(2),
+.information_3 li:nth-child(2),
+.information_4 li:nth-child(2),
+.information_5 li:nth-child(2) {
+  width: 100%; /* Chiều rộng tối đa */
+  box-sizing: border-box;
+}
+
+.information_1 li:nth-child(2) {
+  width: calc(100% - 30px); /* Điều chỉnh để phù hợp với padding */
+}
+
+.information_2 li:nth-child(2) {
+  width: calc(100% - 30px); /* Điều chỉnh để phù hợp với padding */
+}
+
+.information_3 li:nth-child(2) {
+  width: calc(100% - 30px); /* Điều chỉnh để phù hợp với padding */
+}
+
+.information_4 li:nth-child(2) {
+  width: calc(100% - 30px); /* Điều chỉnh để phù hợp với padding */
+}
+
+.information_5 li:nth-child(2) {
+  width: calc(100% - 30px); /* Điều chỉnh để phù hợp với padding */
+}
+
+/* Định dạng hình ảnh dưới cùng */
+.image-container_bottom {
+  display: flex;
+  justify-content: center;
+  gap: 350px; /* Khoảng cách giữa các hình ảnh theo chiều ngang */
+  margin: 20px 0;
+}
+
+.image-container_bottom img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Định dạng nút return */
+.multitasking {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.multitasking ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.multitasking li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.multitasking a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 10px 15px; /* Kích thước của nút */
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.multitasking a:hover {
+  background-color: #007bff;
+  color: white;
+}
+

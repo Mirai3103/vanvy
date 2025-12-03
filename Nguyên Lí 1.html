@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Menu with JavaScript</title>
+    <link rel="stylesheet" href="Nguyên Lí 1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu-bar">
+            <button onclick="showContent('content1')">LOW</button>
+            <button onclick="showContent('content2')">M1</button>
+            <button onclick="showContent('content4')">M2</button>
+            <button onclick="showContent('content5')">HI</button>
+            <li class="menu-item">
+                <button onclick="showContent('content')">CÔNG TẮC ÁP SUẤT</button>
+                <ul class="submenu">
+                    <li class="submenu-item" data-content="Nội dung 1.1">
+                        <button class="submenu-button" onclick="showContent('content6')">CHỨC NĂNG - VỊ TRÍ</button>
+                    </li>
+                    <li class="submenu-item" data-content="Nội dung 1.2">
+                        <button class="submenu-button" onclick="showContent('content7')">ÁP SUẤT KÉP</button>
+                    </li>
+                    <li class="submenu-item" data-content="Nội dung 1.3">
+                        <button class="submenu-button" onclick="showContent('content8')">ÁP SUẤT TRUNG BÌNH</button>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <button onclick="showContent('content')">LY HỢP TỪ (ON/OFF)</button>
+                <ul class="submenu">
+                    <li class="submenu-item" data-content="Nội dung 1.1">
+                        <button class="submenu-button" onclick="showContent('content9')">CHỨC NĂNG - VỊ TRÍ</button>
+                    </li>
+                    <li class="submenu-item" data-content="Nội dung 1.2">
+                        <button class="submenu-button" onclick="showContent('content10')">CHỨC NĂNG CÁC CHÂN</button>
+                    </li>
+                    <li class="submenu-item" data-content="Nội dung 1.3">
+                        <button class="submenu-button" onclick="showContent('content11')">BẢNG ĐIỆN ÁP</button>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <div class="content">
+            <div id="content1" class="tab-content">
+                <div class="LOW-container">
+                    <div class="LOW-text">
+                        <h2>Chế độ LOW</h2>
+                        <p>
+                            Khi bật công tắc ở chế độ LOW, dòng điện đi từ nguồn (11-14V) <br>
+                            ⇒ Công tắc máy vị trí IG ⇒ cầu chì 10A GAUGE ⇒ Chân 2 của <br>
+                            cuộn dây rơle HT R ⇒ Chân 1 cuộn dây rơle HTR ⇒ Chân LOW <br>
+                            của công tắc dàn lạnh (chân 9) ⇒ Chân E của công tắc dàn lạnh <br>
+                            (Chân 5) ⇒ Mass. Lúc này tiếp điểm 5 và 3 của rơle HTR được <br>
+                            nối với nhau. Dòng điện từ dương ắc quy (BAT) (11-14V) ⇒ cầu <br>
+                            chì 40A HTR ⇒ Chân 5 của rơle HTR ⇒ Chân 3 của rơle HTR <br>
+                            ⇒ Motor quạt dàn lạnh (Blower with Fan Motor) ⇒ Điện trở quạt <br>
+                            dàn lạnh (Blower Resistor) (Chân 4) ⇒ Chân 1 của điện trở quạt <br>
+                            dàn lạnh ⇒ mass. ⇒ Quạt dàn lạnh quay với tốc độ thấp nhất.
+                        </p>
+                        <div class="button-container">
+                            <button onclick="toggleFlashing()">Tín Hiệu Trong Sơ Đồ Mạch Điện</button>
+                        </div>
+                    </div>
+                    <div class="LOW-image">
+                        <img src="image/LOW M HIGH.jpg" alt="Chế độ LOW">
+                        <div class="multitaskingg">
+                            <ul>
+                                <li><a href="index.html">Return</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content2" class="tab-content">
+                <div class="LOW-container">
+                    <div class="LOW-text">
+                        <h2>Chế độ M1</h2>
+                        <p>
+                            Khi bật công tắc ở chế độ M1, dòng điện đi từ nguồn (11-14V) <br>
+                             ⇒ Công tắc máy vị trí IG ⇒ cầu chì 10A GAUGE ⇒ Chân 2 của <br>
+                             cuộn dây rơle HTR ⇒ Chân 1 cuộn dây rơle HTR ⇒ Chân LOW <br>của
+                             công tắc dàn lạnh (chân 9) ⇒ Chân E của công tắc dàn lạnh <br> (Chân 5) ⇒ Mass. Lúc này tiếp điểm 5 và 3 của rơle HTR được <br>
+                             nối với nhau.
+Dòng điện từ dương ắc quy (BAT) (11-14V) ⇒ cầu <br>chì 40A HTR ⇒ Chân 5 của rơle HTR ⇒ Chân 3 của rơle HTR ⇒<br> Motor quạt dàn lạnh (Blower with Fan Motor) ⇒
+ Chân 4 của điện <br> trở quạt dàn lạnh (Blower Resistor) ⇒ Chân 3 của điện trở quạt <br>dàn lạnh ⇒ Chân M1 của công tắc dàn lạnh (chân 7) ⇒ Chân E <br>của công tắc dàn lạnh (Chân 5) ⇒ Mass. <br>
+⇒ Quạt dàn lạnh quay với tốc độ M1.
+
+                        </p>
+                        <div class="button-container">
+                            <button onclick="toggleFlashing()">Tín Hiệu Trong Sơ Đồ Mạch Điện</button>
+                        </div>
+                    </div>
+                    <div class="LOW-image">
+                        <img src="image/LOW M HIGH.jpg" alt="Chế độ LOW">
+                        <div class="multitaskingg">
+                            <ul>
+                                <li><a href="index.html">Return</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content4" class="tab-content">
+                <div class="LOW-container">
+                    <div class="LOW-text">
+                        <h2>Chế độ M2</h2>
+                        <p>
+                            Khi bật công tắc ở chế độ M2, dòng điện đi từ nguồn (11-14V)  <br>
+                            ⇒ Công tắc máy vị trí IG ⇒ cầu chì 10A GAUGE ⇒ Chân 2 của <br>
+                             cuộn dây rơle HTR ⇒ Chân 1 cuộn dây rơle HTR ⇒ Chân LOW <br>
+                              của công tắc dàn lạnh (chân 9) ⇒ Chân E của công tắc dàn lạnh <br>
+                               (Chân 5) ⇒ Mass. Lúc này tiếp điểm 5 và 3 của rơle HTR được <br>
+                                nối với nhau. Dòng điện từ dương ắc quy (BAT) (11-14V) ⇒ cầu <br>
+                                 chì 40A HTR ⇒ Chân 5 của rơle HTR ⇒ Chân 3 của rơle HTR <br>
+                                 ⇒ Motor quạt dàn lạnh (Blower with Fan Motor) ⇒ Chân 4 của <br>
+                                  điện trở quạt dàn lạnh (Blower Resistor) ⇒ Chân 2 của điện trở <br>
+                                   quạt dàn lạnh ⇒ Chân M2 của công tắc dàn lạnh (chân 6) ⇒ <br>
+                                    Chân E của công tắc dàn lạnh (Chân 5) ⇒ Mass. <br> ⇒ Quạt dàn lạnh quay với tốc độ M2.
+
+                        </p>
+                        <div class="button-container">
+                            <button onclick="toggleFlashing()">Tín Hiệu Trong Sơ Đồ Mạch Điện</button>
+                        </div>
+                    </div>
+                    <div class="LOW-image">
+                        <img src="image/LOW M HIGH.jpg" alt="Chế độ LOW">
+                        <div class="multitaskingg">
+                            <ul>
+                                <li><a href="index.html">Return</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content5" class="tab-content">
+                <div class="LOW-container">
+                    <div class="LOW-text">
+                        <h2>Chế độ HIGH</h2>
+                        <p>
+                            Khi bật công tắc ở chế độ HIGH, dòng điện đi từ nguồn (11-14V)  <br>
+                            ⇒ Công tắc máy vị trí IG ⇒ cầu chì 10A GAUGE ⇒ Chân 2 của<br>
+                            cuộn dây rơle HTR ⇒ Chân 1 cuộn dây rơle HTR ⇒ Chân LOW <br>
+                            của công tắc dàn lạnh (chân 9) ⇒ Chân E của công tắc dàn lạnh  <br>
+                            (Chân 5) ⇒ Mass. Lúc này tiếp điểm 5 và 3 của rơle HTR được  <br>
+                            nối với nhau. Dòng điện từ dương ắc quy (BAT) (11-14V) ⇒ cầu <br>
+                            chì 40A HTR ⇒ Chân 5 của rơle HTR ⇒ Chân 3 của rơle HTR <br>
+                            ⇒ Motor quạt dàn lạnh (Blower with Fan Motor) ⇒ Chân HI của <br>
+                             công tắc dàn lạnh (chân 10) ⇒ Chân E của công tắc dàn lạnh <br> (Chân 5) ⇒ Mass. 
+                             ⇒ Quạt dàn lạnh quay với tốc độ cao nhất.
+
+                        </p>
+                        <div class="button-container">
+                            <button onclick="toggleFlashing()">Tín Hiệu Trong Sơ Đồ Mạch Điện</button>
+                        </div>
+                    </div>
+                    <div class="LOW-image">
+                        <img src="image/LOW M HIGH.jpg" alt="Chế độ LOW">
+                        <div class="multitaskingg">
+                            <ul>
+                                <li><a href="index.html">Return</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content6" class="tab-content">
+                <div class="AC-container">
+                    <div class="AC-text">
+                        <h2>Chức Năng Công Tắc Áp Suất</h2>
+                        <p>
+                            Công tắc áp suất dùng để phát hiện sự tăng lên <br>
+                             không bình thường của áp suất môi chất và ngắt <br>
+                              bộ ly hợp từ và dừng máy nén để bảo vệ cho các <br>
+                              bộ phận trong chu trình làm lạnh. Khi máy ĐHKK <br>
+                               đang hoạt động bình thường. Áp suất lạnh môi <br>
+                                chất quá thấp do rò rỉ hay áp suất môi chất quá <br>
+                                 cao do giải nhiệt kém hoặc gì lý do nào đó làm <br>
+                                  cho công tắc áp suất chuyển sang vị trí OFF. <br>
+                                   Nguồn điện cung cấp cho bộ khuếch đại sẽ bị cắt,<br>
+                                    bộ khuếch đại không hoạt động.
+
+                        </p>
+                        <div class="button-container">
+                            <button onclick="toggleFlashing()">Vị Trí Trong Sơ Đồ Mạch Điện</button>
+                        </div>
+                    </div>
+                    <div class="AC-image">
+                        <img src="image/backgroud.jpg" alt="Chế độ AC">
+                    </div>
+                    <!--<div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="diagonal-header">
+                                        <div class="header-text">Tín Hiệu</div>
+                                        <div class="sub-header">Điện Áp</div>
+                                    </th>
+                                    <th>IG+</th>
+                                    <th>A/C</th>
+                                    <th>LED</th>
+                                    <th>GND</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr contenteditable="true">
+                                    <td>Cấp nguồn bộ khuếch đại</td>
+                                    <td>12V</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>1V</td>
+                                </tr>
+                                <tr contenteditable="true">
+                                    <td>A/C ON</td>
+                                    <td>12V</td>
+                                    <td>12V</td>
+                                    <td>1V</td>
+                                    <td>1V</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="multitasking">
+                            <ul>
+                                <li><a href="index.html">Return</a></li>
+                            </ul>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div id="content7" class="tab-content">
+                <div class="AC-container">
+                    <div class="AC-text">
+                        <h2>Công Tắc Áp Suất Kép</h2>
+                        <p>
+                            Cấu tạo: Gồm hai công tắc áp suất, một cho áp suất <br>
+                            cao và một cho áp suất thấp, được tích hợp chung <br>
+                            trong một vỏ. <br>
+                            Nguyên lý hoạt động <br>
+                            “Áp suất cao”: Khi áp suất trong hệ thống tăng quá <br>
+                             mức cho phép, màng ngăn bên trong công tắc sẽ bị <br>
+                            đẩy lên, làm ngắt các tiếp điểm điện (OFF). Tín hiệu <br>
+                            này sẽ được gửi đến mạch điều khiển thông qua chân <br>
+                            PSW (chân 12), sau đó bộ khuếch đại sẽ ngừng tiếp <br>
+                            mass cho chân MGC (15) để ngắt rơle máy nén, ly hợp <br>
+                            từ sẽ ngưng hoạt động, ngăn ngừa quá tải hệ thống. <br>
+                            “Áp suất thấp”: Ngược lại, khi áp suất giảm quá thấp, <br>
+                            màng ngăn sẽ bị kéo xuống, tương tự sẽ làm ngắt <br>
+                            các tiếp điểm điện (OFF). Tín hiệu này cũng sẽ được <br>
+                            gửi đến mạch điều khiển thông qua chân PSW (chân 12), <br>
+                            bộ khuếch đại sẽ ngừng tiếp mass cho chân MGC (15) <br> để ngắt rơle máy nén, ngăn ngừa hư hỏng máy nén do <br> thiếu môi chất lạnh.
+                        </p>
+                        <div class="button-container">
+                            <button onclick="toggleFlashing()">Tín Hiệu Trong Sơ Đồ Mạch Điện</button>
+                        </div>
+                    </div>
+                    <div class="AC-image">
+                        <img src="image/apsuatkep.jpg" alt="Chế độ AC">
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="diagonal-header">
+                                        <div class="header-text">Tín Hiệu</div>
+                                    </th>
+                                    <th>PSW (12)</th>
+                                    <th>CFN- (2)</th>
+                                    <th>MGC (15)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr contenteditable="true">
+                                    <td>Áp suất bình thường <br> (1,370 kPa – 1,770 kPa)</td>
+                                    <td>0V</td>
+                                    <td>11-14 V</td>
+                                    <td>0V</td>
+                                </tr>
+                                <tr contenteditable="true">
+                                    <td>Áp suất kép (Áp suất cao) > 3,140 kPa</td>
+                                    <td>11-14V</td>
+                                    <td>11-14V</td>
+                                    <td>11-14V</td>
+                                </tr>
+                                <tr contenteditable="true"></tr>
+                                    <td>Áp suất kép (Áp suất thấp) < 196 kPa</td>
+                                    <td>11-14V</td>
+                                    <td>11-14V</td>
+                                    <td>11-14V</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="multitasking">
+                            <ul>
+                                <li><a href="index.html">Return</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content8" class="tab-content">
+                <div class="AC-container">
+                    <div class="AC-text">
+                        <h2>Công Tắc Áp Suất Trung Bình</h2>
+                        <p>
+                            Nguyên lý hoạt động <br
+                            > Tương tự như công tắc áp suất kép, công tắc áp <br>
+                             suất trung bình cũng sử dụng màng ngăn để cảm <br>
+                             nhận áp suất. Khi áp suất đạt đến mức độ đã cài <br>
+                              đặt bởi nhà sản xuất, màng ngăn sẽ di chuyển để <br>
+                               đóng hoặc mở các tiếp điểm điện, gửi tín hiệu đến <br>
+                                mạch điều khiển. <br>
+                            Chức năng: Bảo vệ hệ thống điều hoà bằng cách <br>
+                             điều khiển tốc độ quạt. Khi áp suất trong hệ thống <br>
+                              vượt mức trung bình đã cài sẵn, tiếp điểm sẽ được <br>
+                               đóng, làm cho cuộn dây rơle quạt dàn nóng được <br>
+                                tiếp mass. Lúc này tiếp điểm rơle quạt dàn nóng <br>
+                                 thay đổi làm cho quạt dàn nóng quay tốc độ cao. <br>
+                            Đồng thời tín hiệu công tắc áp suất trung bình hoạt <br>
+                            động cũng sẽ được gửi về bộ khuếch đại thông qua <br>
+                            chân CFN- (chân 2) để bộ điều khiển ngắt dòng rơle <br> ly hợp từ để bảo vệ hệ thống.
+                        </p>
+                        <div class="button-container">
+                            <button onclick="toggleFlashing()">Vị Trí Trong Sơ Đồ Mạch Điện</button>
+                        </div>
+                    </div>
+                    <div class="AC-image">
+                        <img src="image/apsuatkep.jpg" alt="Chế độ AC">
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="diagonal-header">
+                                        <div class="header-text">Tín Hiệu</div>
+                                    </th>
+                                    <th>PSW (12)</th>
+                                    <th>CFN- (2)</th>
+                                    <th>MGC (15)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr contenteditable="true">
+                                    <td>Áp suất bình thường (1,370 kPa – 1,770 kPa)</td>
+                                    <td> 0V</td>
+                                    <td>11-14 V</td>
+                                    <td>0V</td>
+                                </tr>
+                                <tr contenteditable="true">
+                                    <td>Áp suất trung bình vượt mức (> 1,770 kPa) hoặc (< 1,370 kPa)</td>
+                                    <td>0V</td>
+                                    <td>0V</td>
+                                    <td>11-14 V</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="multitasking">
+                            <ul>
+                                <li><a href="index.html">Return</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content9" class="tab-content">
+                <div class="m1-container">
+                    <div class="m1-text">
+                        <h2>Chế độ M1</h2>
+                        <p>
+                            Dòng điện đi từ sau công tắc khóa IG (11-14V) → cầu chì 10A GAUGE → rơle HTR qua cuộn dây 1 và 2 → LOW (E1-9) và SBLW (E7-21) tín hiệu motor quạt ON được nhập vào bộ khuếch đại tín hiệu → E (E1-5) → D1 → mass. Lúc này tiếp điểm của rơle HTR 3 và 5 được nối nhau. Dòng điện từ ắc quy (BATT) (11-14V) → cầu chì 40A HTR → rơle HTR chân 3-5 → motor quạt dàn lạnh (E4-2-1) → cầu chì 40A → qua 2 điện trở (E3-3) → M1 (E1-7) công tắc M1 được bật → M1 được nối với E (E1-5) → D1→ mass. Lúc này quạt quay với tốc độ M1.
+                        </p>
+                    </div>
+                    <div class="m1-image">
+                        <img src="bulong đai ốc/m1.jpg" alt="Chế độ M1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Đặt ở cuối body -->
+    <script src="script.js"></script>
+</body>
+</html>

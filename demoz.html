@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan</title>
+    <link rel="stylesheet" href="./font1.css">
+
+    <link rel="stylesheet" href="demo.css">
+</head>
+<header>
+    <a href="index.html"> <img class="logoiuh" src="image/logoiuh.png" alt="Logo IUH"></a>
+    <h1>ĐẠI HỌC CÔNG NGHIỆP TP. HỒ CHÍ MINH <br>KHOA CÔNG NGHỆ ĐỘNG LỰC</h1>
+</header>
+<body>
+    <button class="dropdown-btn" onclick="toggleDropdown()">Các hư hỏng thường gặp trong hệ thống điện điều khiển</button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#" onclick="showContent('Quạt dàn lạnh quay chậm khi bật chế độ quạt HI')">TH1: Quạt dàn lạnh quay chậm khi bật chế độ quạt HI</a>
+        <a href="#" onclick="showContent('Quạt dàn lạnh quay chậm khi bật chế độ quạt M2')">TH2: Quạt dàn lạnh quay chậm khi bật chế độ quạt M2</a>
+        <a href="#" onclick="showContent('Quạt dàn lạnh quay chậm khi bật chế độ quạt M1')">TH3: Quạt dàn lạnh quay chậm khi bật chế độ quạt M1</a>
+        <a href="#" onclick="showContent('Quạt dàn lạnh không quay, HTR relay không hoạt động khi bật các chế độ quạt')">TH4: Quạt dàn lạnh không quay, HTR relay không hoạt động khi bật các chế độ quạt</a>
+        <a href="#" onclick="showContent('Quạt dàn lạnh không quay, HTR relay hoạt động khi bật các chế độ quạt')">TH5: Quạt dàn lạnh không quay, HTR relay hoạt động khi bật các chế độ quạt</a>
+        <a href="#" onclick="showContent('Bật A/C nhưng HTR SUB1/AC MG Relay và ly hợp từ không hoạt động')">TH6: Bật A/C nhưng HTR SUB1/AC MG Relay và ly hợp từ không hoạt động</a>
+        <a href="#" onclick="showContent('Bật A/C, HTR SUB1/AC MG Relay hoạt động nhưng ly hợp từ không hoạt động')">TH7: Bật A/C, HTR SUB1/AC MG Relay hoạt động nhưng ly hợp từ không hoạt động</a>
+        <a href="#" onclick="showContent('Bật công tắc A/C, rơle FAN NO.1 không hoạt động, quạt dàn nóng không quay')">TH8: Bật công tắc A/C, rơle FAN NO.1 không hoạt động, quạt dàn nóng không quay</a>
+        <a href="#" onclick="showContent('Bật công tắc A/C, rơle FAN NO.1 hoạt động nhưng quạt dàn nóng không quay')">TH9: Bật công tắc A/C, rơle FAN NO.1 hoạt động nhưng quạt dàn nóng không quay</a>
+        <a href="#" onclick="showContent('Bật A/C, bật công tắc giả lập áp suất trung bình cao nhưng FAN NO.2 Relay không hoạt động')">TH10: Bật công tắc A/C, bật công tắc giả lập áp suất trung bình cao nhưng FAN NO.2 Relay không hoạt động</a>
+        <a href="#" onclick="showContent('Bật A/C, bật công tắc giả lập quạt dàn nóng quay tốc độ cao, FAN NO.2 Relay hoạt động nhưng dàn nóng không quay')">TH11: Bật công tắc A/C, bật công tắc giả lập quạt dàn nóng quay tốc độ cao, FAN NO.2 Relay hoạt động nhưng quạt dàn nóng không quay</a>
+    </div>
+
+    <!-- Các nội dung được ẩn đi ban đầu -->
+    <div id="content-Quạt dàn lạnh quay chậm khi bật chế độ quạt HI" class="content-section image-content">
+        <!-- Các nút con hiển thị sau khi nhấn vào nút chính -->
+    <div class="button-container" id="buttonContainer-Quạt dàn lạnh quay chậm khi bật chế độ quạt HI" >
+        <button class="custom-button" onclick="displayContent(1, 'HI')">Bước 1: Chuẩn bị dụng cụ</button>
+        <button class="custom-button" onclick="displayContent(2, 'HI')">Bước 2: Xác định triệu chứng</button>
+        <button class="custom-button" onclick="displayContent(3, 'HI')">Bước 3: Xác định khu vực nghi ngờ</button>
+        <button class="custom-button" onclick="displayContent(4, 'HI')">Bước 4: Quy trình đo kiểm bằng VOM</button>
+        <button class="custom-button" onclick="displayContent(5, 'HI')">Bước 5: Xác định vị trí hư hỏng</button>
+        <button class="custom-button" onclick="displayContent(6, 'HI')">Bước 6: Khắc phục hư hỏng</button>
+    </div>
+
+    <!-- Các nội dung tương ứng với từng nút -->
+    <div id="contentA-HI" class="hidden-content">
+        <h2>Chuẩn bị dụng cụ</h2>
+        <p> -	Đồng hồ VOM. <br>
+            -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+            -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+            -	Chì hàn, ống co nhiệt, băng keo đen, dây điện,...
+            </p>
+            <div class="hinhmota">
+                <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                <img src="NG/ongco.jpg" alt="NG/hinhmota">
+            </div>
+            <img class="HIGH" src="NG/HIGH.png" alt="#">
+    </div>
+    <div id="contentB-HI" class="hidden-content">
+        <h2>Xác định triệu chứng</h2>
+        <p>-	Quạt dàn lạnh: <br> 	+ Chế độ LO: Hoạt động bình thường. <br>
+            + Chế độ M1: Hoạt động bình thường. <br>
+            + Chế độ M2: Hoạt động bình thường. <br>
+            + Chế độ HI: Quay chậm giống như LO. <br>
+        -	Quạt dàn nóng: Hoạt động bình thường. <br>
+        -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+        -	HTR Relay: Hoạt động bình thường (có tiếng click).
+        
+            </p>
+    </div>
+    <div id="contentC-HI" class="hidden-content">
+        <h2>Xác định khu vực nghi ngờ</h2>
+        <p>(KV1) - 	Đứt dây dẫn từ chân 1 (E4) đến chân 10 (E1). <br>
+            (KV2) - 	Hư công tắc dàn lạnh ở vị trí HI. <br>
+            </p>
+        <img class="KVNN" src="NG/KVNN1.png" alt="KVNN">
+    </div>
+    <div id="contentD-HI" class="hidden-content">
+        <h2>Quy trình đo kiểm bằng VOM</h2>
+        <p>Bật công tắc quạt dàn lạnh vị trí HI.</p>
+        <div class="DOKIEMM">
+            <div class="scrollable">
+                <img class="DOKIEM1" src="NG/H33.jpg" alt="KPHH">
+                <div class="ND">             
+                    <div class="layout">
+                        <div class="box" data-image="image1" style="top: 196px; left: -164px; width: 136px; height: 65px;">Đứt dây dẫn 1 (E4) → 10 (E1)</div>
+                        <div class="box" data-image="image2" style="top: 412px; left: -459px; max-width: 136px; height: 65px; font-size: 20px;">Hư công tắc vị trí HI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ND">             
+            <div class="image-popup">
+                <img id="image1" src="pan từng vị trí/0V HI.png">
+                <img id="image2" src="pan từng vị trí/12V HI.png">
+            </div>
+        </div>
+    </div>
+    <div id="contentE-HI" class="hidden-content">
+        <h2>Xác định vị trí hư hỏng</h2>
+        <table class="my-table1">
+            <tr>
+              <td>TRƯỜNG HỢP HƯ HỎNG</td>
+              <td>VỊ TRÍ HƯ HỎNG</td>
+              <td>GHI CHÚ</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 1</td>
+              <td>Dây dẫn từ chân 1 (E4) đến chân 10 (E1).</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 2</td>
+              <td>Công tắc dàn lạnh vị trí HI.</td>
+              <td>-</td>
+            </tr>
+          </table>
+    </div>
+    <div id="contentF-HI" class="hidden-content">
+        <h2>Khắc phục hư hỏng</h2>
+        <table class="my-table1">
+            <tr>
+              <td>TRƯỜNG HỢP HƯ HỎNG</td>
+              <td>KHẮC PHUC HƯ HỎNG</td>
+              <td>GHI CHÚ</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 1</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (E4) đến chân 10 (E1).</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 2</td>
+              <td>Thay công tắc dàn lạnh mới.</td>
+              <td>-</td>
+            </tr>
+          </table>
+    </div>
+    </div>
+
+    <div id="content-Quạt dàn lạnh quay chậm khi bật chế độ quạt M2" class="content-section table-content">
+         <!-- Các nút con hiển thị sau khi nhấn vào nút chính -->
+    <div class="button-container" id="buttonContainer-Quạt dàn lạnh quay chậm khi bật chế độ quạt M2" >
+        <button class="custom-button" onclick="displayContent(1, 'M2')">Bước 1: Chuẩn bị dụng cụ</button>
+        <button class="custom-button" onclick="displayContent(2, 'M2')">Bước 2: Xác định triệu chứng</button>
+        <button class="custom-button" onclick="displayContent(3, 'M2')">Bước 3: Xác định khu vực nghi ngờ</button>
+        <button class="custom-button" onclick="displayContent(4, 'M2')">Bước 4: Quy trình đo kiểm bằng VOM</button>
+        <button class="custom-button" onclick="displayContent(5, 'M2')">Bước 5: Xác định vị trí hư hỏng</button>
+        <button class="custom-button" onclick="displayContent(6, 'M2')">Bước 6: Khắc phục hư hỏng</button>
+    </div>
+
+    <!-- Các nội dung tương ứng với từng nút -->
+    <div id="contentA-M2" class="hidden-content">
+        <h2>Chuẩn bị dụng cụ</h2>
+        <p>-	Đồng hồ VOM. <br>
+            -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+            -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+            -	Chì hàn, ống co nhiệt, băng keo đen, dây điện,...
+        </p>
+        <div class="hinhmota">
+            <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+            <img src="NG/ongco.jpg" alt="NG/hinhmota">
+        </div>
+        <img class="HIGH" src="NG/M2.jpg" alt="#">
+    </div>
+    <div id="contentB-M2" class="hidden-content">
+        <h2>Xác định triệu chứng</h2>
+        <p>-	Quạt dàn lạnh: <br>	+ Chế độ LO: Hoạt động bình thường. <br>
+            + Chế độ M1: Hoạt động bình thường. <br>
+            + Chế độ M2: Quay chậm giống như LO. <br>
+            + Chế độ HI: Hoạt động bình thường. <br>
+        -	Quạt dàn nóng: Hoạt động bình thường. <br>
+        -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+        -	HTR Relay: Hoạt động bình thường (có tiếng click).
+        </p>
+    </div>
+    <div id="contentC-M2" class="hidden-content">
+        <h2>Xác định khu vực nghi ngờ</h2>
+        <p> (KV1) -   Đứt dây dẫn từ chân 2 (E3) đến chân 6 (E1). <br>
+            (KV2) -	Hư công tắc dàn lạnh ở vị trí M2.
+            </p>
+            <img class="KVNN" src="NG/2.png" alt="KVNN">
+    </div>
+    <div id="contentD-M2" class="hidden-content">
+        <h2>Trình tự đo kiểm</h2>
+        <p>Bật công tắc quạt dàn lạnh vị trí M2.</p>
+        <div class="DOKIEMM">
+            <div class="scrollable">
+                <img class="DOKIEM1" src="NG/H34.jpg" alt="KPHH">
+                <div class="ND">             
+                    <div class="layout">
+                        <div class="box" data-image="image3" style="top: 197px; left: -163px; width: 136px; height: 65px;">Đứt dây dẫn 2 (E3) → 6 (E1)</div>
+                        <div class="box" data-image="image4" style="top: 413px; left: -458px; max-width: 136px; height: 65px; font-size: 20px;">Hư công tắc vị trí M2</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ND">             
+            <div class="image-popup">
+                <img id="image3" src="pan từng vị trí/0V M2 (1).png">
+                <img id="image4" src="pan từng vị trí/4.2V M2 (1).png">
+            </div>
+        </div>
+    </div>
+    <div id="contentE-M2" class="hidden-content">
+        <h2>Xác định vị trí hư hỏng</h2>
+        <table class="my-table1">
+            <tr>
+              <td>TRƯỜNG HỢP HƯ HỎNG</td>
+              <td>VỊ TRÍ HƯ HỎNG</td>
+              <td>GHI CHÚ</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 1</td>
+              <td>Dây dẫn từ chân 2 (E3) đến chân 6 (E1).</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 2</td>
+              <td>Công tắc dàn lạnh vị trí M2.</td>
+              <td>-</td>
+            </tr>
+          </table>
+    </div>
+    <div id="contentF-M2" class="hidden-content">
+        <h2>Khắc phục hư hỏng</h2>
+        <table class="my-table1">
+            <tr>
+              <td>TRƯỜNG HỢP HƯ HỎNG</td>
+              <td>KHẮC PHUC HƯ HỎNG</td>
+              <td>GHI CHÚ</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 1</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 2 (E3) đến chân 6 (E1).</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 2</td>
+              <td>Thay công tắc dàn lạnh mới.</td>
+              <td>-</td>
+            </tr>
+          </table>
+    </div>
+    </div>
+
+    <div id="content-Quạt dàn lạnh quay chậm khi bật chế độ quạt M1" class="content-section">
+        <!-- Các nút con hiển thị sau khi nhấn vào nút chính -->
+    <div class="button-container" id="buttonContainer-Quạt dàn lạnh quay chậm khi bật chế độ quạt M1" >
+        <button class="custom-button" onclick="displayContent(1, 'M1')">Bước 1: Chuẩn bị dụng cụ</button>
+        <button class="custom-button" onclick="displayContent(2, 'M1')">Bước 2: Xác định triệu chứng</button>
+        <button class="custom-button" onclick="displayContent(3, 'M1')">Bước 3: Xác định khu vực nghi ngờ</button>
+        <button class="custom-button" onclick="displayContent(4, 'M1')">Bước 4: Trình tự đo kiểm</button>
+        <button class="custom-button" onclick="displayContent(5, 'M1')">Bước 5: Xác định vị trí hư hỏng</button>
+        <button class="custom-button" onclick="displayContent(6, 'M1')">Bước 6: Khắc phục hư hỏng</button>
+    </div>
+
+    <!-- Các nội dung tương ứng với từng nút -->
+    <div id="contentA-M1" class="hidden-content">
+        <h2>Chuẩn bị dụng cụ</h2>
+        <p>-	Đồng hồ VOM. <br>
+            -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+            -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+            -	Chì hàn, ống co nhiệt, dây điện, băng keo đen...
+            </p>
+            <div class="hinhmota">
+                <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                <img src="NG/ongco.jpg" alt="NG/hinhmota">
+            </div>
+            <img class="HIGH" src="NG/M1.jpg" alt="#">
+    </div>
+    <div id="contentB-M1" class="hidden-content">
+        <h2>Xác định triệu chứng</h2>
+        <p>-	Quạt dàn lạnh: <br> 	+ Chế độ LO: Hoạt động bình thường. <br>
+            + Chế độ M1: Quay chậm giống như LO. <br>
+            + Chế độ M2: Hoạt động bình thường. <br>
+            + Chế độ HI: Hoạt động bình thường. <br>
+        -	Quạt dàn nóng: Hoạt động bình thường. <br>
+        -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+        -	HTR Relay: Hoạt động bình thường (có tiếng click).
+        </p>
+    </div>
+    <div id="contentC-M1" class="hidden-content">
+        <h2>Xác định khu vực nghi ngờ</h2>
+        <p>(KV1) - 	Đứt dây dẫn từ chân 3 (E3) đến chân 7 (E1). <br>
+            (KV2) - 	Hư công tắc dàn lạnh ở vị trí M1.
+            </p>
+            <img class="KVNN" src="NG/3.png" alt="KVNN">
+    </div>
+    <div id="contentD-M1" class="hidden-content">
+        <h2>Trình tự đo kiểm</h2>
+        <p>Bật công tắc quạt dàn lạnh vị trí M1.</p>
+        <div class="DOKIEMM">
+            <div class="scrollable">
+                <img class="DOKIEM1" src="NG/H35.jpg" alt="KPHH">
+                <div class="ND">             
+                    <div class="layout">
+                        <div class="box" data-image="image5" style="top: 196px; left: -164px; width: 137px; height: 65px;">Đứt dây dẫn 3 (E3) → 7 (E1)</div>
+                        <div class="box" data-image="image6" style="top: 412px; left: -458px; max-width: 136px; height: 65px; font-size: 20px;">Hư công tắc vị trí M1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ND">             
+            <div class="image-popup">
+                <img id="image5" src="pan từng vị trí/0V M1.png">
+                <img id="image6" src="pan từng vị trí/4.2V M1.png">
+            </div>
+        </div>
+    </div>
+    <div id="contentE-M1" class="hidden-content">
+        <h2>Xác định vị trí hư hỏng</h2>
+        <table class="my-table1">
+            <tr>
+              <td>TRƯỜNG HỢP HƯ HỎNG</td>
+              <td>VỊ TRÍ HƯ HỎNG</td>
+              <td>GHI CHÚ</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 1</td>
+              <td>Dây dẫn từ chân 3 (E3) đến chân 7 (E1).</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 2</td>
+              <td>Công tắc dàn lạnh vị trí M1.</td>
+              <td>-</td>
+            </tr>
+          </table>
+    </div>
+    <div id="contentF-M1" class="hidden-content">
+        <h2>Khắc phục hư hỏng</h2>
+        <table class="my-table1">
+            <tr>
+              <td>TRƯỜNG HỢP HƯ HỎNG</td>
+              <td>KHẮC PHUC HƯ HỎNG</td>
+              <td>GHI CHÚ</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 1</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (E3) đến chân 7 (E1).</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>Trường hợp 2</td>
+              <td>Thay công tắc dàn lạnh mới.</td>
+              <td>-</td>
+            </tr>
+          </table>
+    </div>
+    </div>
+
+    <!-- Thêm các nội dung cho các mục khác nếu cần -->
+    <div id="content-Quạt dàn lạnh không quay, HTR relay không hoạt động khi bật các chế độ quạt" class="content-section">
+        <div class="button-container" id="buttonContainer-Quạt dàn lạnh quay chậm khi bật chế độ quạt M1" >
+            <button class="custom-button" onclick="displayContent(1, 'M3')">Bước 1: Chuẩn bị dụng cụ</button>
+            <button class="custom-button" onclick="displayContent(2, 'M3')">Bước 2: Xác định triệu chứng</button>
+            <button class="custom-button" onclick="displayContent(3, 'M3')">Bước 3: Xác định khu vực nghi ngờ</button>
+            <button class="custom-button" onclick="displayContent(4, 'M3')">Bước 4: Trình tự đo kiểm</button>
+            <button class="custom-button" onclick="displayContent(5, 'M3')">Bước 5: Xác định vị trí hư hỏng</button>
+            <button class="custom-button" onclick="displayContent(6, 'M3')">Bước 6: Khắc phục hư hỏng</button>
+        </div>
+        <div id="contentA-M3" class="hidden-content">
+            <h2>Chuẩn bị dụng cụ</h2>
+            <p>-	Đồng hồ VOM. <br>
+                -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                -	Chì hàn, ống co nhiệt, băng keo đen, dây điện...
+                </p>
+                <div class="hinhmota">
+                    <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                    <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                </div>
+                <img class="HIGH" src="NG/HIGH.png" alt="#">
+        </div>
+        <div id="contentB-M3" class="hidden-content">
+            <h2>Xác định triệu chứng</h2>
+            <p>-	Quạt dàn lạnh: <br> 	+ Chế độ LO: Không hoạt động. <br>
+                + Chế độ M1: Không hoạt động. <br>
+                + Chế độ M2: Không hoạt động. <br>
+                + Chế độ HI: Không hoạt động. <br> 
+            -	Quạt dàn nóng: Hoạt động bình thường. <br>
+            -	Bật công tắc A/C: Ly hợp từ không hoạt động. <br>
+            -	HTR Relay: Không hoạt động (không có tiếng click).
+            </p>
+        </div>
+        <div id="contentC-M3" class="hidden-content">
+            <h2>Xác định khu vực nghi ngờ</h2>
+            <p>(KV1) - 	Mất nguồn IG. <br>
+                (KV2) - 	Hư cầu chì 10A GAUGE. <br>
+                (KV3) - 	Hư HTR Relay. <br>
+                (KV4) - 	Đứt dây dẫn từ chân 1 (HTR Relay) đến chân 9 (E1). <br>
+                (KV5) - 	Hư công tắc quạt dàn lạnh (E1). <br>
+                (KV6) - 	Đứt dây dẫn từ chân 5 (E1) đến chân mass (D1). <br>
+                (KV7) - 	Mất chân mass (D1). </p>
+                <img class="KVNN" src="NG/4.jpg" alt="KVNN">
+        </div>
+        <div id="contentD-M3" class="hidden-content">
+            <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI).</p>
+            <div class="DOKIEM">
+                <div class="scrollable">
+                    <img class="DOKIEM1" src="NG/H12.jpg" alt="KPHH">
+                    <img class="DOKIEM2" src="NG/H13.jpg" alt="KPHH">
+                    <img class="DOKIEM3" src="NG/H14.jpg" alt="KPHH">
+                    <div class="ND">             
+                        <div class="layout">
+                            <div class="box" data-image="image7" style="top: -890.5px; left: -417px; width: 136px; height: 65px;font-size: 18px;">Mất nguồn IG</div>
+                            <div class="box" data-image="image8" style="top: -677px; left: -417px; width: 136px; height: 65px;">Đứt cầu chì 10A GAUGE</div>
+                            <div class="box" data-image="image9" style="top: -470px; left: -417px; width: 136px; height: 65px;">Hư HTR Relay</div>
+                            <div class="box" data-image="image10" style="top: -249.5px; left: -415px; width: 136px; height: 66px;">Đứt dây dẫn: 1 (HTR Relay) → 9 (E1)</div>
+                            <div class="box" data-image="image11" style="top: -39px; left: -417px; width: 138px; height: 65px; font-size: 20px;">Hư E1</div>
+                            <div class="box" data-image="image12" style="top: 195px; left: -382px; width: 175px; height: 65px;">Đứt dây dẫn: 5 (E1) → Mass (D1)</div>
+                            <div class="box" data-image="image100" style="top: 412px; left: -705px; max-width: 136px; height: 65px;">(KT7) Mất mass (D1)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ND">             
+                <div class="image-popup">
+                    <img id="image7" src="pan từng vị trí/KT1.png">
+                    <img id="image8" src="pan từng vị trí/KT2.png">
+                    <img id="image9" src="pan từng vị trí/KT3.png">
+                    <img id="image10" src="pan từng vị trí/KT4.png">
+                    <img id="image11" src="pan từng vị trí/KT5.png">
+                    <img id="image12" src="pan từng vị trí/KT6.png">
+                    <img id="image100" src="pan từng vị trí/KT7.png">
+                </div>
+            </div>
+        </div>
+        <div id="contentE-M3" class="hidden-content">
+            <h2>Xác định vị trí hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>VỊ TRÍ HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Mất nguồn IG.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Đứt cầu chì 10A GAUGE.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Hư HTR Relay.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Đứt dây dẫn từ chân 1 (HTR Relay) đến chân 9 (E1).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Hư công tắc quạt dàn lạnh (E1).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 6</td>
+                    <td>Đứt dây dẫn từ chân 5 (E1) đến chân mass (D1).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 7</td>
+                    <td>Mất mass (D1).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+        <div id="contentF-M3" class="hidden-content">
+            <h2>Khắc phục hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>KHẮC PHUC HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Kiểm tra nguồn IG hoặc thay công tắc IG mới.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Thay cầu chì 10A mới.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Thay relay 5 chân mới.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (HTR Relay) đến chân 9 (E1).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Thay công tắc quạt dàn lạnh mới.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 6</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 5 (E1) đến chân mass (D1).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 7</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối lại mass (D1).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+    </div>
+
+    <div id="content-Quạt dàn lạnh không quay, HTR relay hoạt động khi bật các chế độ quạt" class="content-section">
+        <div class="button-container" id="buttonContainer-Quạt dàn lạnh quay chậm khi bật chế độ quạt M1" >
+            <button class="custom-button" onclick="displayContent(1, 'M4')">Bước 1: Chuẩn bị dụng cụ</button>
+            <button class="custom-button" onclick="displayContent(2, 'M4')">Bước 2: Xác định triệu chứng</button>
+            <button class="custom-button" onclick="displayContent(3, 'M4')">Bước 3: Xác định khu vực nghi ngờ</button>
+            <button class="custom-button" onclick="displayContent(4, 'M4')">Bước 4: Trình tự đo kiểm</button>
+            <button class="custom-button" onclick="displayContent(5, 'M4')">Bước 5: Xác định vị trí hư hỏng</button>
+            <button class="custom-button" onclick="displayContent(6, 'M4')">Bước 6: Khắc phục hư hỏng</button>
+        </div>
+        <div id="contentA-M4" class="hidden-content">
+            <h2>Chuẩn bị dụng cụ</h2>
+            <p>-	Đồng hồ VOM. <br>
+                -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                -	Chì hàn, ống co nhiệt, dây điện, băng keo đen,...
+                </p>
+                <div class="hinhmota">
+                    <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                    <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                </div>
+                <img class="HIGH" src="NG/HIGH.png" alt="#">
+        </div>
+        <div id="contentB-M4" class="hidden-content">
+            <h2>Xác định triệu chứng</h2>
+            <p>-	Quạt dàn lạnh: <br> 	+ Chế độ LO: Không hoạt động. <br>
+                + Chế độ M1: Không hoạt động. <br>
+                + Chế độ M2: Không hoạt động. <br>
+                + Chế độ HI: Không hoạt động. <br>
+            -	Quạt dàn nóng: Hoạt động bình thường. <br>
+            -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+            -	HTR Relay: Hoạt động bình thường (có tiếng click).            
+            </p>
+        </div>
+        <div id="contentC-M4" class="hidden-content">
+            <h2>Xác định khu vực nghi ngờ</h2>
+            <p>(KV1) - 	Mất nguồn ắc quy. <br>
+                (KV2) - 	Hư cầu chì 40A HTR. <br>
+                (KV3) - 	Đứt dây dẫn từ chân 2 (40A HTR) đến chân 5 (HTR Relay). <br>
+                (KV4) - 	Đứt dây dẫn từ chân 3 (HTR Relay) đến chân 2 (E4). <br>
+                (KV5) - 	Hư mô tơ quạt dàn lạnh (E4). <br>
+                (KV6) - 	Đứt dây dẫn từ chân 1 (E4) đến chân 4 (E3). <br>
+                </p>
+                <img class="KVNN" src="NG/5.jpg" alt="KVNN">
+        </div>
+        <div id="contentD-M4" class="hidden-content">
+            <p>	Bật công tắc quạt dàn lạnh sang 1 trong 4 vị trí LO, M1, M2, HI.</p>
+            <div class="DOKIEM">
+                <div class="scrollable">
+                    <img class="DOKIEM1" src="NG/H16.jpg" alt="KPHH">
+                    <img class="DOKIEM2" src="NG/H17.jpg" alt="KPHH">
+                    <img class="DOKIEM3" src="NG/H18.jpg" alt="KPHH">
+                    <div class="ND1">             
+                        <div class="layout">
+                            <div class="box" data-image="image13" style="top: -1141.5px; left: -417px; width: 136px; height: 65px;">Mất nguồn accu</div>
+                            <div class="box" data-image="image14" style="top: -927px; left: -418px; width: 136px; height: 65px;">Đứt cầu chì 40A HTR</div>
+                            <div class="box" data-image="image15" style="top: -707px; left: -415px; width: 135px; height: 64.5px;">Đứt dây dẫn: 2 (40A HTR) → 5 (HTR Relay)</div>
+                            <div class="box" data-image="image16" style="top: -486.5px; left: -417px; width: 136px; height: 65px;">Đứt dây dẫn: 3 (HTR Relay) → 2 (E4)</div>
+                            <div class="box" data-image="image17" style="top: -270px; left: -417px; width: 136px; height: 65px; font-size: 18px;">Hư E4</div>
+                            <div class="box" data-image="image101" style="top: -44px; left: -705.5px; max-width: 136px; height: 65px; font-size: 17px;">(KT6) Đứt dây dẫn 1 (E4) → 4 (E3)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ND1">
+                <div class="image-popup">
+                    <img id="image13" src="pan từng vị trí/Pan số 5/KT1.png">
+                    <img id="image14" src="pan từng vị trí/Pan số 5/KT2.png">
+                    <img id="image15" src="pan từng vị trí/Pan số 5/KT3.png">
+                    <img id="image16" src="pan từng vị trí/Pan số 5/KT4.png">
+                    <img id="image17" src="pan từng vị trí/Pan số 5/KT5.png">
+                    <img id="image101" src="pan từng vị trí/Pan số 5/KT6.png">
+                </div>
+            </div>
+        </div>
+        <div id="contentE-M4" class="hidden-content">
+            <h2>Xác định vị trí hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>VỊ TRÍ HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Mất nguồn ắc quy.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Đứt cầu chì 40A GAUGE.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Đứt dây dẫn từ chân 2 (40A HTR) đến chân 5 (HTR Relay).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Đứt dây dẫn từ chân 3 (HTR Relay) đến chân 2 (E4).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Hư mô tơ quạt dàn lạnh (E4).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 6</td>
+                    <td>Đứt dây dẫn từ chân 1 (E4) đến chân 4 (E3).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+        <div id="contentF-M4" class="hidden-content">
+            <h2>Khắc phục hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>KHẮC PHUC HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Kiểm tra nguồn ắc quy hoặc thay ắc quy mới.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Thay cầu chì 40A mới.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 2 (40A HTR) đến chân 5 (HTR Relay).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (HTR Relay) đến chân 2 (E4).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Thay mô tơ quạt dàn lạnh mới.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 6</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (E4) đến chân 4 (E3).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+    </div>
+
+    <div id="content-Bật A/C nhưng HTR SUB1/AC MG Relay và ly hợp từ không hoạt động" class="content-section">
+        <div class="button-container" id="buttonContainer-Quạt dàn lạnh quay chậm khi bật chế độ quạt M1" >
+            <button class="custom-button" onclick="displayContent(1, 'M5')">Bước 1: Chuẩn bị dụng cụ</button>
+            <button class="custom-button" onclick="displayContent(2, 'M5')">Bước 2: Xác định triệu chứng</button>
+            <button class="custom-button" onclick="displayContent(3, 'M5')">Bước 3: Xác định khu vực nghi ngờ</button>
+            <button class="custom-button" onclick="displayContent(4, 'M5')">Bước 4: Trình tự đo kiểm</button>
+            <button class="custom-button" onclick="displayContent(5, 'M5')">Bước 5: Xác định vị trí hư hỏng</button>
+            <button class="custom-button" onclick="displayContent(6, 'M5')">Bước 6: Khắc phục hư hỏng</button>
+        </div>
+        <div id="contentA-M5" class="hidden-content">
+            <h2>Chuẩn bị dụng cụ</h2>
+            <p>-	Đồng hồ VOM. <br>
+                -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                -	Sơ đồ vị trí các chân tín hiệu trên bộ khuếch đại Amplifier. <br>
+                -	Chì hàn, ống co nhiệt, dây điện, băng keo đen,...
+                </p>
+                <div class="hinhmota1">
+                    <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                    <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                </div>
+                <img class="AC" src="NG/AC SWITCH.png" alt="#">
+        </div>
+        <div id="contentB-M5" class="hidden-content">
+            <h2>Xác định triệu chứng</h2>
+            <p>-	Quạt dàn lạnh: <br> 	+ Chế độ LO: Hoạt động bình thường. <br>
+                + Chế độ M1: Hoạt động bình thường. <br>
+                + Chế độ M2: Hoạt động bình thường. <br>
+                + Chế độ HI: Hoạt động bình thường. <br>
+            -	Quạt dàn nóng: Hoạt động bình thường. <br>
+            -	Bật công tắc A/C: Ly hợp từ không hoạt động. <br>
+            -	HTR SUB1/AC MG Relay: Không hoạt động (không có tiếng click).                       
+            </p>
+        </div>
+        <div id="contentC-M5" class="hidden-content">
+            <h2>Xác định khu vực nghi ngờ</h2>
+            <p>(KV1) - 	Hư cầu chì 7.5A A/C. <br>
+                (KV2) - 	Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 1 (HTR SUB1/AC MG Relay). <br>
+                (KV3) - 	Hư HTR SUB1/AC MG Relay. <br>
+                (KV4) - 	Đứt dây dẫn từ chân 2 (HTR SUB1/AC MG Relay) đến chân 15 (E7). <br>
+                (KV5) - 	Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 2 (E5). <br>
+                (KV6) - 	Hư công tắc A/C (E5). <br>
+                (KV7) - 	Đứt dây dẫn từ chân 4 (E5) đến chân 27 (E7). <br>
+                (KV8) - 	Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 14 (E7). <br>
+                (KV9) - 	Đứt dây dẫn tín hiệu dàn lạnh chân 21 (E7). <br>
+                (KV10) - 	Đứt dây mass của bộ khuếch đại chân 24 (E7). <br>
+                (KV11) - 	Đứt dây dẫn từ chân 22 (E7) đến chân 23 (E7). <br>
+                (KV12) - 	Đứt dây dẫn từ chân 12 (E7) đến chân 4 (A3). <br>
+                (KV13) - 	Hư công tắc áp suất kép (A3). <br>
+                (KV14) - 	Đứt dây dẫn từ chân 1 (A3) đến chân mass (A1).
+                
+                </p>
+                <img class="KVNN" src="NG/6.png" alt="KVNN">
+        </div>
+        <div id="contentD-M5" class="hidden-content">
+            <p>Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
+                Bật công tắc A/C.
+                </p>
+                <div class="DOKIEM">
+                    <div class="scrollable">
+                        <img class="DOKIEM7" src="NG/H19.jpg" alt="KPHH">
+                        <img class="DOKIEM8" src="NG/H20.jpg" alt="KPHH">
+                        <img class="DOKIEM9" src="NG/H21.jpg" alt="KPHH">
+                        <img class="DOKIEM10" src="NG/H22.jpg" alt="KPHH">
+                        <img class="DOKIEM11" src="NG/H23.jpg" alt="KPHH">
+                        <div class="ND2">             
+                            <div class="layout">
+                                <div class="box" data-image="image19" style="top: -2059px; left: -417px; width: 136px; height: 65px;">Đứt cầu chì 7.5A A/C</div>
+                                <div class="box" data-image="image20" style="top: -1843px; left: -417px; width: 136px; height: 65px;">Đứt dây dẫn: 7.5A A/C → 1 (MG Relay)</div>
+                                <div class="box" data-image="image21" style="top: -1639.5px; left: -415px; width: 136px; height: 65px;">Hư HTR SUB1/AC MG Relay </div>
+                                <div class="box" data-image="image22" style="top: -1418px; left: -415px; width: 136px; height: 65px;">Đứt dây dẫn: 2 (MG Relay) → 15 (E7)</div>
+                                <div class="box" data-image="image23" style="top: -1211.5px; left: -415px;width: 136px; height: 65px;">Đứt dây dẫn: 7.5A A/C → 2 (E5)</div>
+                                <div class="box" data-image="image24" style="top: -979.5px; left: -418px; width: 136px; height: 65px; font-size: 20px;">Hư E5 </div>
+                                <div class="box" data-image="image25" style="top: -761.5px; left: -415px; width: 136px; height: 65px;">Đứt dây dẫn: 4 (E5) → 27 (E7)</div>
+                                <div class="box" data-image="image26" style="top: -558.5px; left: -415px; width: 136px; height: 65px;">Đứt dây dẫn: 7.5A A/C → 14 (E7)</div>
+                                <div class="box" data-image="image27" style="top: -343.5px; left: -388px; width: 136px; height: 65px;">Đứt dây dẫn: 21 (E7) </div>
+                                <div class="box" data-image="image28" style="top: -136.5px; left: -389px; width: 136px; height: 65px;">Đứt dây dẫn: 24 (E7) </div>
+                                <div class="box" data-image="image29" style="top: 117px; left: -419px; width: 136px; height: 65px;">Đứt dây dẫn: 22 (E7) → 23 (E7)</div>
+                                <div class="box" data-image="image30" style="top: 332.5px; left: -418px; width: 136px; height: 65px;">Đứt dây dẫn: 12 (E7) → 4 (A3)</div>
+                                <div class="box" data-image="image31" style="top: 540.5px; left: -417px; width: 136px; height: 65px; font-size: 18px;">Hư A3</div>
+                                <div class="box" data-image="image102" style="top: 746.5px; left: -706px; max-width: 136px; height: 65px; font-size: 16px;">(KT14) Đứt dây dẫn: 1 (A3) → mass (A1) </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ND2">
+                <div class="image-popup">
+                    <img id="image19" src="pan từng vị trí/Pan số 6/KT1.png">
+                    <img id="image20" src="pan từng vị trí/Pan số 6/KT2.png">
+                    <img id="image21" src="pan từng vị trí/Pan số 6/KT3.png">
+                    <img id="image22" src="pan từng vị trí/Pan số 6/KT4.png">
+                    <img id="image23" src="pan từng vị trí/Pan số 6/KT5.png">
+                    <img id="image24" src="pan từng vị trí/Pan số 6/KT6.png">
+                    <img id="image25" src="pan từng vị trí/Pan số 6/KT7.png">
+                    <img id="image26" src="pan từng vị trí/Pan số 6/KT8.png">
+                    <img id="image27" src="pan từng vị trí/Pan số 6/KT9.png">
+                    <img id="image28" src="pan từng vị trí/Pan số 6/KT10.png">
+                    <img id="image29" src="pan từng vị trí/Pan số 6/KT11.png">
+                    <img id="image30" src="pan từng vị trí/Pan số 6/KT12.png">
+                    <img id="image31" src="pan từng vị trí/Pan số 6/KT13.png">
+                    <img id="image102" src="pan từng vị trí/Pan số 6/KT14.png">
+                </div>
+            </div>
+        </div>
+        <div id="contentE-M5" class="hidden-content">
+            <h2>Xác định vị trí hư hỏng</h2>
+            <div class="table-container">
+                <table class="my-table2">
+                    <thead>
+                        <tr>
+                            <th>TRƯỜNG HỢP HƯ HỎNG</th>
+                            <th>VỊ TRÍ HƯ HỎNG</th>
+                            <th>GHI CHÚ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trường hợp 1</td>
+                            <td>Đứt cầu chì 7.5A A/C.</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 2</td>
+                            <td>Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 1 (HTR SUB1/AC MG Relay).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 3</td>
+                            <td>Hư HTR SUB1/AC MG Relay.</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 4</td>
+                            <td>Đứt dây dẫn từ chân 2 (HTR SUB1/AC MG Relay) đến chân 15 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 5</td>
+                            <td>Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 2 (E5).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 6</td>
+                            <td>Hư công tắc A/C (E5).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 7</td>
+                            <td>Đứt dây dẫn từ chân 4 (E5) đến chân 27 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 8</td>
+                            <td>Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 14 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 9</td>
+                            <td>Đứt dây dẫn tín hiệu dàn lạnh chân 21 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 10</td>
+                            <td>Đứt dây mass của bộ khuếch đại chân 24 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 11</td>
+                            <td>Đứt dây dẫn từ chân 22 (E7) đến chân 23 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 12</td>
+                            <td>Đứt dây dẫn từ chân 12 (E7) đến chân 4 (A3).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 13</td>
+                            <td>Hư công tắc áp suất kép (A3).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 14</td>
+                            <td>Đứt dây dẫn từ chân 1 (A3) đến chân mass (A1).</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>           
+        <div id="contentF-M5" class="hidden-content">
+            <h2>Khắc phục hư hỏng</h2>
+            <div class="table-containerr">
+                <table class="my-table3">
+                    <thead>
+                        <tr>
+                            <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                            <td>KHẮC PHỤC HƯ HỎNG</td>
+                            <td>GHI CHÚ</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trường hợp 1</td>
+                            <td>Thay cầu chì 7.5A mới.</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 2</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 7.5A A/C đến chân 1 (HTR SUB1/AC MG Relay).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 3</td>
+                            <td>Thay relay 4 chân mới.</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 4</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 2 (HTR SUB1/AC MG Relay) đến chân 15 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 5</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 7.5A A/C đến chân 2 (E5).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 6</td>
+                            <td>Thay công tắc A/C mới.</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 7</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 4 (E5) đến chân 27 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 8</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 7.5A A/C đến chân 14 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 9</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn tín hiệu dàn lạnh chân 21 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 10</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây mass của bộ khuếch đại chân 24 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 11</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 22 (E7) đến chân 23 (E7).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 12</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 12 (E7) đến chân 4 (A3).</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 13</td>
+                            <td>Thay công tắc áp suất kép mới.</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Trường hợp 14</td>
+                            <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (A3) đến chân mass (A1).</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </div>    
+    <div id="content-Bật A/C, HTR SUB1/AC MG Relay hoạt động nhưng ly hợp từ không hoạt động" class="content-section">
+            <div class="button-container" id="buttonContainer-Bật A/C, HTR SUB1/AC MG Relay hoạt động nhưng ly hợp từ không hoạt động" >
+                <button class="custom-button" onclick="displayContent(1, 'M6')">Bước 1: Chuẩn bị dụng cụ</button>
+                <button class="custom-button" onclick="displayContent(2, 'M6')">Bước 2: Xác định triệu chứng</button>
+                <button class="custom-button" onclick="displayContent(3, 'M6')">Bước 3: Xác định khu vực nghi ngờ</button>
+                <button class="custom-button" onclick="displayContent(4, 'M6')">Bước 4: Trình tự đo kiểm</button>
+                <button class="custom-button" onclick="displayContent(5, 'M6')">Bước 5: Xác định vị trí hư hỏng</button>
+                <button class="custom-button" onclick="displayContent(6, 'M6')">Bước 6: Khắc phục hư hỏng</button>
+            </div>
+            <div id="contentA-M6" class="hidden-content">
+                <h2>Chuẩn bị dụng cụ</h2>
+                <p>-	Đồng hồ VOM. <br>
+                    -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                    -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                    -	Chì hàn, ống co nhiệt, băng keo đen, dây điện,...
+                    </p>
+                    <div class="hinhmota1">
+                        <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                        <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                    </div>
+                    <img class="AC" src="NG/AC SWITCH.png" alt="#">
+            </div>
+            <div id="contentB-M6" class="hidden-content">
+                <h2>Xác định triệu chứng</h2>
+                <p>-	Quạt dàn lạnh: <br>	+ Chế độ LO: Hoạt động bình thường. <br>
+                    + Chế độ M1: Hoạt động bình thường. <br>
+                    + Chế độ M2: Hoạt động bình thường. <br>
+                    + Chế độ HI: Hoạt động bình thường. <br>
+                -	Quạt dàn nóng: Hoạt động bình thường. <br>
+                -	Bật công tắc A/C: Ly hợp từ không hoạt động. <br>
+                -	HTR SUB1/AC MG Relay: Hoạt động bình thường (có tiếng click).
+                           
+                </p>
+            </div>
+            <div id="contentC-M6" class="hidden-content">
+                <h2>Xác định khu vực nghi ngờ</h2>
+                <p>(KV1) - 	Đứt dây dẫn từ chân 3 (HTR SUB1/AC MG Relay) đến chân 1 (C8). <br>
+                    (KV2) - 	Hư ly hợp từ (C8). <br>
+                    (KV3) - 	Mất mass ly hợp từ (C8).                    
+                    </p>
+                    <img class="KVNN" src="NG/7.png" alt="KVNN">
+            </div>
+            <div id="contentD-M6" class="hidden-content">
+                <h2>Trình tự đo kiểm</h2>
+                <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
+                    Bật công tắc A/C.          
+                </p>
+                    <div class="layout">
+                        <img class="DOKIEMM" src="NG/H24.jpg" alt="KPHH">
+                        <div class="box" data-image="image32" style="top: 24px; left: 262px; width: 136px; height: 65.5px;">Đứt dây dẫn: 3 (MG Relay) → 1 (C8)</div>
+                        <div class="box" data-image="image33" style="top: 232px; left: 295px; width: 136px; height: 65px; font-size: 24px;">Hư C8</div>
+                        <div class="box" data-image="image103" style="top: 472px; left: -26px; width: 135px; height: 65px; font-size: 19px;"> Mất mass C8</div>
+                    </div>
+                    <div class="image-popup">
+                        <img id="image32" src="pan từng vị trí/Pan số 7/KT1.png">
+                        <img id="image33" src="pan từng vị trí/Pan số 7/KT2.png">
+                        <img id="image103" src="pan từng vị trí/Pan số 7/KT3.png">
+                    </div>
+            </div>
+            <div id="contentE-M6" class="hidden-content">
+                <h2>Xác định vị trí hư hỏng</h2>
+                <table class="my-table1">
+                    <tr>
+                      <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                      <td>VỊ TRÍ HƯ HỎNG</td>
+                      <td>GHI CHÚ</td>
+                    </tr>
+                    <tr>
+                      <td>Trường hợp 1</td>
+                      <td>Đứt dây dẫn từ chân 3 (HTR SUB1/AC MG Relay) đến chân 1 (C8).</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Trường hợp 2</td>
+                      <td>Hư ly hợp từ (C8).</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Trường hợp 3</td>
+                        <td>Mất mass ly hợp từ (C8).</td>
+                        <td>-</td>
+                      </tr>
+                  </table>
+                </div>
+            <div id="contentF-M6" class="hidden-content">
+                <h2>Khắc phục hư hỏng</h2>
+                <table class="my-table1">
+                    <tr>
+                      <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                      <td>KHẮC PHUC HƯ HỎNG</td>
+                      <td>GHI CHÚ</td>
+                    </tr>
+                    <tr>
+                      <td>Trường hợp 1</td>
+                      <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (HTR SUB1/AC MG Relay) đến chân 1 (C8).</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <td>Trường hợp 2</td>
+                      <td>Thay ly hợp từ mới.</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Trường hợp 3</td>
+                        <td>Dùng hàn chì và ống co nhiệt nối lại mass ly hợp từ.</td>
+                        <td>-</td>
+                      </tr>
+                  </table>
+            </div>
+        </div>
+
+    <div id="content-Bật công tắc A/C, rơle FAN NO.1 không hoạt động, quạt dàn nóng không quay" class="content-section">
+        <div class="button-container" id="buttonContainer-Bật công tắc A/C, rơle FAN NO.1 không hoạt động, quạt dàn nóng không quay" >
+            <button class="custom-button" onclick="displayContent(1, 'M7')">Bước 1: Chuẩn bị dụng cụ</button>
+            <button class="custom-button" onclick="displayContent(2, 'M7')">Bước 2: Xác định triệu chứng</button>
+            <button class="custom-button" onclick="displayContent(3, 'M7')">Bước 3: Xác định khu vực nghi ngờ</button>
+            <button class="custom-button" onclick="displayContent(4, 'M7')">Bước 4: Trình tự đo kiểm</button>
+            <button class="custom-button" onclick="displayContent(5, 'M7')">Bước 5: Xác định vị trí hư hỏng</button>
+            <button class="custom-button" onclick="displayContent(6, 'M7')">Bước 6: Khắc phục hư hỏng</button>
+        </div>
+        <div id="contentA-M7" class="hidden-content">
+            <h2>Chuẩn bị dụng cụ</h2>
+            <p>-	Đồng hồ VOM. <br>
+                -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                -	Chì hàn, ống co nhiệt, dây điện, băng keo,...
+                </p>
+                <div class="hinhmota1">
+                    <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                    <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                </div>
+                <img class="AC-TH8" src="NG/TH8.png" alt="#">
+        </div>
+        <div id="contentB-M7" class="hidden-content">
+            <h2>Xác định triệu chứng</h2>
+            <p>-	Quạt dàn lạnh: <br>	+ Chế độ LO: Hoạt động bình thường. <br>
+                + Chế độ M1: Hoạt động bình thường. <br>
+                + Chế độ M2: Hoạt động bình thường.  <br>
+                + Chế độ HI: Hoạt động bình thường. <br>
+            -	Quạt dàn nóng: Không hoạt động. <br>
+            -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+            -	FAN NO.1 Relay: Không hoạt động (không có tiếng click).
+            
+                
+            </p>
+        </div>
+        <div id="contentC-M7" class="hidden-content">
+            <h2>Xác định khu vực nghi ngờ</h2>
+            <p>(KV1) - 	Hư cầu chì 10A ECU-IG. <br>
+                (KV2) - 	Đứt dây dẫn từ cầu chì 10A ECU-IG đến <br> chân 6 (FAN NO.1 Relay). <br>
+                (KV3) - 	Hư FAN NO.1 Relay. <br>
+                (KV4) - 	Đứt dây dẫn từ chân 7 (FAN NO.1 Relay) đến chân 1 (E7).
+                
+                                   
+                </p>
+                <img class="KVNN" src="NG/8.png" alt="KVNN">
+        </div>
+        <div id="contentD-M7" class="hidden-content">
+            <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
+                Bật công tắc A/C.                
+                </p>
+                <div class="DOKIEM">
+                    <div class="scrollable">
+                        <img class="DOKIEM1" src="NG/H25.jpg" alt="KPHH">
+                        <img class="DOKIEM2" src="NG/H26.jpg" alt="KPHH">
+                        <div class="ND4">             
+                            <div class="layout">
+                                <div class="box" data-image="image34" style="top: -758px; left: -407px; max-width: 136px; height: 65px;">Đứt cầu chì 10A ECU-IG </div>
+                                <div class="box" data-image="image35" style="top: -548px; left: -407px; max-width: 136px; height: 65px;">Đứt dây dẫn: 10A ECU → 6 (F1 Relay)</div>
+                                <div class="box" data-image="image36" style="top: -331.5px; left: -369px; width: 136px; height: 65px;">Hư FAN NO.1 Relay</div>
+                                <div class="box" data-image="image104" style="top: -89.5px; left: -696px; max-width: 137px; height: 65px;">Đứt dây dẫn: 7 (F1 Relay) → 1 (E7)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ND4">
+                <div class="image-popup">
+                    <img id="image34" src="pan từng vị trí/Pan số 8/KT1.png">
+                    <img id="image35" src="pan từng vị trí/Pan số 8/KT2.png">
+                    <img id="image36" src="pan từng vị trí/Pan số 8/KT3.png">
+                    <img id="image104" src="pan từng vị trí/Pan số 8/KT4.png">
+                </div>
+            </div>
+        </div>
+        <div id="contentE-M7" class="hidden-content">
+            <h2>Xác định vị trí hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>VỊ TRÍ HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Đứt cầu chì 10A ECU-IG.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Đứt dây dẫn từ cầu chì 10A ECU-IG đến chân 6 (FAN NO.1 Relay).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Hư FAN NO.1 Relay.</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Đứt dây dẫn từ chân 7 (FAN NO.1 Relay) đến chân 1 (E7).</td>
+                    <td>-</td>
+                </tr>
+              </table>
+        </div>
+        <div id="contentF-M7" class="hidden-content">
+            <h2>Khắc phục hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>KHẮC PHUC HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Thay cầu chì 10A mới.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Dùng hàn chì và ống co nhiệt nối dây dây từ cầu chì 10A ECU-IG đến chân 6 (FAN NO.1 Relay).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Thay relay 4 chân mới.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 7 (FAN NO.1 Relay) đến chân 1 (E7).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+    </div>
+
+    <div id="content-Bật công tắc A/C, rơle FAN NO.1 hoạt động nhưng quạt dàn nóng không quay" class="content-section">
+        <div class="button-container" id="buttonContainer-Bật công tắc A/C, rơle FAN NO.1 hoạt động nhưng quạt dàn nóng không quay" >
+            <button class="custom-button" onclick="displayContent(1, 'M8')">Bước 1: Chuẩn bị dụng cụ</button>
+            <button class="custom-button" onclick="displayContent(2, 'M8')">Bước 2: Xác định triệu chứng</button>
+            <button class="custom-button" onclick="displayContent(3, 'M8')">Bước 3: Xác định khu vực nghi ngờ</button>
+            <button class="custom-button" onclick="displayContent(4, 'M8')">Bước 4: Trình tự đo kiểm</button>
+            <button class="custom-button" onclick="displayContent(5, 'M8')">Bước 5: Xác định vị trí hư hỏng</button>
+            <button class="custom-button" onclick="displayContent(6, 'M8')">Bước 6: Khắc phục hư hỏng</button>
+        </div>
+        <div id="contentA-M8" class="hidden-content">
+            <h2>Chuẩn bị dụng cụ</h2>
+            <p>-	Đồng hồ VOM. <br>
+                -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                -	Chì hàn, ống co nhiệt, băng keo đen, dây điện,...
+                </p>
+                <div class="hinhmota1">
+                    <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                    <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                </div>
+                <img class="AC-TH8" src="NG/TH8.png" alt="#">
+        </div>
+        <div id="contentB-M8" class="hidden-content">
+            <h2>Xác định triệu chứng</h2>
+            <p>-	Quạt dàn lạnh: <br>	+ Chế độ LO: Hoạt động bình thường. <br>
+                + Chế độ M1: Hoạt động bình thường. <br>
+                + Chế độ M2: Hoạt động bình thường. <br>
+                + Chế độ HI: Hoạt động bình thường. <br>
+            -	Quạt dàn nóng: Không hoạt động. <br>
+            -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+            -	FAN NO.1 Relay: Hoạt động bình thường (có tiếng click).
+                                
+            </p>
+        </div>
+        <div id="contentC-M8" class="hidden-content">
+            <h2>Xác định khu vực nghi ngờ</h2>
+            <p>(KV1) - 	Hư cầu chì 30A RDI. <br>
+                (KV2) - 	Đứt dây dẫn từ cầu chì 30A RDI đến chân 5 (FAN NO.1 Relay). <br>
+                (KV3) - 	Đứt dây dẫn từ chân 8 (FAN NO.1 Relay) đến chân 2 (A7). <br>
+                (KV4) - 	Hư mô tơ quạt dàn nóng (A7). <br>
+                (KV5) - 	Đứt dây dẫn từ chân 1 (A7) đến chân 3 (FAN NO.2 Relay). <br>
+                (KV6) - 	Đứt dây dẫn từ chân 4 (FAN NO.2 Relay) đến chân 2 (A13). <br>
+                (KV7) - 	Hư điện trở quạt dàn lạnh (A13). <br>
+                (KV8) - 	Đứt dây dẫn từ chân 1 (A13) đến chân mass (A1).
+                
+                
+                </p>
+                <img class="KVNN" src="NG/9.png" alt="KVNN">
+        </div>
+        <div id="contentD-M8" class="hidden-content">
+            <p>Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
+                Bật công tắc A/C.                
+                </p>
+                <div class="DOKIEM">
+                    <div class="scrollable">
+                        <img class="DOKIEM1" src="NG/H27.jpg" alt="KPHH">
+                        <img class="DOKIEM2" src="NG/H28.jpg" alt="KPHH">
+                        <img class="DOKIEM2" src="NG/H29.jpg" alt="KPHH">
+                        <div class="ND5">             
+                            <div class="layout">
+                                <div class="box" data-image="image37" style="top: -1136px; left: -408px; max-width: 136px; height: 65px; ">Đứt cầu chì 30A RDI</div>
+                                <div class="box" data-image="image38" style="top: -914px; left: -408px; max-width: 136px; height: 65px;">Đứt dây dẫn: 30A RDI → 5 (F1 Relay) </div>
+                                <div class="box" data-image="image39" style="top: -707px; left: -405px; max-width: 135px; height: 65px;">Đứt dây dẫn: 8 (F1 Relay) → 2 (A7)</div>
+                                <div class="box" data-image="image40" style="top: -491px; left: -370px; width: 135px; height: 65px; font-size: 25px;">Hư A7 </div>
+                                <div class="box" data-image="image41" style="top: -271px; left: -406px; max-width: 135px; height: 65px;">Đứt dây dẫn: 1 (A7) → 3 (F2 Relay)</div>
+                                <div class="box" data-image="image42" style="top: -46px; left: -408px; max-width: 136px; height: 65px;">Đứt dây dẫn: 4 (F2 Relay) → 2 (A13)</div>
+                                <div class="box" data-image="image43" style="top: 162px; left: -371px; width: 136px; height: 65px; font-size: 23px;">Hư A13</div>          
+                                <div class="box" data-image="image105" style="top: 385px; left: -696px; max-width: 136px; height: 65px; font-size: 16px;">Đứt dây dẫn: 1(A13) → mass(A1)</div>          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ND5">
+                <div class="image-popup">
+                    <img id="image37" src="pan từng vị trí/Pan số 9/KT1.png">
+                    <img id="image38" src="pan từng vị trí/Pan số 9/KT2.png">
+                    <img id="image39" src="pan từng vị trí/Pan số 9/KT3.png">
+                    <img id="image40" src="pan từng vị trí/Pan số 9/KT4.png">
+                    <img id="image41" src="pan từng vị trí/Pan số 9/KT5.png">
+                    <img id="image42" src="pan từng vị trí/Pan số 9/KT6.png">
+                    <img id="image43" src="pan từng vị trí/Pan số 9/KT7.png">
+                    <img id="image105" src="pan từng vị trí/Pan số 9/KT8.png">
+                </div>
+            </div>
+        </div>
+        <div id="contentE-M8" class="hidden-content">
+            <h2>Xác định vị trí hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>VỊ TRÍ HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Đứt cầu chì 30A RDI.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Đứt dây dẫn từ cầu chì 30A RDI đến chân 5 (FAN NO.1 Relay).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Đứt dây dẫn từ chân 8 (FAN NO.1 Relay) đến chân 2 (A7).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Hư mô tơ quạt dàn nóng (A7).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Đứt dây dẫn từ chân 1 (A7) đến chân 3 (FAN NO.2 Relay).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 6</td>
+                    <td>Đứt dây dẫn từ chân 4 (FAN NO.2 Relay) đến chân 2 (A13).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 7</td>
+                    <td>Hư điện trở quạt dàn lạnh (A13).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 8</td>
+                    <td>Đứt dây dẫn từ chân 1 (A13) đến chân mass (A1).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+        <div id="contentF-M8" class="hidden-content">
+            <h2>Khắc phục hư hỏng</h2>
+            <table class="my-table4">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>KHẮC PHỤC HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Thay cầu chì 30A mới.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 30A RDI đến chân 5 (FAN NO.1 Relay).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 8 (FAN NO.1 Relay) đến chân 2 (A7).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Thay mô tơ quạt dàn nóng mới.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Dùng hàn chì và ống co nhiệt dây dẫn từ chân 1 (A7) đến chân 3 (FAN NO.2 Relay).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 6</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 4 (FAN NO.2 Relay) đến chân 2 (A13).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 7</td>
+                    <td>Thay điện trở quạt dàn lạnh mới.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 8</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (A13) đến chân mass (A1).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+    </div>
+
+    <div id="content-Bật A/C, bật công tắc giả lập áp suất trung bình cao nhưng FAN NO.2 Relay không hoạt động" class="content-section">
+        <div class="button-container" id="buttonContainer-Bật A/C, bật công tắc giả lập áp suất trung bình cao nhưng FAN NO.2 Relay không hoạt động" >
+            <button class="custom-button" onclick="displayContent(1, 'M9')">Bước 1: Chuẩn bị dụng cụ</button>
+            <button class="custom-button" onclick="displayContent(2, 'M9')">Bước 2: Xác định triệu chứng</button>
+            <button class="custom-button" onclick="displayContent(3, 'M9')">Bước 3: Xác định khu vực nghi ngờ</button>
+            <button class="custom-button" onclick="displayContent(4, 'M9')">Bước 4: Trình tự đo kiểm</button>
+            <button class="custom-button" onclick="displayContent(5, 'M9')">Bước 5: Xác định vị trí hư hỏng</button>
+            <button class="custom-button" onclick="displayContent(6, 'M9')">Bước 6: Khắc phục hư hỏng</button>
+        </div>
+        <div id="contentA-M9" class="hidden-content">
+            <h2>Chuẩn bị dụng cụ</h2>
+            <p>-	Đồng hồ VOM. <br>
+                -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                -	Chì hàn, ống co nhiệt, dây điện, băng keo đen,...
+                </p>
+                <div class="hinhmota1">
+                    <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                    <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                </div>
+                <img class="AC-TH8" src="NG/TH8.png" alt="#">
+        </div>
+        <div id="contentB-M9" class="hidden-content">
+            <h2>Xác định triệu chứng</h2>
+            <p>	-	Quạt dàn lạnh: <br> 	+ Chế độ LO: Hoạt động bình thường. <br>
+                + Chế độ M1: Hoạt động bình thường. <br>
+                + Chế độ M2: Hoạt động bình thường. <br>
+                + Chế độ HI: Hoạt động bình thường. <br>
+            -	Quạt dàn nóng: Luôn quay ở tốc độ thấp khi bật công tắc giả lập áp suất trung bình cao. <br>
+            -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+            -	FAN NO.2 Relay: Không hoạt động (không có tiếng click).
+                  
+            </p>
+        </div>
+        <div id="contentC-M9" class="hidden-content">
+            <h2>Xác định khu vực nghi ngờ</h2>
+            <p>(KV1) - 	Đứt dây dẫn từ cầu chì 10A ECU-IG đến chân 2 <br> (FAN NO.2 Relay). <br>
+                (KV2) - 	Hư FAN NO.2 Relay. <br>
+                (KV3) - 	Đứt dây dẫn từ chân 1 (FAN NO.2 Relay) đến chân 2 (A3). <br>
+                (KV4) - 	Hư công tắc áp suất trung bình (A3). <br>
+                (KV5) - 	Đứt dây dẫn từ chân 3 (A3) đến chân mass (A1). <br>
+                                   
+                </p>
+                <img class="KVNN" src="NG/10.png" alt="KVNN">
+        </div>
+        <div id="contentD-M9" class="hidden-content">
+            <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
+                Bật công tắc A/C và công tắc giả lập áp suất trung bình cao.          
+                </p>
+                <div class="DOKIEM">
+                    <div class="scrollable">
+                        <img class="DOKIEM1" src="NG/H30.jpg" alt="KPHH">
+                        <img class="DOKIEM2" src="NG/H31.jpg" alt="KPHH">
+                        <div class="ND6">             
+                            <div class="layout">
+                                <div class="box" data-image="image44" style="top: -978px; left: -409px; max-width: 136px; height: 72px; padding-top: 4px;">Đứt dây dẫn: 10A ECU → 2 (F2 Relay)</div>
+                                <div class="box" data-image="image45" style="top: -772px; left: -370px; max-width: 136px; height: 66px; font-size: 17px;">Hư FAN NO.2 Relay</div>
+                                <div class="box" data-image="image46" style="top: -546px; left: -407px; max-width: 136px; height: 65px;">Đứt dây dẫn: 1 (F2 Relay) → 2 (A3)</div>
+                                <div class="box" data-image="image47" style="top: -331px;left: -370px;width: 135px;height: 65px;font-size: 23px;">Hư A3 </div>                      
+                                <div class="box" data-image="image106" style="top: -105px;left: -696px;max-width: 136px;height: 65px;font-size: 16px;">Đứt dây dẫn 3 (A3) → mass (A1) </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ND6">
+            <div class="image-popup">
+                <img id="image44" src="pan từng vị trí/Pan số 10/KT1.png">
+                <img id="image45" src="pan từng vị trí/Pan số 10/KT2.png">
+                <img id="image46" src="pan từng vị trí/Pan số 10/KT3.png">
+                <img id="image47" src="pan từng vị trí/Pan số 10/KT4.png">
+                <img id="image106" src="pan từng vị trí/Pan số 10/KT5.png">
+            </div>
+            </div>
+        </div>
+        <div id="contentE-M9" class="hidden-content">
+            <h2>Xác định vị trí hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>VỊ TRÍ HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Đứt dây dẫn từ cầu chì 10A ECU-IG đến chân 2 (FAN NO.2 Relay).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Hư FAN NO.2 Relay.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Đứt dây dẫn từ chân 1 (FAN NO.2 Relay) đến chân 2 (A3).</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Hư công tắc áp suất trung bình (A3).</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Đứt dây dẫn từ chân 3 (A3) đến chân mass (A1).</td>
+                    <td>-</td>
+                </tr>
+              </table>
+        </div>
+        <div id="contentF-M9" class="hidden-content">
+            <h2>Khắc phục hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>KHẮC PHUC HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 10A ECU-IG đến chân 2 (FAN NO.2 Relay).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Thay relay 5 chân mới.</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                    <td>Trường hợp 3</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (FAN NO.2 Relay) đến chân 2 (A3).</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 4</td>
+                    <td>Thay công tắc áp suất trung bình mới.</td>
+                    <td>-</td>
+                  </tr>
+                  <tr>
+                    <td>Trường hợp 5</td>
+                    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (A3) đến chân mass (A1).</td>
+                    <td>-</td>
+                  </tr>
+              </table>
+        </div>
+    </div>
+
+    <div id="content-Bật A/C, bật công tắc giả lập quạt dàn nóng quay tốc độ cao, FAN NO.2 Relay hoạt động nhưng dàn nóng không quay" class="content-section">
+        <div class="button-container" id="buttonContainer-Bật A/C, bật công tắc giả lập quạt dàn nóng quay tốc độ cao, FAN NO.2 Relay hoạt động nhưng dàn nóng không quay" >
+            <button class="custom-button" onclick="displayContent(1, 'M10')">Bước 1: Chuẩn bị dụng cụ</button>
+            <button class="custom-button" onclick="displayContent(2, 'M10')">Bước 2: Xác định triệu chứng</button>
+            <button class="custom-button" onclick="displayContent(3, 'M10')">Bước 3: Xác định khu vực nghi ngờ</button>
+            <button class="custom-button" onclick="displayContent(4, 'M10')">Bước 4: Trình tự đo kiểm</button>
+            <button class="custom-button" onclick="displayContent(5, 'M10')">Bước 5: Xác định vị trí hư hỏng</button>
+            <button class="custom-button" onclick="displayContent(6, 'M10')">Bước 6: Khắc phục hư hỏng</button>
+        </div>
+        <div id="contentA-M10" class="hidden-content">
+            <h2>Chuẩn bị dụng cụ</h2>
+            <p>-	Đồng hồ VOM. <br>
+                -	Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007. <br>
+                -	Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007. <br>
+                -	Chì hàn, ống co nhiệt, băng keo đen, dây điện,...
+                </p>
+                <div class="hinhmota1">
+                    <img src="NG/hinhVOM.jpg" alt="NG/hinhmota">
+                    <img src="NG/ongco.jpg" alt="NG/hinhmota">
+                </div>
+                <img class="AC-TH9" src="NG/TH8.png" alt="#">
+        </div>
+        <div id="contentB-M10" class="hidden-content">
+            <h2>Xác định triệu chứng</h2>
+            <p>-	Quạt dàn lạnh: <br>	+ Chế độ LO: Hoạt động bình thường. <br>
+                + Chế độ M1: Hoạt động bình thường. <br>
+                + Chế độ M2: Hoạt động bình thường. <br>
+                + Chế độ HI: Hoạt động bình thường. <br>
+            -	Quạt dàn nóng: Không hoạt động khi bật công tắc giả lập áp suất trung bình cao. <br>
+            -	Bật công tắc A/C: Ly hợp từ hoạt động bình thường. <br>
+            -	FAN NO.2 Relay: Hoạt động bình thường (có tiếng click).
+            
+            </p>
+        </div>
+        <div id="contentC-M10" class="hidden-content">
+            <h2>Xác định khu vực nghi ngờ</h2>
+            <p>(KV1) - 	Đứt dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1).  <br>
+                (KV2) - 	Mất mass (A1).                                
+                </p>
+                <img class="KVNN" src="NG/11.png" alt="KVNN">
+        </div>
+        <div id="contentD-M10" class="hidden-content">
+            <h2>Trình tự đo kiểm</h2>
+            <p>	-	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
+                -	Bật công tắc A/C. <br>
+                -	Bật công tắc giả lập áp suất trung bình cao.                           
+                </p>
+                <div class="layout">
+                    <img class="DOKIEMM" src="NG/H32.jpg" alt="KPHH">
+                    <div class="box" data-image="image48" style="top: 25px; left: 300px; width: 135px; height: 65px;">Đứt dây dẫn: 5 (F2 Relay) → mass (A1)</div>
+                    <div class="box" data-image="image49" style="top: 241px; left: -25px; max-width: 136px; height: 65px; font-size: 23px;">Mất mass (A1)</div>
+                </div>
+                <div class="image-popup">
+                    <img id="image48" src="pan từng vị trí/Pan số 11/N57-75 12V.png">
+                    <img id="image49" src="pan từng vị trí/Pan số 11/N57-75 0V.png">
+                </div>
+        </div>
+        <div id="contentE-M10" class="hidden-content">
+            <h2>Xác định vị trí hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>VỊ TRÍ HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Đứt dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Mất mass (A1).</td>
+                  <td>-</td>
+                </tr>
+              </table>
+        </div>
+        <div id="contentF-M10" class="hidden-content">
+            <h2>Khắc phục hư hỏng</h2>
+            <table class="my-table1">
+                <tr>
+                  <td>TRƯỜNG HỢP HƯ HỎNG</td>
+                  <td>KHẮC PHUC HƯ HỎNG</td>
+                  <td>GHI CHÚ</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 1</td>
+                  <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1).</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Trường hợp 2</td>
+                  <td>Dùng hàn chì và ống co nhiệt nối dây mass (A1).</td>
+                  <td>-</td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    <!-- Nội dung mặc định hiển thị nếu không chọn mục nào -->
+    <div id="default-content" class="content-section">
+        <p>Vui lòng chọn một mục từ menu để xem nội dung.</p>
+    </div>
+
+    <script>
+       // Hàm toggle để hiển thị hoặc ẩn menu
+function toggleDropdown() {
+    var dropdown = document.getElementById("myDropdown");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+}
+// Hiển thị menu ngay từ đầu khi trang được tải
+window.onload = function() {
+    document.getElementById("myDropdown").style.display = "block";  // Hiển thị menu
+}
+
+// Hàm hiển thị nội dung tương ứng khi người dùng chọn mục
+function showContent(contentId) {
+    var button = document.querySelector(".dropdown-btn");
+    button.innerHTML = contentId;  // Cập nhật tên nút
+
+    // Ẩn tất cả các nội dung
+    var allContents = document.querySelectorAll(".content-section");
+    allContents.forEach(function(content) {
+        content.style.display = "none";
+    });
+
+    // Hiển thị nội dung tương ứng
+    var selectedContent = document.getElementById("content-" + contentId);
+    if (selectedContent) {
+        selectedContent.style.display = "block";
+    }
+
+    // Đóng menu sau khi chọn mục
+    document.getElementById("myDropdown").style.display = "none";
+
+    // Hiển thị các nút con tương ứng với mục đã chọn
+    var buttonContainer = document.getElementById("buttonContainer-" + contentId);
+    if (buttonContainer) {
+        buttonContainer.style.display = "block";
+    }
+}
+
+// Hàm hiển thị nội dung tương ứng với nút đã nhấn
+function displayContent(contentId, mode) {
+    // Ẩn tất cả nội dung
+    let contents = document.querySelectorAll('.hidden-content');
+    contents.forEach(content => content.style.display = 'none');
+    
+    // Hiển thị nội dung tương ứng với nút
+    document.getElementById('content' + String.fromCharCode(64 + contentId) + '-' + mode).style.display = 'block';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const boxes = document.querySelectorAll('.box');
+
+boxes.forEach((box) => {
+    const imageId = box.dataset.image;
+    const image = document.getElementById(imageId);
+
+    box.addEventListener('mouseover', () => {
+        image.style.display = 'block'; // Hiển thị hình ảnh
+    });
+
+    box.addEventListener('mouseout', () => {
+        image.style.display = 'none'; // Ẩn hình ảnh
+    });
+});
+
+    </script>
+</body>
+</html>

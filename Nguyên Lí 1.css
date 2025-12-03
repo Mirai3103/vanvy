@@ -1,0 +1,320 @@
+
+        /* Nguyên Lí 1.css */
+
+/* Đặt kiểu cơ bản cho các phần tử */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.menu-bar {
+    display: flex;
+    background-color: #333;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.menu-bar button,.menu-bar .menu-item  {
+    color: white;
+    background-color: #333;
+    border: none;
+    padding: 7px 20px;
+    margin: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+}
+
+.menu-bar button:hover {
+    background-color: #575757;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/******************************************************************************************************/
+
+
+.AC-container,
+    .KT-container,.LOW-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px; /* Khoảng cách giữa văn bản và hình ảnh */
+}
+
+
+.AC-text,.KT-text,.LOW-text {
+    background-color: #fc8c8c; /* Màu nền nhẹ nhàng */
+    border-radius: 10px; /* Bo tròn góc */
+    padding: 20px; /* Khoảng cách bên trong */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    margin: 0 0; /* Khoảng cách trên và dưới */
+    font-family: 'Arial', sans-serif; /* Font chữ */
+    color: #fff9f9; /* Màu chữ */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+}
+
+.AC-image,.KT-image,.LOW-image {
+    flex: 1;
+    max-width: 67%; /* Chiếm hai phần ba trang */
+}
+
+.AC-image img,.KT-image img,.LOW-image img {
+    height: auto; /* Giữ nguyên tỷ lệ khung hình */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.multitaskingg{
+    margin-top: -80px;
+    margin-left: 800px;
+}
+.multitaskingg ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .multitaskingg li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .multitaskingg a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 15px; /* Kích thước của nút */
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .multitaskingg a:hover {
+    background-color: #007bff;
+    color: white;
+  }
+
+.AC-image img{
+    width: 100%; height: 640px;
+}
+.KT-image img{
+    max-width: 40%;
+}
+.LOW-image img{
+    width: 100%; height: 600px;
+}
+
+/* Ac on******************************************************************************************************/
+
+
+.table-container {
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 30%;
+    margin-top: 80px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 5px solid #ccc;
+    padding: 5px;
+    text-align: left;
+    position: relative;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    height: 50px;
+}
+
+.diagonal-header {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.diagonal-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid #ccc;
+    transform-origin: 0 0;
+    pointer-events: none;
+}
+
+.header-text {
+    position: absolute;
+    bottom: 12px;
+    left: 20px;
+    transform-origin: left bottom;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+}
+
+.sub-header {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+}
+
+/* Đặt chiều rộng cho cột STT */
+th:first-child, td:first-child {
+    width: 100px; /* Chiều rộng cho cột STT */
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td[contenteditable="true"]:focus {
+    outline: 2px solid #007BFF;
+}
+
+.button-container button {
+    background-color: #007BFF; /* Màu xanh dương */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không viền */
+    border-radius: 8px; /* Bo tròn góc */
+    padding: 12px 24px; /* Khoảng cách bên trong */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    text-transform: uppercase; /* Chữ in hoa */
+    cursor: pointer; /* Con trỏ khi di chuột */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Hiệu ứng chuyển tiếp */
+    margin-top: 5px;
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Màu nền tối hơn khi di chuột */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Đổ bóng sâu hơn khi di chuột */
+    transform: translateY(-2px); /* Nâng nút lên một chút khi di chuột */
+}
+
+.button-container button:active {
+    transform: translateY(0); /* Đưa nút về vị trí ban đầu khi nhấn */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng trở về khi nhấn */
+}* {
+    box-sizing: border-box;
+}
+
+/* Định dạng nút return */
+.multitasking {
+    margin-top:160px;
+    margin-left: 300px;
+  }
+  
+  .multitasking ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .multitasking li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .multitasking a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 10px 15px; /* Kích thước của nút */
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .multitasking a:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+
+
+
+
+  .menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-item {
+    display: inline-block;
+    position: relative;
+}
+
+.menu-button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu-item {
+    flex: 1; /* Chiếm cùng một diện tích */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+.submenu-button {
+    display: block;
+    background-color: #666;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%; /* Đảm bảo nút chiếm toàn bộ chiều rộng của li */
+    padding: 10px; /* Thêm khoảng cách bên trong cho nút */
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+
+

@@ -1,0 +1,123 @@
+/* Đặt margin và padding mặc định */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,300;0,900;1,400;1,700&family=Playwrite+GB+J+Guides:ital@0;1&display=swap');
+/* Định dạng body */
+body {
+    
+    line-height: 1.75;
+    color: #ffffff; /* Màu chữ trắng */
+    background: url('image/backgroud-thực\ tiễn.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 80vh;
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+    margin-top: 105px;
+}
+
+/* Lớp phủ làm mờ */
+.overlay {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Nội dung */
+.content {
+    text-align: justify;
+    position: relative;
+    z-index: 2;
+    padding-right: 55px;
+    padding-left: 55px;
+    max-width: 100%;
+    border-radius: 10px;
+    color: black;
+    margin-top: -100px;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        line-height: 1.75;
+        color: #ffffff; /* Màu chữ trắng */
+        font-size: 14px;
+        position: relative;
+        min-height: 80vh;
+        overflow: hidden;  /* Đảm bảo ảnh nền không bị tràn */
+    }
+    
+    /* Thêm lớp mờ cho ảnh nền bằng ::after */
+    body::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('image/nen.jpg') no-repeat center center fixed;
+        background-size: cover;
+        filter: blur(1px); /* Làm mờ ảnh nền */
+        z-index: -1; /* Đảm bảo lớp mờ này nằm dưới nội dung */
+    }
+    .content {
+        margin-top: -50px;
+    }
+}
+
+
+
+@media (max-width: 430px) and (min-width: 390px){
+    body {
+        font-size: 10px;
+        min-height: 120vh;
+        overflow: auto;
+        margin-top: -74px;
+    }
+    
+    /* Thêm lớp mờ cho ảnh nền bằng ::after */
+    body::after {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('image/nen.jpg') no-repeat center center fixed;
+        background-size: cover;
+        filter: blur(4px); /* Làm mờ ảnh nền */
+        z-index: -1; /* Đảm bảo lớp mờ này nằm dưới nội dung */
+    }
+
+    .content {
+        margin-left: 5%; /* Giảm khoảng cách trái để không bị cắt ở màn hình nhỏ */
+        margin-right: 5%; /* Giảm khoảng cách phải */
+        border-radius: 10px;
+        color: black;
+        margin-top: 15px; /* Giảm khoảng cách trên để nội dung dễ nhìn */
+        padding-left: 15px; /* Điều chỉnh padding bên trái */
+        padding-right: 15px; /* Điều chỉnh padding bên phải */
+    }
+    h1 {
+        text-align: center;
+        margin-top: 72px;
+        font-size: 24px;
+    }
+}

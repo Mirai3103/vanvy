@@ -1,0 +1,233 @@
+/* Toàn bộ phần tử body */
+body {
+    font-family: 'Roboto', sans-serif; /* Sử dụng phông chữ Roboto */
+    line-height: 1.6; /* Tăng khoảng cách giữa các dòng */
+    margin: 0; /* Loại bỏ margin mặc định */
+    padding-top: 150px; /* Dành chỗ cho header cố định */
+}
+
+/* Header cố định trên cùng */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Đảm bảo header nằm trên các phần khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng cho đẹp mắt */
+    background-color: #6e62fb;
+    display: flex; /* Sử dụng flexbox */
+    justify-content: space-between; /* Chia đều không gian giữa các nút */
+    padding: 10px;
+    border-radius: 7px;
+    color: white;
+}
+
+header img {
+    height: 60px;
+}
+
+/* Tiêu đề trang (h1) */
+h1 {
+    color: rgb(250, 21, 21);
+    font-size: 1.75rem;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+    margin-right: 70px;
+}
+
+/* Phần chứa các nút (nutan) */
+.nutan {
+    display: none; /* Ban đầu ẩn */
+    position: fixed;
+    top: 100px; /* Điều chỉnh giá trị này tùy theo chiều cao của header */
+    left: 0px;
+    width: 100%;
+    background-color: white; /* Màu nền cho nút */
+    z-index: 999; /* Đảm bảo nó nằm dưới header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng cho đẹp mắt */
+    padding: 5px;
+    text-align: center;
+}
+header:hover + .nutan,
+.nutan:hover {
+    display: block; /* Hiển thị .nutan */
+    opacity: 1; /* Đảm bảo nó mờ dần ra */
+    transform: translateY(0); /* Trở lại vị trí ban đầu (trượt xuống) */
+    pointer-events: auto; /* Cho phép tương tác khi hiển thị */
+}
+
+.nutan button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #5260fc;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nutan button:hover {
+    background-color: #0056b3;
+}
+
+/* Các phần tử nội dung (contentt) */
+.contentt {
+    display: none;
+    margin-top: -35px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: opacity 0.5s ease, display 0s 0.5s;
+    opacity: 0;
+}
+
+.contentt.active {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    flex-direction: column;
+}
+
+/* Bố cục phần AC-container */
+.AC-container {
+    display: block;
+    justify-content: space-between;  /* Giữa các phần tử */
+    margin-top: -30px; /* Để tránh đè lên header */
+}
+
+/* Phần văn bản (AC-text) */
+.AC-text {
+    width: 60%; /* Chiếm 60% chiều rộng */
+    padding: 10px;
+    color: rgb(247, 74, 195);
+}
+p{
+    margin-top: -20px;
+}
+
+/* Bảng (table-container) */
+.table-container {
+    width: 55%; /* Chiếm 60% chiều rộng của container */
+    padding: 10px;
+    margin-top: -15px;
+}
+
+/* Phần hình ảnh và flashing nằm bên phải */
+.right-side {
+    width: 45%; /* Chiếm 40% chiều rộng của container */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    float: right;
+}
+
+/* Phần hình ảnh */
+.AC-image img {
+    width: 75%; /* Hình ảnh nhỏ lại để chiếm khoảng 80% của phần bên phải */
+    margin-top: -638px;
+    margin-left: 100px;
+}
+.AB-image img {
+    width: 100%; /* Hình ảnh nhỏ lại để chiếm khoảng 80% của phần bên phải */
+    margin-top: -30px;
+}
+
+/* Phần flashing */
+.flashing {
+    margin-top: -10px; /* Khoảng cách từ hình ảnh */
+    text-align: center;
+}
+.flashingg {
+    float: right;
+    margin-top: -150px ;
+    margin-right: 100px;
+}
+
+/* Phần button */
+button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #5260fc;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#returnButton {
+    margin-left: auto; /* Đẩy nút trở về sang bên phải */
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 5px solid #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    height: 50px;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td[contenteditable="true"]:focus {
+    outline: 2px solid #007BFF;
+}
+
+/* Return Button */
+#returnButton {
+    margin-left: 900px; /* Điều chỉnh vị trí cho nút Return */
+}
+
+
+/* Ẩn thông tin ban đầu */
+/* Ẩn thông tin ban đầu */
+/* Ẩn thông tin ban đầu */
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 14px;
+    color: #333;
+    white-space: normal; /* Cho phép xuống dòng */
+    max-width: 610px; /* Giới hạn độ rộng của tooltip */
+    word-wrap: break-word; /* Chia từ khi cần thiết */
+    color: #fff;
+    background-color: #6e62fb;
+    border-radius: 10px;
+}
+
+/* Điều chỉnh vị trí tooltip gần với con trỏ chuột */
+.tooltip.show {
+    display: block;
+    pointer-events: none; /* Cho phép di chuyển chuột qua tooltip */
+}

@@ -1,0 +1,1859 @@
+/* General body styling */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Header styling */
+header {
+  position: fixed; /* Giữ header ở vị trí cố định */
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px; /* Giảm chiều cao header */
+            z-index: 1000; /* Đảm bảo header nằm trên các nội dung khác */
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 0 2rem;
+}
+
+/* Logo styling */
+img.logoiuh {
+  height: 60px; 
+  margin-left: 0;
+}
+
+/* Menu active state */
+.main-nav.active {
+  left: 0 !important;
+}
+
+/* Navigation styles are now handled by Tailwind CSS */
+
+
+/* Main navigation styles are handled by Tailwind CSS */
+
+/* Dropdown menu animations */
+.intro-sub-items.active,
+.principle-sub-items.active,
+.pan-sub-items.active {
+    max-height: 300px !important;
+}
+
+.toggle-intro.active .fa-angle-down,
+.toggle-principle.active .fa-angle-down,
+.toggle-pan.active .fa-angle-down {
+    transform: rotate(180deg);
+}
+
+
+
+.fa-bars,.fa-cogs,.bi-wrench-adjustable,.bi-ev-front-fill,.bi-mortarboard-fill,.bi-stack,.bi-house-fill{
+  margin-left: -50px;
+  margin-right: 45px; /* Khoảng cách giữa biểu tượng và nội dung */
+  
+
+}
+
+
+.fa-angle-down:before{
+    margin-left: 20px; /* Khoảng cách giữa các icon */
+}
+
+
+ul.main-nav a:hover,
+ul.main-nav a:focus {
+  background-color: #e9ecef; 
+  color: #0080ff; 
+  outline: 2px solid #0080ff; 
+}
+
+/* Main content styling */
+main {
+  display: flex;
+  flex-direction: column; /* Đặt các phần tử theo chiều dọc */
+  align-items: center; /* Căn giữa các phần tử trong main */
+  height: calc(100vh - 150px); /* Chiều cao giảm để trừ header */
+  margin-top: 10px; /* Khoảng cách từ nav đến nội dung */
+  transition: margin-left 0.3s ease; /* Hiệu ứng chuyển động cho main */
+}
+
+.row {
+  display: block;
+  align-items: center; /* Giữ các hình ảnh và logo trên cùng một hàng */
+  margin-left: 300px;
+  margin-top: -90px;
+}
+
+/* Side images styling */
+.side-image {
+  width: 30%; /* Điều chỉnh kích thước hình ảnh bên trái và phải */
+  transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
+  margin-top: 45px;
+  margin-left: 70px;
+}
+
+.side-image:hover {
+  transform: scale(1.8); /* Phóng to hình ảnh khi rê chuột */
+}
+
+/* Text and links container styling */
+.text-and-links {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; /* Căn giữa nội dung văn bản */
+  margin-top: 108px; /* Khoảng cách từ logo đến văn bản */
+  color: rgb(27, 13, 16);
+}
+
+/* Heading styling */
+.heading-main-text {
+  font-size: 5.5rem; 
+  margin-top: 85px; 
+  text-align: center;
+}
+
+/* Links container styling */
+.links-container {
+  display: flex; 
+  margin-top: 10px; 
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #0b0b0b;
+  text-decoration: none;
+  border-radius: 5px;
+  border-color: #0080ff;
+  margin-top: 5px;
+}
+.btnn {
+  display: inline-block;
+  padding: 10px 62px;
+  font-size: 1rem;
+  color: #0b0b0b;
+  text-decoration: none;
+  border-radius: 5px;
+  border-color: #0080ff;
+}
+footer{
+  background-color: #a2c9ef;
+  height: 50px;
+  margin-top: 90px;
+}
+
+.member{
+  float: right;
+  margin-top: -130px;
+}
+/* Hover effect for buttons */
+
+
+
+
+main.shift {
+  margin-left: 420px; /* Khoảng cách lấn vào của body khi menu mở */
+  transition: margin-left 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+
+
+
+/* các element của các mục  */
+
+
+.intro-sub-items ul {
+  padding: 0; /* Bỏ padding cho ul nếu cần */
+  list-style: none; /* Bỏ dấu chấm cho danh sách */
+}
+
+.intro-sub-items li a {
+  font-size: 14px; /* Chỉnh kích thước chữ tại đây */
+  color: #a1a1a1; /* Màu chữ có thể thay đổi */
+  padding: 10px 40px; /* Padding cho các liên kết */
+  text-decoration: none; /* Bỏ gạch chân */
+  display: block; /* Đảm bảo liên kết chiếm toàn bộ chiều rộng */
+}
+
+.intro-sub-items li a:hover {
+  background-color: #f0f0f0; /* Hiệu ứng hover nếu cần */
+}
+
+
+
+
+.principle-sub-items ul {
+  padding: 0; /* Bỏ padding cho ul nếu cần */
+  list-style: none; /* Bỏ dấu chấm cho danh sách */
+}
+
+.principle-sub-items li a {
+  font-size: 14px; /* Chỉnh kích thước chữ tại đây */
+  color: #a1a1a1; /* Màu chữ có thể thay đổi */
+  padding: 10px 40px; /* Padding cho các liên kết */
+  text-decoration: none; /* Bỏ gạch chân */
+  display: block; /* Đảm bảo liên kết chiếm toàn bộ chiều rộng */
+}
+
+.principle-sub-items li a:hover {
+  background-color: #f0f0f0; /* Hiệu ứng hover nếu cần */
+}
+
+
+
+.pan-sub-items ul {
+  padding: 0; /* Bỏ padding cho ul nếu cần */
+  list-style: none; /* Bỏ dấu chấm cho danh sách */
+}
+
+.pan-sub-items li a {
+  font-size: 14px; /* Chỉnh kích thước chữ tại đây */
+  color: #a1a1a1; /* Màu chữ có thể thay đổi */
+  padding: 10px 40px; /* Padding cho các liên kết */
+  text-decoration: none; /* Bỏ gạch chân */
+  display: block; /* Đảm bảo liên kết chiếm toàn bộ chiều rộng */
+}
+
+.pan-sub-items li a:hover {
+  background-color: #f0f0f0; /* Hiệu ứng hover nếu cần */
+}
+
+.intro-sub-items, .principle-sub-items,.pan-sub-items {
+  display: block; /* Hoặc sử dụng display: none; khi ẩn */
+  overflow: hidden;
+  max-height: 0; /* Đặt chiều cao tối đa ban đầu */
+  transition: max-height 0.3s ease; /* Hiệu ứng mượt mà */
+}
+
+.intro-sub-items.active,
+.principle-sub-items.active
+.pan-sub-items.active {
+    max-height: 200px; /* Chiều cao tối đa khi mở */
+}
+
+
+
+
+/* Định dạng cho các mục -Low *********************************************************/
+
+
+
+
+.LOW-container{
+    padding-right: 10px;
+    width: 1100px; /* Chiều rộng cố định */
+    position: relative;
+    margin: 0 auto; /* Căn giữa ngang */
+    overflow: hidden; /* Ẩn phần dư nếu cần */
+}
+.LOW-text {
+  background-color: #384289; /* Màu nền nhẹ nhàng */
+  border-radius: 10px; /* Bo tròn góc */
+  padding: 10px; /* Khoảng cách bên trong */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  margin: 0 0; /* Khoảng cách trên và dưới */
+  font-family: 'Arial', sans-serif; /* Font chữ */
+  color: #fff9f9; /* Màu chữ */
+  line-height: 1.5; /* Khoảng cách giữa các dòng */
+  font-size: 15px;
+}
+.LOW-image {
+  position: relative; /* Để các phần tử con có thể sử dụng vị trí tuyệt đối */
+}
+.LOW-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  height: auto; /* Để giữ tỷ lệ */
+}
+.button-container {
+  position: absolute;
+  top: 3.5%;
+  left: 5%;
+  transform: translate(-3.5%, -5%);
+  z-index: 10;
+}
+.button-container button {
+  background-color: #007BFF; /* Màu xanh dương */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Không viền */
+  border-radius: 8px; /* Bo tròn góc */
+  padding: 12px 24px; /* Khoảng cách bên trong */
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: bold; /* Chữ đậm */
+  text-transform: uppercase; /* Chữ in hoa */
+  cursor: pointer; /* Con trỏ khi di chuột */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Hiệu ứng chuyển tiếp */
+
+}
+.button-containerr button {
+  background-color: #007BFF; /* Màu xanh dương */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Không viền */
+  border-radius: 8px; /* Bo tròn góc */
+  padding: 12px 24px; /* Khoảng cách bên trong */
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: bold; /* Chữ đậm */
+  text-transform: uppercase; /* Chữ in hoa */
+  cursor: pointer; /* Con trỏ khi di chuột */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Hiệu ứng chuyển tiếp */
+
+}
+
+.button-container button:hover {
+  background-color: #0056b3; /* Màu nền tối hơn khi di chuột */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Đổ bóng sâu hơn khi di chuột */
+  transform: translateY(-2px); /* Nâng nút lên một chút khi di chuột */
+}
+.button-containerr button:hover {
+  background-color: #0056b3; /* Màu nền tối hơn khi di chuột */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Đổ bóng sâu hơn khi di chuột */
+  transform: translateY(-2px); /* Nâng nút lên một chút khi di chuột */
+}
+
+.button-container button:active {
+  transform: translateY(0); /* Đưa nút về vị trí ban đầu khi nhấn */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng trở về khi nhấn */
+}* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+/* CSS cho dây điện ***************************************************************/
+.doan-day-doc,
+.doan-day-doc-2,.doan-day-doc-1,.doan-day-doc-3,.doan-day-doc-4,.doan-day-doc-5,.doan-day-doc-6,.doan-day-doc-7,.doan-day-doc-8,.doan-day-doc-9,.doan-day-doc-10
+,.doan-day-doc-11
+,.doan-day-doc-12
+,.doan-day-doc-13
+,.doan-day-doc-14
+,.doan-day-doc-15
+,.doan-day-doc-16,.doan-day-doc-17,.doan-day-doc-18,.doan-day-doc-19 
+,.doan-day-doc-20,.doan-day-doc-21,.doan-day-doc-22,.doan-day-doc-23,.doan-day-doc-24,.doan-day-doc-25,.doan-day-doc-26,.doan-day-doc-27,.doan-day-doc-28,.doan-day-doc-29
+,.doan-day-doc-30,.doan-day-doc-31,.doan-day-doc-32,.doan-day-doc-33,.doan-day-doc-34,.doan-day-doc-35,.doan-day-doc-36,.doan-day-doc-37,.doan-day-doc-38,.doan-day-doc-39
+,.doan-day-doc-40,.doan-day-doc-41,.doan-day-doc-42,.doan-day-doc-43,.doan-day-doc-44,.doan-day-doc-45,.doan-day-doc-46,.doan-day-doc-47,.doan-day-doc-48,.doan-day-doc-49
+,.doan-day-doc-50,.doan-day-doc-51,.doan-day-doc-52,.doan-day-doc-53,.doan-day-doc-54,.doan-day-doc-55,.doan-day-doc-56,.doan-day-doc-57,.doan-day-doc-58,.doan-day-doc-59
+,.doan-day-doc-60,.doan-day-doc-61,.doan-day-doc-62,.doan-day-doc-63,.doan-day-doc-64,.doan-day-doc-65,.doan-day-doc-66,.doan-day-doc-67,.doan-day-doc-68
+,.doan-day-doc-69
+,.doan-day-doc-70
+,.doan-day-doc-71
+,.doan-day-doc-72
+,.doan-day-doc-73
+,.doan-day-doc-74
+,.doan-day-doc-75
+,.doan-day-doc-76
+,.doan-day-doc-77
+,.doan-day-doc-78
+,.doan-day-doc-79
+,.doan-day-doc-80
+,.doan-day-doc-81
+,.doan-day-doc-82
+,.doan-day-doc-83
+,.doan-day-doc-84
+,.doan-day-doc-85
+,.doan-day-doc-86
+,.doan-day-doc-87
+,.doan-day-doc-88
+,.doan-day-doc-89
+,.doan-day-doc-90{
+    position: absolute; /* Đặt vị trí tuyệt đối cho các dây */
+    background-color: none;
+}
+.doan-day-doc{
+            width:  107px;
+            height: 7px;
+            margin: 10px 0;
+            transition: background-color 0.5s;
+        }
+.doan-day-doc-2 {
+          width: 132.5px;
+          height: 7px;
+          margin: 10px 0;
+          transition: background-color 0.5s;
+}
+
+.doan-day-doc-1 {
+  width: 7px;
+  height: 164px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-3 {
+  width: 41px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-4{
+  width:  41px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-5{
+  width:  20.2px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-6 {
+  width: 7px;
+  height: 129px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-7 {
+  width: 143px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-8 {
+  width: 219px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-9 {
+  width: 7px;
+  height: 178.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-10 {
+  width: 123px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-11 {
+  width: 41.5px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-12 {
+  width: 7px;
+  height: 99px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-13 {
+  width: 62px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-14 {
+  width: 22px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-15 {
+  width: 64px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-16 {
+  width: 201px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-17 {
+  width: 145px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-18 {
+  width: 7px;
+  height: 34.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-19 {
+  width: 18px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-20 {
+  width: 7px;
+  height: 78.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-21 {
+  width: 7px;
+  height: 34.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-22 {
+  width: 49px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-23 {
+  width: 38px;
+  height: 3px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-24 {
+  width: 98.5px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-25 {
+  width: 25.5px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-26 {
+  width: 71px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-27 {
+  width: 7px;
+  height: 53px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-28 {
+  width: 269px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-29 {
+  width: 7px;
+  height: 35px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+
+.doan-day-doc-30 {
+  width: 41px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-31 {
+  width: 7px;
+  height: 112px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-32 {
+  width: 142px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-33 {
+  width: 7px;
+  height: 65px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-34 {
+  width: 110px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-35 {
+  width: 7px;
+  height: 99px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-36 {
+  width: 24.8px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-37 {
+  width: 7px;
+  height: 97px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-38 {
+  width: 186px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-39 {
+  width: 7px;
+  height: 94px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-40 {
+  width: 81px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-41 {
+  width: 40px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-42 {
+  width: 7px;
+  height: 59px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-43 {
+  width: 223px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-44 {
+  width: 7px;
+  height: 122px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-45 {
+  width: 46.5px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-46 {
+  width: 0px;
+  height: 53px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-47 {
+  width: 7px;
+  height: 71px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-48 {
+  width: 7px;
+  height: 38px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-49 {
+  width: 108.5px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-50 {
+  width: 7px;
+  height: 74px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-51 {
+  width: 7px;
+  height: 48px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-52 {
+  width: 104px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-53 {
+  width: 7px;
+  height: 36px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-54 {
+  width: 7px;
+  height: 65px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-55 {
+  width: 153px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-56 {
+  width: 7px;
+  height: 161px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-57 {
+  width: 141px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-58 {
+  width: 7px;
+  height: 207px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-59 {
+  width: 7px;
+  height: 70px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-60 {
+  width: 7px;
+  height: 29px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-61 {
+  width: 7px;
+  height: 11px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-62 {
+  width: 116px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-63 {
+  width: 7px;
+  height: 207px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-64 {
+  width: 7px;
+  height: 117px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-65 {
+  width: 115px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-66 {
+  width: 7px;
+  height: 187px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-67 {
+  width: 2.5px;
+  height: 115px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-68 {
+  width: 7px;
+  height: 39px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-69 {
+  width: 37px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-70 {
+  width: 7px;
+  height: 20px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-71 {
+  width: 7px;
+  height: 17px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-72 {
+  width: 40px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-73 {
+  width: 7px;
+  height: 105.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-74 {
+  width: 118px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-75 {
+  width: 7px;
+  height: 29.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-76 {
+  width: 24px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-77 {
+  width: 33px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-78 {
+  width: 7px;
+  height: 28.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-79 {
+  width: 7px;
+  height: 28.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-80 {
+  width: 7px;
+  height: 43px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-81 {
+  width: 2.5px;
+  height: 27px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-82 {
+  width: 7px;
+  height: 8.5px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-83 {
+  width: 31px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-84 {
+  width: 7px;
+  height: 141px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-85 {
+  width: 34px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+.doan-day-doc-86 {
+  width: 7px;
+  height: 74px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+
+
+.doan-day-doc-87 {
+  width: 7px;
+  height: 60px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}.doan-day-doc-88 {
+  width: 7px;
+  height: 38px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}.doan-day-doc-89 {
+  width: 7px;
+  height: 21px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}.doan-day-doc-90 {
+  width: 174px;
+  height: 7px;
+  margin: 10px 0;
+  transition: background-color 0.5s;
+}
+
+
+
+/* Điều chỉnh vị trí cho từng dây điện */
+#wire1 {
+    top: 62.7%; /* Điều chỉnh vị trí theo ý muốn */
+    left: 9.35%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire2 {
+  top: 29.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 31.45%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire3 {
+    top: 29%; /* Điều chỉnh vị trí theo ý muốn */
+    left: 31.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire4 {
+  top: 3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 43%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire5 {
+  top: 62.7%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 24.15%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire6 {
+  top: 62.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 30.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire7 {
+  top: 3.4%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 43%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire8 {
+  top: 3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 49%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire9 {
+  top: 3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 65.15%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire10 {
+  top: 3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 84.65%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire11 {
+  top: 39.2%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 74%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire12 {
+  top: 33.2%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 74%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire13 {
+  top: 13.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 77.65%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire14 {
+  top: 11%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 78.9%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire15 {
+  top: 11%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 85.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire16 {
+  top: 11%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 89.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire17 {
+  top: 90.2%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 13.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire18 {
+  top: 84%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 14.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire19 {
+  top: 84.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 31.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire20 {
+  top: 84.2%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 30.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire21 {
+  top: 69.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 14.4%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire22 {
+  top: 84.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 31.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire23 {
+  top: 69.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 14.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire24 {
+  top: 69.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 19.9%; /* Điều chỉnh vị trí theo ý muốn */
+}#wire25 {
+  top: 69.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 24.1%; /* Điều chỉnh vị trí theo ý muốn */
+}#wire26 {
+  top: 68.9%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 35.4%; /* Điều chỉnh vị trí theo ý muốn */
+}#wire27 {
+  top: 69%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 42%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire28 {
+  top: 56.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 49.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire29 {
+  top: 10.9%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 52.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire30 {
+  top: 33.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 73.60%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire31 {
+  top: 22.6%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 52.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire32 {
+  top: 23.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 55.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire33 {
+  top: 45.4%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 55.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire34 {
+  top: 33.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 67.7%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire35 {
+  top: 33.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 68.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire36 {
+  top: 13.7%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 77.65%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire37 {
+  top: 32.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 52.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire38 {
+  top: 32.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 53.8%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire39 {
+  top: 51.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 54.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire40 {
+  top: 33.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 70.7%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire41 {
+  top: 33.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 70.9%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire42 {
+  top: 69%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 50.7%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire43 {
+  top: 57.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 53.8%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire44 {
+  top: 57.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 53.8%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire45 {
+  top: 33.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 73.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire46 {
+  top: 33.1%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 74%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire47 {
+  top: 63.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 48.8%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire48 {
+  top: 16.9%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 48.02%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire49 {
+  top: 33.7%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 48.02%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire50 {
+  top: 30.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 37.65%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire51 {
+  top: 31%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 37.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire52 {
+  top: 49%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 37.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire53 {
+  top: 56.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 37.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire54 {
+  top: 51.4%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 46.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire55 {
+  top: 49.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 33.95%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire56 {
+  top: 59.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 34%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire57 {
+  top: 59.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 47.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire58 {
+  top: 85.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 47.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire59 {
+  top: 51.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 59.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire60 {
+  top: 51.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 63.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire61 {
+  top: 69.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 63.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire62 {
+  top: 84.9%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 63.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire63 {
+  top: 85.6%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 63.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire64 {
+  top: 51.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 73.6%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire65 {
+  top: 20.2%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 84.4%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire66 {
+  top: 20%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 84.4%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire67 {
+  top: 20%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 94.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire68 {
+  top: 52.4%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 94.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire69 {
+  top: 72.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 94.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire70 {
+  top: 78.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 91.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire71 {
+  top: 80.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 90.5%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire72 {
+  top: 24.2%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 50.9%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire73 {
+  top: 26%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 51%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire74 {
+  top: 9.2%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 54.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire75 {
+  top: 8.9%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 54.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire76 {
+  top: 8.95%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 64.4%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire77 {
+  top: 12.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 62.85%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire78 {
+  top: 11.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 60.3%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire79 {
+  top: 11.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 60.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire80 {
+  top: 11.3%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 62.75%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire81 {
+  top: 32.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 60.25%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire82 {
+  top: 22.45%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 63%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire83 {
+  top: 32.6%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 62.8%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire84 {
+  top: 32.8%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 63.2%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire85 {
+  top: 9.6%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 65.4%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire86 {
+  top: 9.6%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 66%; /* Điều chỉnh vị trí theo ý muốn */
+}
+#wire87 {
+  top: 9.6%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 68.55%; /* Điều chỉnh vị trí theo ý muốn */
+}
+
+
+#wire88 {
+  top: 30%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 80.9%; /* Điều chỉnh vị trí theo ý muốn */
+}#wire89 {
+  top: 20.5%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 80.9%; /* Điều chỉnh vị trí theo ý muốn */
+}#wire90 {
+  top: 15%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 80.9%; /* Điều chỉnh vị trí theo ý muốn */
+}#wire91 {
+  top: 14.9%; /* Điều chỉnh vị trí theo ý muốn */
+  left: 80.9%; /* Điều chỉnh vị trí theo ý muốn */
+}
+
+
+.nhapnhay {
+  animation: nhapnhay 1s infinite;
+}
+@keyframes nhapnhay {
+  0% { background-color: blue; }
+  50% { background-color: red; }
+  100% { background-color: blue; }
+}
+
+/* Table */
+/* Cấu trúc chính của container */
+
+.LHT-container{
+    width: 1100px; /* Chiều rộng cố định */
+    position: relative;
+    margin: 0 auto; /* Căn giữa ngang */
+    overflow: hidden; /* Ẩn phần dư nếu cần */
+}
+.LHT-image img{
+  float: right;
+  width: 68%;
+  margin-top: -500px;
+  object-fit: cover; /* Giữ hình ảnh luôn vừa khung */
+}
+
+.QDN-container{
+  width: 1100px; /* Chiều rộng cố định */
+  position: relative;
+  margin: 0 auto; /* Căn giữa ngang */
+  overflow: hidden; /* Ẩn phần dư nếu cần */
+}
+.QDN-image1 img{
+float: right;
+width: 63%;
+margin-top: -258px;
+object-fit: cover; /* Giữ hình ảnh luôn vừa khung */
+}
+.QDN-image2 img{
+  float: right;
+  width: 63%;
+  margin-top: -338px;
+  object-fit: cover; /* Giữ hình ảnh luôn vừa khung */
+  }
+.QDNn-container{
+  width: 30%;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+.tablee-container{
+  width: 20%;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+table {
+  width: 160%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 3px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  border-color: #0056b3;
+  background-color: #f6f6f6;
+}
+
+th {
+  background-color: #f2f2f2;
+  height: 50px;
+  width: 100px;
+  border-color: #0056b3;
+  background-color: #59a8f7;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td[contenteditable="true"]:focus {
+  outline: 2px solid #007BFF;
+}
+
+/* Tooltip style */
+/* Cấu trúc của tooltip */
+.info-cell {
+  position: relative;
+  cursor: pointer; /* Đổi con trỏ khi hover */
+}
+
+.info-cell::after {
+  content: attr(data-info); /* Lấy nội dung từ thuộc tính data-info */
+  position: absolute;
+  bottom: 100%; /* Đặt tooltip lên trên thẻ td */
+  left: 100%; /* Căn giữa tooltip */
+  text-align: left;
+  background-color: rgb(9, 9, 52); /* Màu nền tooltip */
+  border-color: #6a0303;
+  color: white; /* Màu chữ */
+  padding: 8px;
+  border-radius: 4px;
+  visibility: hidden; /* Tooltip sẽ ẩn khi không hover */
+  opacity: 0;
+  transition: border-color 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
+  width: 600px; /* Giới hạn chiều rộng của tooltip */
+  word-wrap: break-word; /* Đảm bảo từ dài không tràn ra ngoài */
+  white-space: normal; /* Cho phép nội dung tooltip xuống dòng */
+  line-height: 1.4; /* Tăng khoảng cách dòng trong tooltip */
+  max-height: 6em; /* Giới hạn chiều cao của tooltip, tương ứng với 3 dòng văn bản */
+  overflow: hidden; /* Ẩn văn bản tràn ra ngoài */
+  text-overflow: ellipsis; /* Hiển thị "..." nếu văn bản dài hơn chiều cao giới hạn */
+  z-index: 10; /* Đảm bảo tooltip không bị chồng lên các phần tử khác */
+}
+
+.info-cell:hover::after {
+  visibility: visible; /* Hiển thị tooltip khi hover */
+  opacity: 1; /* Độ mờ tooltip khi hover */
+}
+
+
+
+/* CSS cho elemen của pan ***************************************************************/
+/***************************************************************************************************/
+.button-list {
+  margin-top: 115px;
+  margin-left: -480px;
+  display: flex; /* Sử dụng flexbox để căn giữa */
+  flex-direction: column; /* Xếp theo chiều dọc */
+  align-items: center; /* Căn giữa các nút */
+}
+
+.toggle-button {
+  padding: 10px;
+  width: 550px; /* Độ rộng nút */
+  max-width: 100%; /* Giới hạn độ rộng tối đa */
+  background-color: #007BFF; /* Màu nền */
+  color: white; /* Màu chữ */
+  border: none; /* Bỏ viền */
+  border-radius: 5px; /* Bo góc */
+  font-size: 16px; /* Kích thước chữ */
+  cursor: pointer; /* Con trỏ chuột */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Hiệu ứng chuyển màu và đổ bóng */
+  text-align: left;
+  margin-bottom: 10px; /* Khoảng cách giữa các nút */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}
+
+.toggle-button:hover {
+  background-color: #0056b3; /* Màu nền khi di chuột */
+  transform: translateY(0px); /* Di chuyển nút lên một chút */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Đổ bóng sâu hơn khi hover */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+
+/* Hiệu ứng fade-in và fade-out với transform */
+.content {
+  transform: translateY(20px); /* Di chuyển nhẹ để hiệu ứng trông mượt mà hơn */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Thời gian chuyển động nhanh hơn */
+}
+
+/* Khi nội dung hiện ra */
+.content.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* Trở về vị trí ban đầu */
+}
+
+/* Khi nội dung ẩn đi */
+.content.fade-out {
+  opacity: 0;
+  transform: translateY(20px); /* Dịch chuyển nhẹ xuống dưới */
+}
+
+.textHI{
+  margin-bottom: 10px;
+  background-color: #e7e7f9;
+  padding: 8px;
+  border-radius: 5px;
+  color: #f65d5d;
+}
+
+.container {
+  display: flex; /* Sử dụng Flexbox để tạo bố cục ngang */
+  align-items: flex-start; /* Căn chỉnh các phần tử theo chiều dọc */
+  margin-left: 300px;
+  position: relative; /* Đặt vị trí cho phần tử cha */
+
+}
+
+.textHI {
+  flex: 1; /* Cho phép nội dung chiếm không gian còn lại */
+  margin-left: -300px;
+  padding: 20px; /* Thêm khoảng cách xung quanh nội dung */
+  z-index: 1; /* Đặt z-index để nội dung nằm trên hình ảnh */
+}
+
+.imageHI {
+  position: absolute; /* Để hình ảnh có thể di chuyển tự do */
+    top: 20px; /* Đặt vị trí từ trên cùng */
+    left: 50px; /* Đặt vị trí từ bên trái */
+    max-width: 300px; /* Giới hạn kích thước của hình ảnh */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+    z-index: 0; /* Đặt z-index thấp hơn nội dung */
+    margin-left: 300px;
+    margin-top: -180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS cho bảng */
+
+
+
+
+.header-text {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  transform-origin: left bottom;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+
+.sub-header {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+}
+
+/* Đặt chiều rộng cho cột STT */
+th:first-child, td:first-child {
+  width: 100px; /* Chiều rộng cho cột STT */
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td[contenteditable="true"]:focus {
+  outline: 2px solid #007BFF;
+}
+
+
+
+.NG-G {
+width: 30%;
+margin-top: 5px;
+margin-bottom: 5px;
+margin-left: 50px;
+}
+#content4{
+  margin-left: 310px;
+}
+.NG-GN {
+  width: 60%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 50px;
+  }
+#DOKIEM{
+  background-color: palevioletred;
+  width: 241px;
+  margin-left: 150px;
+}
+
+
+
+
+
+.QDNn-container1{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #59a8f7;
+  color: white;
+  border-radius: 10px;
+}
+
+.QDNn-container2{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #59a8f7;
+  color: white;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+              height: 50px; /* Chiều cao của header */           
+  }
+  
+  /* Logo styling */
+  img.logoiuh {
+    height: 40px; 
+    margin-left: 80px;
+  }
+  
+  
+  
+  /* Heading styling */
+  header h1 {
+    color: rgb(250, 21, 21);
+    font-size: 1rem; 
+    margin-right: 100px;
+  }
+  .heading-main-text {
+    font-size: 3.5rem;
+    margin-top: 85px;
+    text-align: center;
+}
+.row {
+  margin-left: 93px;
+  margin-top: -90px;
+}
+.side-image {
+  width: 79%;
+  margin-top: 76px;
+  margin-left: -118px;
+}
+
+.btnn {
+  display: none;
+}
+main.shift {
+  margin-left: 273px;
+}
+ul.main-nav a {
+  align-items: center;
+  padding: 10px 30px;
+
+}
+.principle-sub-items li a {
+  font-size: 10px;
+}
+.intro-sub-items li a {
+  font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+.LOW-container {
+  width: 500px;
+  margin-top: 65px;
+}
+
+.button-container,.button-containerr {
+  display: none;
+}
+.LHT-image img {
+  float: none;
+  width: 100%;
+  margin-top: 0px;
+  object-fit: cover;
+}
+.tablee-container {
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.LHT-container {
+  width: 444px;
+}
+
+.QDN-container {
+  width: 435px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.QDN-image img {
+  float: none;
+  width: 100%;
+  margin-top: 0px;
+  object-fit: cover;
+}
+.QDNn-container {
+  width: 96%;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+
+
+
+.info-cell::after {
+  bottom: 100%;
+  left: 49%;
+  padding: 8px;
+  border-radius: 4px;
+  width: 300px;
+  line-height: 1.4;
+  max-height: 9em;
+  font-size: 12px;
+}
+}
+
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 430px) and (min-width: 390px){
+  header {
+    height: 50px; /* Chiều cao của header */
+  }
+
+  /* Logo styling */
+  img.logoiuh {
+    height: 30px; /* Giảm kích thước logo */
+    margin-left: 20px; /* Giảm khoảng cách bên trái logo */
+  }
+  
+  /* Heading styling */
+  header h1 {
+    color: rgb(250, 21, 21);
+    font-size: 0.7rem; /* Giảm kích thước chữ */
+    margin-right: 50px; /* Giảm khoảng cách bên phải */
+  }
+
+  .heading-main-text {
+    font-size: 2.5rem; /* Giảm kích thước font chữ */
+    margin-top: 50px; /* Giảm khoảng cách trên */
+    text-align: center;
+  }
+
+  .row {
+    margin-left: 20px; /* Giảm khoảng cách bên trái */
+    margin-top: -40px; /* Giảm khoảng cách trên */
+  }
+
+  .side-image {
+    width: 90%; /* Giảm kích thước hình ảnh */
+    margin-top: 20px; /* Giảm khoảng cách trên */
+    margin-left: 0; /* Đảm bảo hình ảnh không bị lệch */
+  }
+
+  .btnn {
+    display: none; /* Hiển thị nút */
+  }
+
+  main.shift {
+    margin-left: 20px; /* Giảm margin cho phù hợp */
+  }
+
+  ul.main-nav a {
+    align-items: center;
+    padding: 8px 15px; /* Giảm padding */
+  }
+
+  .principle-sub-items li a {
+    font-size: 8px; /* Giảm kích thước chữ */
+  }
+
+  .intro-sub-items li a {
+    font-size: 10px; /* Giảm kích thước chữ */
+  }
+
+  .LOW-container {
+    width: 100%; /* Làm cho container rộng hơn */
+    margin-top: 30px; /* Giảm khoảng cách trên */
+    margin-left: 218px;
+  }
+
+  .button-container, .button-containerr {
+    display: none; /* Hiển thị các nút */
+  }
+
+  .LHT-image img {
+    width: 100%;
+    margin-top: 0;
+    object-fit: cover;
+  }
+
+  .tablee-container {
+    width: 62%; /* Mở rộng container */
+    margin-top: 20px;
+    margin-bottom: 1px;
+  }
+
+  .LHT-container {
+    width: 69%;
+    margin-left: 276px;
+    margin-top: -37px;
+  }
+
+  .QDN-container {
+    width: 100%; /* Làm container rộng hơn */
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-left: 218px;
+        margin-top: -44px;
+  }
+
+  .QDN-image img {
+    width: 100%;
+    margin-top: 0px;
+    object-fit: cover;
+  }
+
+  .QDNn-container {
+    width: 60%; /* Làm container rộng hơn */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .info-cell::after {
+    bottom: 100%;
+    left: 49%;
+    padding: 8px;
+    border-radius: 4px;
+    width: 250px; /* Giảm kích thước hộp thoại */
+    line-height: 1.4;
+    max-height: 7rem; /* Giảm chiều cao tối đa */
+    font-size: 10px; /* Giảm kích thước font chữ */
+  }
+  .menu-toggle {
+    font-size: 32px;
+    cursor: pointer;
+    margin-left: -15px;
+    margin-top: 32px;
+    z-index: 1000;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+.QDN-image1 img {
+  float: none;
+  width: 63%;
+  margin-top: -9px;
+}
+.QDN-image2 img {
+  float: none;
+  width: 63%;
+  margin-top: -9px;
+}
+
+}

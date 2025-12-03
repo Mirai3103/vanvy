@@ -1,0 +1,30 @@
+img{
+    width: 30%;
+
+}
+.image-sketch-1{
+    margin-left: 250px;
+}
+.image-sketch-2{
+    margin-left: 250px;
+}
+.image2, .image4{
+    margin-left: 400px;
+}
+.multitasking li{
+    text-decoration: none;
+    list-style: none;
+}
+.multitasking li a{
+    text-decoration: none;
+    background-color: rgb(8, 67, 8);
+    color: aliceblue;
+    padding: 5px 10px;
+}
+.multitasking li a:hover,
+.multitasking li a:active{
+    background-color: rgb(1, 21, 1);
+}
+.multitasking{
+    margin-top: 50px;
+}

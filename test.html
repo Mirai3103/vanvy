@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Point Mapper</title>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<style>
+    .wrapper {
+        position: relative;
+        display: inline-block;
+    }
+    .point {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: red;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+    }
+    .export-box {
+        white-space: pre;
+        background: #111;
+        color: #0f0;
+        padding: 10px;
+        font-size: 12px;
+        overflow-x: auto;
+        max-height: 200px;
+    }
+</style>
+</head>
+<body class="p-4" x-data="pointApp">
+
+<h2>🔹 Nhập link ảnh:</h2>
+<input type="text" x-model="imgUrl" placeholder="https://..." class="border p-2 w-96">
+<button @click="loadImg()" class="border px-3 py-2 ml-2">Load ảnh</button>
+
+<hr class="my-3">
+
+<div x-show="loaded">
+    <p>👉 Click lên ảnh để thêm điểm.</p>
+
+    <div class="wrapper"
+         @click="addPoint($event)"
+         x-ref="box">
+
+        <img :src="imgUrl" x-ref="img" style="max-width:100%; display:block;">
+        
+        <template x-for="(p, i) in points" :key="i">
+            <div class="point"
+                :style="`left:${p.x * imgW}px; top:${p.y * imgH}px`"
+                draggable="true"
+                @dragstart="dragIndex = i"
+                @dragend="dragIndex=null"
+                @drag="dragMove($event)">
+            </div>
+        </template>
+    </div>
+</div>
+
+<hr class="my-3">
+
+<button @click="exportCode()" class="border px-3 py-2" x-show="points.length > 0">
+    Export Code
+</button>
+
+<h3 class="mt-3">Code Output:</h3>
+<div class="export-box" x-text="output"></div>
+
+<script>
+function pointApp() {
+    return {
+        imgUrl: "",
+        loaded: false,
+        points: [],
+        imgW: 0,
+        imgH: 0,
+        output: "",
+        dragIndex: null,
+
+        loadImg() {
+            this.loaded = true;
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    const img = this.$refs.img;
+                    this.imgW = img.getBoundingClientRect().width;
+                    this.imgH = img.getBoundingClientRect().height;
+                }, 200);
+            });
+        },
+
+        addPoint(e) {
+            const rect = this.$refs.img.getBoundingClientRect();
+            let x = (e.clientX - rect.left) / rect.width;
+            let y = (e.clientY - rect.top) / rect.height;
+            this.points.push({ x, y });
+        },
+
+        dragMove(e) {
+            if (this.dragIndex === null) return;
+
+            const rect = this.$refs.img.getBoundingClientRect();
+            let x = (e.clientX - rect.left) / rect.width;
+            let y = (e.clientY - rect.top) / rect.height;
+
+            if (x >= 0 && x <= 1 && y >= 0 && y <= 1) {
+                this.points[this.dragIndex].x = x;
+                this.points[this.dragIndex].y = y;
+            }
+        },
+
+        exportCode() {
+            let html = `<div class="wrapper">\n    <img src="${this.imgUrl}" id="img">\n`;
+            this.points.forEach((p, i) => {
+                html += `    <div class="point" data-x="${p.x.toFixed(4)}" data-y="${p.y.toFixed(4)}"></div>\n`;
+            });
+            html += `</div>\n`;
+
+            const css = `
+.wrapper {
+    position: relative;
+    display: inline-block;
+}
+.point {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+`;
+
+            const js = `
+function updatePoints() {
+    const img = document.getElementById("img");
+    const rect = img.getBoundingClientRect();
+
+    document.querySelectorAll(".point").forEach(p => {
+        let x = parseFloat(p.dataset.x);
+        let y = parseFloat(p.dataset.y);
+
+        p.style.left = (rect.width * x) + "px";
+        p.style.top = (rect.height * y) + "px";
+    });
+}
+
+window.addEventListener("load", updatePoints);
+window.addEventListener("resize", updatePoints);
+document.getElementById("img").addEventListener("load", updatePoints);
+`;
+
+            this.output = html + "\n" + css + "\n" + js;
+        }
+    };
+}
+</script>
+
+</body>
+</html>

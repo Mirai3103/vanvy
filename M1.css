@@ -1,0 +1,40 @@
+/* Đặt margin và padding mặc định */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Định dạng body */
+body {
+    font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: italic;
+    line-height: 1.7;
+    color: #ffffff; /* Màu chữ trắng */
+    background: url('image/backgroud-thực\ tiễn.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 80vh;
+    font-size: 17px;
+}
+h1{
+    text-align: center;
+}
+
+/* Lớp phủ làm mờ */
+.overlay {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Nội dung */
+.content {
+    position: relative;
+    z-index: 2; /* Đảm bảo nội dung nằm trên overlay */
+    max-width: 900px;
+    margin-left: 23%;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    margin-top: 120px;
+}
