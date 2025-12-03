@@ -155,7 +155,7 @@ body {
   #small-image {
     position: fixed;
     top: 413px; /* Vị trí từ trên xuống */
-    right: 130px; /* Vị trí từ phải qua */
+    right: 100px; /* Vị trí từ phải qua */
     width: 300px; /* Kích thước hình ảnh nhỏ */
     height: auto;
     z-index: 9999; /* Đảm bảo hình ảnh nhỏ luôn ở trên các phần tử khác */
