@@ -1,159 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Point Mapper</title>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-<style>
-    .wrapper {
-        position: relative;
-        display: inline-block;
-    }
-    .point {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        background: red;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-    }
-    .export-box {
-        white-space: pre;
-        background: #111;
-        color: #0f0;
-        padding: 10px;
-        font-size: 12px;
-        overflow-x: auto;
-        max-height: 200px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Point Mapper Tool</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AlpineJS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .point {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
-<body class="p-4" x-data="pointApp">
 
-<h2>🔹 Nhập link ảnh:</h2>
-<input type="text" x-model="imgUrl" placeholder="https://..." class="border p-2 w-96">
-<button @click="loadImg()" class="border px-3 py-2 ml-2">Load ảnh</button>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-6">
 
-<hr class="my-3">
+<div x-data="pointTool" class="max-w-3xl w-full space-y-4">
 
-<div x-show="loaded">
-    <p>👉 Click lên ảnh để thêm điểm.</p>
+    <!-- Input image URL -->
+    <input
+        x-model="imageUrl"
+        type="text"
+        placeholder="Paste image URL here..."
+        class="border px-3 py-2 w-full rounded"
+    >
 
-    <div class="wrapper"
-         @click="addPoint($event)"
+    <button @click="loadImage"
+            class="bg-blue-600 text-white px-4 py-2 rounded">
+        Load Image
+    </button>
+
+    <!-- Image + click mapping -->
+    <div class="wrapper border rounded overflow-hidden"
+         x-show="loaded"
          x-ref="box">
 
-        <img :src="imgUrl" x-ref="img" style="max-width:100%; display:block;">
-        
-        <template x-for="(p, i) in points" :key="i">
+        <img :src="imageUrl"
+             x-ref="img"
+             class="block select-none cursor-crosshair"
+             @load="resizeImage"
+             @click="addPoint($event)">
+
+        <!-- Overlay points -->
+        <template x-for="(p,i) in points" :key="i">
             <div class="point"
-                :style="`left:${p.x * imgW}px; top:${p.y * imgH}px`"
-                draggable="true"
-                @dragstart="dragIndex = i"
-                @dragend="dragIndex=null"
-                @drag="dragMove($event)">
+                 :style="`left: ${p.x * displayWidth}px; top: ${p.y * displayHeight}px;`">
             </div>
         </template>
+
     </div>
+
+    <!-- Output -->
+    <textarea
+        x-model="generatedHtml"
+        class="w-full h-40 border rounded p-2 text-xs font-mono"
+        placeholder="Generated code will appear here...">
+    </textarea>
+
+    <button @click="copyHtml"
+            class="bg-green-600 text-white px-4 py-2 rounded w-full">
+        Copy HTML
+    </button>
 </div>
 
-<hr class="my-3">
-
-<button @click="exportCode()" class="border px-3 py-2" x-show="points.length > 0">
-    Export Code
-</button>
-
-<h3 class="mt-3">Code Output:</h3>
-<div class="export-box" x-text="output"></div>
-
 <script>
-function pointApp() {
-    return {
-        imgUrl: "",
+document.addEventListener("alpine:init", () => {
+    Alpine.data("pointTool", () => ({
+        imageUrl: "",
         loaded: false,
         points: [],
-        imgW: 0,
-        imgH: 0,
-        output: "",
-        dragIndex: null,
+        imgWidth: 0,
+        imgHeight: 0,
+        displayWidth: 0,
+        displayHeight: 0,
+        generatedHtml: "",
 
-        loadImg() {
-            this.loaded = true;
+        loadImage() {
+            this.loaded = false;
+            this.points = [];
+            this.generatedHtml = "";
+
             this.$nextTick(() => {
-                setTimeout(() => {
-                    const img = this.$refs.img;
-                    this.imgW = img.getBoundingClientRect().width;
-                    this.imgH = img.getBoundingClientRect().height;
-                }, 200);
+                let img = new Image();
+                img.src = this.imageUrl;
+                img.onload = () => {
+                    this.imgWidth = img.width;
+                    this.imgHeight = img.height;
+                    this.loaded = true;
+                    this.$nextTick(() => this.resizeImage());
+                };
             });
+        },
+
+        resizeImage() {
+            let rect = this.$refs.img.getBoundingClientRect();
+            this.displayWidth = rect.width;
+            this.displayHeight = rect.height;
+            this.updateRenderedPoints();
         },
 
         addPoint(e) {
-            const rect = this.$refs.img.getBoundingClientRect();
+            let rect = this.$refs.img.getBoundingClientRect();
             let x = (e.clientX - rect.left) / rect.width;
             let y = (e.clientY - rect.top) / rect.height;
+
+            // Only accept valid clicks
+            if (x < 0 || x > 1 || y < 0 || y > 1) return;
+
             this.points.push({ x, y });
+            this.refreshHtml();
+            this.updateRenderedPoints();
         },
 
-        dragMove(e) {
-            if (this.dragIndex === null) return;
-
-            const rect = this.$refs.img.getBoundingClientRect();
-            let x = (e.clientX - rect.left) / rect.width;
-            let y = (e.clientY - rect.top) / rect.height;
-
-            if (x >= 0 && x <= 1 && y >= 0 && y <= 1) {
-                this.points[this.dragIndex].x = x;
-                this.points[this.dragIndex].y = y;
-            }
+        updateRenderedPoints() {
+            // Force refresh display positions
+            this.$nextTick(() => {});
         },
 
-        exportCode() {
-            let html = `<div class="wrapper">\n    <img src="${this.imgUrl}" id="img">\n`;
-            this.points.forEach((p, i) => {
+        refreshHtml() {
+            let html = `<div class="wrapper">\n    <img id="img" src="${this.imageUrl}">\n`;
+            this.points.forEach(p => {
                 html += `    <div class="point" data-x="${p.x.toFixed(4)}" data-y="${p.y.toFixed(4)}"></div>\n`;
             });
-            html += `</div>\n`;
+            html += `</div>`;
+            this.generatedHtml = html;
+        },
 
-            const css = `
-.wrapper {
-    position: relative;
-    display: inline-block;
-}
-.point {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: red;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
-`;
-
-            const js = `
-function updatePoints() {
-    const img = document.getElementById("img");
-    const rect = img.getBoundingClientRect();
-
-    document.querySelectorAll(".point").forEach(p => {
-        let x = parseFloat(p.dataset.x);
-        let y = parseFloat(p.dataset.y);
-
-        p.style.left = (rect.width * x) + "px";
-        p.style.top = (rect.height * y) + "px";
-    });
-}
-
-window.addEventListener("load", updatePoints);
-window.addEventListener("resize", updatePoints);
-document.getElementById("img").addEventListener("load", updatePoints);
-`;
-
-            this.output = html + "\n" + css + "\n" + js;
+        copyHtml() {
+            navigator.clipboard.writeText(this.generatedHtml);
+            alert("HTML copied!");
         }
-    };
-}
+    }));
+});
 </script>
 
 </body>

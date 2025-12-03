@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Hiển Thị Hình Ảnh Full Màn Hình</title>
-  <link rel="stylesheet" href="pan.css">
-  <link rel="stylesheet" href="./tailwind.output.css">
-<style>
- /* #points-img2-1 .point{
-   background-color: transparent;
- } 
- #points-img2-2 .point{
-  background-color: transparent;
-}
-#points-img2-3 .point{
-  background-color: transparent;
-}
-#points-img2-4 .point{
-  background-color: transparent;
-} */
 
-</style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Hiển Thị Hình Ảnh Full Màn Hình</title>
+  <link rel="stylesheet" href="pan.css" />
+  <link rel="stylesheet" href="./tailwind.output.css" />
+  <style>
+    #points-img2-1 .point {
+      background-color: transparent;
+    }
+
+    #points-img2-2 .point {
+      background-color: transparent;
+    }
+
+    #points-img2-3 .point {
+      background-color: transparent;
+    }
+
+    #points-img2-4 .point {
+      background-color: transparent;
+    }
+
+    .wrapper .point {
+      background-color: red;
+    }
+
+    .wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .wrapper .point {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: red;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
   <script src="./assets/splotligt.js"></script>
 </head>
-<body>
 
+<body>
   <!-- Nút biểu tượng -->
   <button class="menu-icon" onclick="toggleMenu()">☰</button>
 
@@ -50,238 +71,314 @@
 
   <!-- Khu vực hiển thị hình ảnh -->
   <div class="image-display">
-    <img class="spotlight" data-src="image/MẠCH ĐIỆN ĐO KIỂM ĐÁNH SỐ.png" id="img1" src="image/MẠCH ĐIỆN ĐO KIỂM ĐÁNH SỐ.png" alt="Hình ảnh 1">
-    
+    <img class="spotlight" data-src="image/MẠCH ĐIỆN ĐO KIỂM ĐÁNH SỐ.png" id="img1"
+      src="image/MẠCH ĐIỆN ĐO KIỂM ĐÁNH SỐ.png" alt="Hình ảnh 1" />
 
-    <img class="spotlight" data-src="NG/LMH LOW.webp" id="img2-1" src="NG/LMH LOW.webp" alt="Hình ảnh 2.1">
-    <div class="points-container" id="points-img2-1">
-        <div class="point" style="top: 1.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 12.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 1.5%; left: 13.3%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 12.5%; left: 13.2%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 8%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 16.2%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 12%; left: 28%;" data-small-image="NG/0V.png"></div>
-        <div class="point" style="top: 25.8%; left: 7.4%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 25.8%; left: 9.55%;" data-small-image="NG/0V.png"></div>
-        <div class="point" style="top: 25.8%; left: 11.68%;" data-small-image="NG/12V.png"></div>
+    <div class="wrapper" id="data1">
+      <img data-src="NG/LMH LOW.webp" id="img2-1" src="NG/LMH LOW.webp" alt="Hình ảnh 2.1" />
 
-        <div class="point" style="top: 25.8%; left: 14.2%;" data-small-image="NG/0V.png"></div>
-        <div class="point" style="top: 43.2%; left: 11.68%;" data-small-image="NG/12V.png"></div>
-        <div class="point" style="top: 49%; left: 11.68%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 53.7%; left: 13.75%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 57.2%; left: 11.68%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 57.2%; left: 22.5%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 57.2%; left: 25.8%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 57.2%; left: 29.65%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 58.4%; left: 14.3%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 58.4%; left: 15.82%;" data-small-image="NG/4.2V.png"></div>
-
-        <div class="point" style="top: 58.4%; left: 17.3%;" data-small-image="NG/4.2V.png"></div>
-        <div class="point" style="top: 76%; left: 18.75%;" data-small-image="NG/0V.png"></div>
-        <div class="point" style="top: 76%; left: 20.2%;" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0165" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0152" data-y="0.1355" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0909" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0883" data-y="0.1307" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2070" data-y="0.0871" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2096" data-y="0.1646" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2539" data-y="0.1210" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0257" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0478" data-y="0.2590" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0987" data-y="0.2566" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0739" data-y="0.4405" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.5010" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.0948" data-y="0.5373" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.0726" data-y="0.5761" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.1952" data-y="0.5761" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.2330" data-y="0.5761" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.2748" data-y="0.5761" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.1026" data-y="0.5906" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.1196" data-y="0.5857" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.1378" data-y="0.5906" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.1509" data-y="0.7576" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.1691" data-y="0.7624" data-small-image="NG/0V.png"></div>
     </div>
-    <script>
-      // dịch point qua phải 1.4%
-      const points = document.querySelectorAll('#points-img2-1 .point');
-      points.forEach(point => {
-        point.style.left = parseFloat(point.style.left) + 1.4 + '%';
-      });
-    </script>
 
-    <img class="spotlight" data-src="NG/LMH M1.webp" id="img2-2" src="NG/LMH M1.webp" alt="Hình ảnh 2.2">
+    <div class="wrapper" id="data2">
+      <img data-src="NG/LMH M1.webp" id="img2-2" src="NG/LMH M1.webp" alt="Hình ảnh 2.2" />
+
+      <div class="point" data-x="0.0165" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0152" data-y="0.1355" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0909" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0883" data-y="0.1307" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2070" data-y="0.0871" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2096" data-y="0.1646" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2539" data-y="0.1210" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0257" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0478" data-y="0.2590" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0987" data-y="0.2566" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0739" data-y="0.4405" data-small-image="NG/2.62.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.5010" data-small-image="NG/2.62.png"></div>
+      <div class="point" data-x="0.0948" data-y="0.5373" data-small-image="NG/2.62.png"></div>
+      <div class="point" data-x="0.0726" data-y="0.5761" ></div>
+      <div class="point" data-x="0.1952" data-y="0.5761" ></div>
+      <div class="point" data-x="0.2330" data-y="0.5761" data-small-image="NG/2.62.png"></div>
+      <div class="point" data-x="0.2748" data-y="0.5761" ></div>
+      <div class="point" data-x="0.1026" data-y="0.5906"></div>
+      <div class="point" data-x="0.1196" data-y="0.5857"></div>
+      <div class="point" data-x="0.1378" data-y="0.5906" data-small-image="NG/2.62.png"></div>
+      <div class="point" data-x="0.1509" data-y="0.7576" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.1691" data-y="0.7624" data-small-image="NG/0V.png"></div>
+    </div>
+
+    <!-- <img class="spotlight" />
     <div class="points-container" id="points-img2-2">
-      <div class="point" style="top: 1.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 1.5%; left: 13.3%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12.5%; left: 13.2%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 8%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 16.2%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12%; left: 28%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 25.8%; left: 7.4%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 25.8%; left: 9.55%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 25.8%; left: 11.68%;" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 1.5%; left: 6.68%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 12.5%; left: 6.68%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 1.5%; left: 13.3%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 12.5%; left: 13.2%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 8%; left: 23.85%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 16.2%; left: 23.85%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 12%; left: 28%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 25.8%; left: 7.4%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 25.8%; left: 9.55%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 25.8%; left: 11.68%" data-small-image="NG/12V.png"></div>
 
-      <div class="point" style="top: 25.8%; left: 14.2%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 43.2%; left: 11.68%;" data-small-image="NG/12V.png"></div>
-      
-      <div class="point" style="top: 57.2%; left: 29.65%;" data-small-image="NG/0V.png"></div>
-      
-      <div class="point" style="top: 76%; left: 18.75%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 76%; left: 20.2%;" data-small-image="NG/0V.png"></div>
-    </div>
-    <script>
-      // dịch point qua phải 1.4%
-      const points2 = document.querySelectorAll('#points-img2-2 .point');
-      points2.forEach(point => {
-        point.style.left = parseFloat(point.style.left) + 1.4 + '%';
-      });
-    </script>
+      <div class="point" style="top: 25.8%; left: 14.2%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 43.2%; left: 11.68%" data-small-image="NG/12V.png"></div>
 
-    <img class="spotlight" data-src="NG/LMH M2.webp" id="img2-3" src="NG/LMH M2.webp" alt="Hình ảnh 2.3">
-    <div class="points-container" id="points-img2-3">
-      <div class="point" style="top: 1.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 1.5%; left: 13.3%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12.5%; left: 13.2%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 8%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 16.2%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12%; left: 28%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 25.8%; left: 7.4%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 25.8%; left: 9.55%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 25.8%; left: 11.68%;" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 57.2%; left: 29.65%" data-small-image="NG/0V.png"></div>
 
-      <div class="point" style="top: 25.8%; left: 14.2%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 43.2%; left: 11.68%;" data-small-image="NG/12V.png"></div>
-      
-      <div class="point" style="top: 57.2%; left: 29.65%;" data-small-image="NG/0V.png"></div>
-      
-      <div class="point" style="top: 76%; left: 18.75%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 76%; left: 20.2%;" data-small-image="NG/0V.png"></div>
-    </div>
-    <script>
-      // dịch point qua phải 1.4%
-      const points3 = document.querySelectorAll('#points-img2-3 .point');
-      points3.forEach(point => {
-        point.style.left = parseFloat(point.style.left) + 1.4 + '%';
-      });
-    </script>
+      <div class="point" style="top: 76%; left: 18.75%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 76%; left: 20.2%" data-small-image="NG/0V.png"></div>
+    </div> -->
 
-    <img class="spotlight" data-src="NG/LMH LOW.webp" id="img2-4" src="NG/LMH LOW.webp" alt="Hình ảnh 2.4">
-    <div class="points-container" id="points-img2-4">
-      <div class="point" style="top: 1.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12.5%; left: 6.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 1.5%; left: 13.3%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12.5%; left: 13.2%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 8%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 16.2%; left: 23.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 12%; left: 28%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 25.8%; left: 7.4%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 25.8%; left: 9.55%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 25.8%; left: 11.68%;" data-small-image="NG/12V.png"></div>
 
-      <div class="point" style="top: 25.8%; left: 14.2%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 43.2%; left: 11.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 49%; left: 11.68%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 53.7%; left: 13.75%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 57.2%; left: 11.68%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 57.2%; left: 22.5%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 57.2%; left: 25.8%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 57.2%; left: 29.65%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 58.4%; left: 14.3%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 58.4%; left: 15.82%;" data-small-image="NG/0V.png"></div>
+    <div class="wrapper" id="data3">
+      <img class="spotlight" data-src="NG/LMH M2.webp" id="img2-3" src="NG/LMH M2.webp" alt="Hình ảnh 2.3" />
 
-      <div class="point" style="top: 58.4%; left: 17.3%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 76%; left: 18.75%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 76%; left: 20.2%;" data-small-image="NG/0V.png"></div>
-    </div>
-    <script>
-      // dịch point qua phải 1.4%
-      const points4 = document.querySelectorAll('#points-img2-4 .point');
-      points4.forEach(point => {
-        point.style.left = parseFloat(point.style.left) + 1.4 + '%';
-      });
-    </script>
 
-    <img class="spotlight" data-src="NG/AC.png" id="img3" src="NG/AC.png" alt="Hình ảnh 3">
-    <div class="points-container" id="points-img3">
-      <div class="point" style="top: 2.5%; left: 20.8%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 14.4%; left: 20.68%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 14.3%; left: 23%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 9%; left: 33.2%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 20.8%; left: 31%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 20.8%; left: 34%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 18.5%; left: 38%;" data-small-image="NG/12V.png"></div>
-
-      <div class="point" style="top: 33.5%; left: 11.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 44%; left: 8.8%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 44%; left: 11.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 31.8%; left: 20.7%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 31.8%; left: 31%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 31.8%; left: 45%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 31.8%; left: 48.45%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 31.8%; left: 51.45%;" data-small-image="NG/0V.png"></div>
-
-      <div class="point" style="top: 44.5%; left: 19.4%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 44.5%; left: 23.2%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 44.5%; left: 26.9%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 44.5%; left: 30.4%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 44.5%; left: 33.85%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 44.5%; left: 42.3%;" data-small-image="NG/1.6V.png"></div>
-
-      <div class="point" style="top: 65.2%; left: 59.8%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 79.8%; left: 59.8%;" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0165" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0152" data-y="0.1355" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0909" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0883" data-y="0.1307" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2070" data-y="0.0871" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2096" data-y="0.1646" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2539" data-y="0.1210" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0257" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0478" data-y="0.2590" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0987" data-y="0.2566" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0739" data-y="0.4405" data-small-image="NG/1.66.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.5010" data-small-image="NG/1.66.png"></div>
+      <div class="point" data-x="0.0948" data-y="0.5373" data-small-image="NG/1.66.png"></div>
+      <div class="point" data-x="0.0726" data-y="0.5761"></div>
+      <div class="point" data-x="0.1952" data-y="0.5761" data-small-image="NG/1.66.png"></div>
+      <div class="point" data-x="0.2330" data-y="0.5761"></div>
+      <div class="point" data-x="0.2748" data-y="0.5761" data-small-image="NG/4.2V.png"></div>
+      <div class="point" data-x="0.1026" data-y="0.5906"></div>
+      <div class="point" data-x="0.1196" data-y="0.5857" data-small-image="NG/1.66.png"></div>
+      <div class="point" data-x="0.1378" data-y="0.5906"></div>
+      <div class="point" data-x="0.1509" data-y="0.7576" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.1691" data-y="0.7624" data-small-image="NG/0V.png"></div>
     </div>
 
-    <img class="spotlight" data-src="NG/Dan nong (2).png" id="img4-1" src="NG/Dan nong (2).png" alt="Hình ảnh 4.1">
+    <div class="wrapper" id="data4">
+      <img class="spotlight" data-src="NG/LMH LOW.webp" id="img2-4" src="NG/LMH LOW.webp" alt="Hình ảnh 2.4" />
+
+
+      <div class="point" data-x="0.0165" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0152" data-y="0.1355" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0909" data-y="0.0242" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0883" data-y="0.1307" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2070" data-y="0.0871" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2096" data-y="0.1646" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.2539" data-y="0.1210" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0257" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0478" data-y="0.2590" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.2614" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0987" data-y="0.2566" data-small-image="NG/0V.png"></div>
+      <div class="point" data-x="0.0739" data-y="0.4405" data-small-image="NG/12V.png"></div>
+      <div class="point" data-x="0.0713" data-y="0.5010" ></div>
+      <div class="point" data-x="0.0948" data-y="0.5373" ></div>
+      <div class="point" data-x="0.0726" data-y="0.5761" data-small-image="NG/0.28.png"></div>
+      <div class="point" data-x="0.1952" data-y="0.5761" ></div>
+      <div class="point" data-x="0.2330" data-y="0.5761"></div>
+      <div class="point" data-x="0.2748" data-y="0.5761" ></div>
+      <div class="point" data-x="0.1026" data-y="0.5906" data-small-image="NG/0.28.png"></div>
+      <div class="point" data-x="0.1196" data-y="0.5857" ></div>
+      <div class="point" data-x="0.1378" data-y="0.5906"></div>
+      <div class="point" data-x="0.1509" data-y="0.7576" ></div>
+      <div class="point" data-x="0.1691" data-y="0.7624" ></div>
+    </div>
+        <div class="wrapper" id="data5">
+      <img class="spotlight" data-src="NG/AC.png" id="img3" src="NG/AC.png" alt="Hình ảnh 3" />
+
+
+     <div class="point" data-x="0.1736" data-y="0.0508" data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.1723" data-y="0.1547" data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.2298" data-y="0.1475" data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.3146" data-y="0.0991" data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.2898" data-y="0.2249" ></div>
+    <div class="point" data-x="0.3251" data-y="0.2176"data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.3681" data-y="0.1910"data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.3681" data-y="0.2539"></div>
+    <div class="point" data-x="0.0731" data-y="0.3457"data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.0379" data-y="0.4521"></div>
+    <div class="point" data-x="0.0744" data-y="0.4521"data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.1736" data-y="0.3240"data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.2911" data-y="0.3240"></div>
+    <div class="point" data-x="0.4465" data-y="0.3264"data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.4870" data-y="0.3240"></div>
+    <div class="point" data-x="0.5196" data-y="0.3240"></div>
+    <div class="point" data-x="0.9739" data-y="0.0169"></div>
+    <div class="point" data-x="0.1593" data-y="0.4497"data-small-image="NG/12V.png"></div>
+    <div class="point" data-x="0.1997" data-y="0.4521"></div>
+    <div class="point" data-x="0.2428" data-y="0.4545"></div>
+    <div class="point" data-x="0.2833" data-y="0.4521"></div>
+    <div class="point" data-x="0.3225" data-y="0.4570"></div>
+    <div class="point" data-x="0.4151" data-y="0.4545"data-small-image="NG/1.6V.png"></div>
+    <div class="point" data-x="0.6123" data-y="0.6601"></div>
+    <div class="point" data-x="0.6136" data-y="0.8003"></div>
+    </div>
+
+
+ 
+
+    <img class="spotlight" data-src="NG/Dan nong (2).png" id="img4-1" src="NG/Dan nong (2).png" alt="Hình ảnh 4.1" />
     <div class="points-container" id="points-img4-1">
-      <div class="point" style="top: 31.8%; left: 48.2%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 44.5%; left: 44.75%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 65%; left: 50.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 80%; left: 50.85%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 22.5%; left: 60.85%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 22.5%; left: 64.15%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 22.5%; left: 67.45%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 2.5%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 13.8%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 2.5%; left: 83.75%;" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 31.8%; left: 48.2%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 44.5%; left: 44.75%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 65%; left: 50.85%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 80%; left: 50.85%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 22.5%; left: 60.85%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 22.5%; left: 64.15%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 22.5%; left: 67.45%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 2.5%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 13.8%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 2.5%; left: 83.75%" data-small-image="NG/12V.png"></div>
 
-      <div class="point" style="top: 13.8%; left: 83.75%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 24.5%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 24.5%; left: 78.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 36%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 36%; left: 78.7%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 48.5%; left: 75.5%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 53.8%; left: 75.5%;" data-small-image="NG/4.2V.png"></div>
-      <div class="point" style="top: 33.5%; left: 83.75%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 33.6%; left: 87%;" data-small-image="NG/4.2V.png"></div>
-      <div class="point" style="top: 45.6%; left: 83.85%;" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 13.8%; left: 83.75%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 24.5%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 24.5%; left: 78.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 36%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 36%; left: 78.7%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 48.5%; left: 75.5%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 53.8%; left: 75.5%" data-small-image="NG/4.2V.png"></div>
+      <div class="point" style="top: 33.5%; left: 83.75%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 33.6%; left: 87%" data-small-image="NG/4.2V.png"></div>
+      <div class="point" style="top: 45.6%; left: 83.85%" data-small-image="NG/12V.png"></div>
 
-      <div class="point" style="top: 45.6%; left: 86.85%;" data-small-image="NG/4.2V.png"></div>
-      <div class="point" style="top: 60.7%; left: 90.75%;" data-small-image="NG/4.2V.png"></div>
-      <div class="point" style="top: 69%; left: 90.75%;" data-small-image="NG/4.2V.png"></div>
+      <div class="point" style="top: 45.6%; left: 86.85%" data-small-image="NG/4.2V.png"></div>
+      <div class="point" style="top: 60.7%; left: 90.75%" data-small-image="NG/4.2V.png"></div>
+      <div class="point" style="top: 69%; left: 90.75%" data-small-image="NG/4.2V.png"></div>
     </div>
 
-
-    <img class="spotlight" data-src="NG/Dan nong (2).png" id="img4-2" src="NG/Dan nong (2).png" alt="Hình ảnh 4.2">
+    <img class="spotlight" data-src="NG/Dan nong (2).png" id="img4-2" src="NG/Dan nong (2).png" alt="Hình ảnh 4.2" />
     <div class="points-container" id="points-img4-2">
-      <div class="point" style="top: 31.8%; left: 48.2%;" data-small-image="NG/0-.png"></div>
-      <div class="point" style="top: 44.5%; left: 44.75%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 65%; left: 50.85%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 80%; left: 50.85%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 22.5%; left: 60.85%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 22.5%; left: 64.15%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 22.5%; left: 67.45%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 2.5%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 13.8%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 2.5%; left: 83.75%;" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 31.8%; left: 48.2%" data-small-image="NG/0-.png"></div>
+      <div class="point" style="top: 44.5%; left: 44.75%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 65%; left: 50.85%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 80%; left: 50.85%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 22.5%; left: 60.85%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 22.5%; left: 64.15%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 22.5%; left: 67.45%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 2.5%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 13.8%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 2.5%; left: 83.75%" data-small-image="NG/12V.png"></div>
 
-      <div class="point" style="top: 13.8%; left: 83.75%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 24.5%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 24.5%; left: 78.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 36%; left: 75.55%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 36%; left: 78.7%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 48.5%; left: 75.5%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 53.8%; left: 75.5%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 33.5%; left: 83.75%;" data-small-image="NG/12V.png"></div>
-      <div class="point" style="top: 33.6%; left: 87%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 45.6%; left: 83.85%;" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 13.8%; left: 83.75%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 24.5%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 24.5%; left: 78.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 36%; left: 75.55%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 36%; left: 78.7%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 48.5%; left: 75.5%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 53.8%; left: 75.5%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 33.5%; left: 83.75%" data-small-image="NG/12V.png"></div>
+      <div class="point" style="top: 33.6%; left: 87%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 45.6%; left: 83.85%" data-small-image="NG/0V.png"></div>
 
-      <div class="point" style="top: 45.6%; left: 86.85%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 60.7%; left: 90.75%;" data-small-image="NG/0V.png"></div>
-      <div class="point" style="top: 69%; left: 90.75%;" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 45.6%; left: 86.85%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 60.7%; left: 90.75%" data-small-image="NG/0V.png"></div>
+      <div class="point" style="top: 69%; left: 90.75%" data-small-image="NG/0V.png"></div>
     </div>
 
-
-    <img id="small-image" class="spotlight" data-src="NG/0V.png.png" src="NG/0V.png.png" alt="Hình ảnh nhỏ">
-    
-
+    <img id="small-image" class="spotlight" data-src="NG/0V.png.png" src="NG/0V.png.png" alt="Hình ảnh nhỏ" />
   </div>
 
   <!-- Nút kéo -->
-  <img class="draggable" id="draggable" src="image/kim.png" alt="Draggable image">
+  <img class="draggable" id="draggable" src="image/kim.png" alt="Draggable image" />
 
+  <script src="pan.js"></script>
+  <script>
+    function updatePointsFor(imageId, dataId) {
+      const img = document.getElementById(imageId);
+      if (!img) return;                      // tránh lỗi khi phần tử chưa tồn tại
+       if (!img || img.offsetWidth === 0 || img.offsetHeight === 0) {
+        // hide all points if image is not loaded or has no size
+        document.querySelectorAll(`#${dataId} .point`).forEach(p => {
+          p.style.display = 'none';
+          p.style.left = `0px`;
+          p.style.top = `0px`;
+        });
+        return;
+       }
+      const rect = img.getBoundingClientRect();
 
-<script src="pan.js"></script>
+      document.querySelectorAll(`#${dataId} .point`).forEach(p => {
+        const x = parseFloat(p.dataset.x);
+        const y = parseFloat(p.dataset.y);
+        p.style.display = 'block';
+        p.style.left = `${x * rect.width}px`;
+        p.style.top = `${y * rect.height}px`;
+      });
+    }
+
+    function updateAll() {
+      updatePointsFor("img2-1", "data1");
+      updatePointsFor("img2-2", "data2");
+      updatePointsFor("img2-3", "data3");
+      updatePointsFor("img2-4", "data4");
+      updatePointsFor("img3", "data5");
+    }
+
+    window.addEventListener("load", updateAll);
+    window.addEventListener("resize", updateAll);
+  </script>
+
+  <script>
+    function getPos(el) {
+      const r = el.getBoundingClientRect();
+      return { x: r.left, y: r.top };
+    }
+
+    setInterval(() => {
+      let isOneMatch = false;
+      const drag = document.getElementById("draggable");
+      const points = document.querySelectorAll(".point");
+
+      const pDrag = getPos(drag);
+
+      points.forEach((point) => {
+        const pPoint = getPos(point);
+
+        const dx = pDrag.x - pPoint.x;
+        const dy = pDrag.y - pPoint.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist <= 14) {
+          isOneMatch = true;
+          const small = point.dataset.smallImage;
+
+          if (document.getElementById("small-image").src !== small && small !== undefined && small !== "") {
+            document.getElementById("small-image").src = small;
+          }
+        }
+        if (!isOneMatch) {
+          document.getElementById("small-image").src = "NG/0V.png";
+        }
+      });
+    }, 50);
+  </script>
 </body>
+
 </html>

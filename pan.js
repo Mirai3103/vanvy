@@ -61,40 +61,40 @@ function showImage(imageId) {
 }
 
 // Kiểm tra khi nút kéo gần điểm
-function checkPosition() {
-  const draggableRect = draggable.getBoundingClientRect();
-  const activePoints = document.querySelectorAll('.points-container.active .point');
-  let imageChanged = false;
+// function checkPosition() {
+//   const draggableRect = draggable.getBoundingClientRect();
+//   const activePoints = document.querySelectorAll('.points-container.active .point');
+//   let imageChanged = false;
 
-  if (activePoints) {
-    activePoints.forEach(point => {
-      const pointRect = point.getBoundingClientRect();
-      if (
-        draggableRect.left < pointRect.right &&
-        draggableRect.right > pointRect.left &&
-        draggableRect.top < pointRect.bottom &&
-        draggableRect.bottom > pointRect.top
-      ) {
-        const smallImage = document.getElementById('small-image');
-        const newImageSrc = point.getAttribute('data-small-image');
-        if (smallImage.src !== newImageSrc) {
-          smallImage.src = newImageSrc;
-        }
-        smallImage.classList.add('show');
-        imageChanged = true;
-      }
-    });
-  }
+//   if (activePoints) {
+//     activePoints.forEach(point => {
+//       const pointRect = point.getBoundingClientRect();
+//       if (
+//         draggableRect.left < pointRect.right &&
+//         draggableRect.right > pointRect.left &&
+//         draggableRect.top < pointRect.bottom &&
+//         draggableRect.bottom > pointRect.top
+//       ) {
+//         const smallImage = document.getElementById('small-image');
+//         const newImageSrc = point.getAttribute('data-small-image');
+//         if (smallImage.src !== newImageSrc) {
+//           smallImage.src = newImageSrc;
+//         }
+//         smallImage.classList.add('show');
+//         imageChanged = true;
+//       }
+//     });
+//   }
 
-  // Khôi phục hình ảnh gốc nếu không có điểm nào gần
-  if (!imageChanged) {
-    const smallImage = document.getElementById('small-image');
-    smallImage.src = 'NG/0V.png';
-  }
-}
+//   // Khôi phục hình ảnh gốc nếu không có điểm nào gần
+//   if (!imageChanged) {
+//     const smallImage = document.getElementById('small-image');
+//     smallImage.src = 'NG/0V.png';
+//   }
+// }
 
-// Kiểm tra vị trí khi di chuyển
-setInterval(checkPosition, 10);
+// // Kiểm tra vị trí khi di chuyển
+// setInterval(checkPosition, 10);
 
 // Thêm biến trạng thái để xác định nếu nút kéo đã được chọn
 let isDragging = false;  // Trạng thái chọn
