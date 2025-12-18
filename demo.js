@@ -36,10 +36,18 @@ function troubleshootingGuide() {
 <section class="p-4 bg-gray-50 rounded-lg shadow">
 <h2 class="text-2xl font-semibold text-gray-800 mb-4">Chuẩn bị dụng cụ</h2>
 <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
-<li>Đồng hồ VOM.</li>
-<li>Sơ đồ mạch điện hệ thống điều hoà không khí Toyota Vios 2007.</li>
-<li>Phần mềm tra cứu về sơ đồ mạch điện điều hoà không khí Toyota Vios 2007.</li>
-<li>Chì hàn, ống co nhiệt, băng keo đen, dây điện,...</li>
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
 </ul>
 
 <div class="grid grid-cols-2 md:grid-cols-8 gap-4  justify-center">
@@ -96,7 +104,7 @@ function troubleshootingGuide() {
   <img id="image2" src="pan từng vị trí/12V HI.png">
 </div>`,
           /*html*/ `<h2>Xác định vị trí hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>VỊ TRÍ HƯ HỎNG</td></tr><tr><td>1</td><td>Dây dẫn từ chân 1 (E4) đến chân 10 (E1).</td></tr><tr><td>2</td><td>Công tắc dàn lạnh vị trí HI.</td></tr></table>`,
-          `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng hàn chì và ống co nhiệt nối lại dây dẫn.</td></tr><tr><td>2</td><td>Thay công tắc dàn lạnh mới.</td></tr></table>`,
+          `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (E4) đến chân 10 (E1).</td></tr><tr><td>2</td><td>Thay công tắc dàn lạnh.</td></tr></table>`,
         ],
       },
       // CASE 2
@@ -112,8 +120,56 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu, dụng cụ sửa chữa điện.</p><div class="hinhmota"><img src="NG/hinhVOM.jpg" alt="VOM"><img src="NG/ongco.jpg" alt="Ống co nhiệt"></div><img class="HIGH" src="NG/M2.jpg" alt="Sơ đồ M2">`,
-          /*html*/ `<h2>Xác định triệu chứng</h2><p>- Quạt dàn lạnh:<br>&nbsp;&nbsp;+ Chế độ LO, M1, HI: Hoạt động bình thường.<br>&nbsp;&nbsp;+ Chế độ M2: Quay chậm giống như LO.<br>- Các bộ phận khác hoạt động bình thường.</p>`,
+          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><div class="hinhmota"><img src="NG/hinhVOM.jpg" alt="VOM"><img src="NG/ongco.jpg" alt="Ống co nhiệt"></div><img class="HIGH" src="NG/M2.jpg" alt="Sơ đồ M2">`,
+          /*html*/ `<h2>Xác định triệu chứng</h2>
+ <ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-slate-700">
+      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">
+        Chế độ M2: Quay chậm giống như LO.
+      </li>
+      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-slate-700">
+      <li class="before:content-['+'] before:mr-2">Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-slate-700">
+    Bật công tắc A/C: Ly hợp từ hoạt động bình thường.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-slate-700">
+    HTR Relay: Hoạt động bình thường <span class="text-slate-500">(có tiếng click)</span>.
+  </li>
+</ul>
+
+
+
+          `,
           /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 2 (E3) đến chân 6 (E1).<br>(KV2) - Hư công tắc dàn lạnh ở vị trí M2.</p><img class="KVNN" src="NG/2.png" alt="Khu vực nghi ngờ 2">`,
           /*html*/ `<h2>Quy trình đo kiểm</h2>
 <p>Bật công tắc quạt dàn lạnh vị trí M2.</p>
@@ -132,7 +188,7 @@ function troubleshootingGuide() {
   <img id="image4" src="pan từng vị trí/4.2V M2 (1).png">
 </div>`,
           /*html*/ `<h2>Xác định vị trí hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>VỊ TRÍ HƯ HỎNG</td></tr><tr><td>1</td><td>Dây dẫn từ chân 2 (E3) đến chân 6 (E1).</td></tr><tr><td>2</td><td>Công tắc dàn lạnh vị trí M2.</td></tr></table>`,
-          /*html*/ `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng hàn chì và ống co nhiệt nối lại dây dẫn.</td></tr><tr><td>2</td><td>Thay công tắc dàn lạnh mới.</td></tr></table>`,
+          /*html*/ `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 2 (E3) đến chân 2 (E3).</td></tr><tr><td>2</td><td>Thay công tắc dàn lạnh mới.</td></tr></table>`,
         ],
       },
       // CASE 3
@@ -148,8 +204,54 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu, dụng cụ sửa chữa điện.</p><div class="hinhmota"><img src="NG/hinhVOM.jpg" alt="VOM"><img src="NG/ongco.jpg" alt="Ống co nhiệt"></div><img class="HIGH" src="NG/M1.jpg" alt="Sơ đồ M1">`,
-          /*html*/ `<h2>Xác định triệu chứng</h2><p>- Quạt dàn lạnh:<br>&nbsp;&nbsp;+ Chế độ LO, M2, HI: Hoạt động bình thường.<br>&nbsp;&nbsp;+ Chế độ M1: Quay chậm giống như LO.<br>- Các bộ phận khác hoạt động bình thường.</p>`,
+          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><div class="hinhmota"><img src="NG/hinhVOM.jpg" alt="VOM"><img src="NG/ongco.jpg" alt="Ống co nhiệt"></div><img class="HIGH" src="NG/M1.jpg" alt="Sơ đồ M1">`,
+          /*html*/ `<h2>Xác định triệu chứng</h2>
+          <ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-slate-700">
+      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">
+        Chế độ M1: Quay chậm giống như LO.
+      </li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-slate-700">
+      <li class="before:content-['+'] before:mr-2">Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-slate-700">
+    Bật công tắc A/C: Ly hợp từ hoạt động bình thường.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-slate-700">
+    HTR Relay: Hoạt động bình thường <span class="text-slate-500">(có tiếng click)</span>.
+  </li>
+</ul>
+
+          `,
           /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 3 (E3) đến chân 7 (E1).<br>(KV2) - Hư công tắc dàn lạnh ở vị trí M1.</p><img class="KVNN" src="NG/3.png" alt="Khu vực nghi ngờ 3">`,
           /*html*/ `<h2>Quy trình đo kiểm</h2>
 <p>Bật công tắc quạt dàn lạnh vị trí M1.</p>
@@ -169,7 +271,7 @@ function troubleshootingGuide() {
   <img id="image6" src="pan từng vị trí/4.2V M1.png">
 </div>`,
           /*html*/ `<h2>Xác định vị trí hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>VỊ TRÍ HƯ HỎNG</td></tr><tr><td>1</td><td>Dây dẫn từ chân 3 (E3) đến chân 7 (E1).</td></tr><tr><td>2</td><td>Công tắc dàn lạnh vị trí M1.</td></tr></table>`,
-          /*html*/ `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng hàn chì và ống co nhiệt nối lại dây dẫn.</td></tr><tr><td>2</td><td>Thay công tắc dàn lạnh mới.</td></tr></table>`,
+          /*html*/ `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TRƯỜNG HỢP</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (E3) đến chân 7 (E1).</td></tr><tr><td>2</td><td>Thay công tắc dàn lạnh mới.</td></tr></table>`,
         ],
       },
       // CASE 4
@@ -185,8 +287,67 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu, dụng cụ sửa chữa điện.</p>`,
-          /*html*/ `<h2>Xác định triệu chứng</h2><p>- Quạt dàn lạnh: Không hoạt động ở mọi chế độ.<br>- Bật công tắc A/C: Ly hợp từ không hoạt động.<br>- HTR Relay: Không hoạt động (không có tiếng click).</p>`,
+          /*html*/ `<div>
+          <h2>Chuẩn bị dụng cụ</h2>
+          <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul>
+          <img src="./image/TH45.jpeg" style="max-width: 450px; margin: 0 auto;" alt="VOM"/>
+
+          
+          </div>`,
+          /*html*/ `<h2>Xác định triệu chứng</h2><ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal">
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ LO: Không hoạt động.
+      </li>
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ M1: Không hoạt động.
+      </li>
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ M2: Không hoạt động.
+      </li>
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ HI: Không hoạt động.
+      </li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-slate-700">
+      <li class="before:content-['+'] before:mr-2">
+        Hoạt động bình thường.
+      </li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    Bật công tắc A/C: Ly hợp từ không hoạt động.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    HTR Relay: Không hoạt động
+    <span class="text-red-500">(Không có tiếng click)</span>.
+  </li>
+</ul>
+`,
           /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) Mất nguồn IG. (KV2) Hư cầu chì 10A GAUGE. (KV3) Hư HTR Relay. (KV4) Đứt dây 1 (HTR Relay) → 9 (E1). (KV5) Hư công tắc quạt (E1). (KV6) Đứt dây 5 (E1) → Mass (D1). (KV7) Mất mass (D1).</p><img class="KVNN" src="NG/4.jpg" alt="Khu vực nghi ngờ 4">`,
           /*html*/ `<div id="contentD-M3" class="hidden-content block">
   <p>Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI).</p>
@@ -273,9 +434,46 @@ function troubleshootingGuide() {
 </div>
 `,
           /*html*/ `<h2>Xác định vị trí hư hỏng</h2><table class="my-table1"><tr><td>TH</td><td>VỊ TRÍ HƯ HỎNG</td></tr><tr><td>1</td><td>Mất nguồn IG.</td></tr><tr><td>2</td><td>Đứt cầu chì 10A GAUGE.</td></tr><tr><td>3</td><td>Hư HTR Relay.</td></tr><tr><td>4-7</td><td>Đứt dây hoặc mất mass.</td></tr></table>`,
-          /*html*/ `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TH</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Kiểm tra nguồn IG, thay công tắc IG.</td></tr><tr><td>2</td><td>Thay cầu chì 10A mới.</td></tr><tr><td>3</td><td>Thay relay 5 chân mới.</td></tr><tr><td>4-7</td><td>Nối lại dây hoặc làm lại điểm mass.</td></tr></table>`,
+          /*html*/ `
+          <h2>Khắc phục hư hỏng</h2>
+<table class="my-table1">
+   <tr>
+      <td>TH</td>
+      <td>HƯỚNG KHẮC PHỤC</td>
+   </tr>
+   <tr>
+      <td>1</td>
+      <td>Kiểm tra nguồn IG, thay công tắc IG.</td>
+   </tr>
+   <tr>
+      <td>2</td>
+      <td>Thay cầu chì 10A mới.</td>
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (E3) đến chân 7 (E1).</td>
+   </tr>
+   <tr>
+      <td>4</td>
+      <td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (HTR Relay) đến chân 9 (E1).</td>
+   </tr>
+   <tr>
+      <td>5</td>
+      <td>Thay công tắc quạt dàn lạnh mới.</td>
+   </tr>
+   <tr>
+      <td>6</td>
+      <td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (E1) đến chân mass (D1).</td>
+   </tr>
+   <tr>
+      <td>7</td>
+      <td>Dùng hàn chì và ống co nhiệt nối lại mas.</td>
+   </tr>
+</table>
+          `,
         ],
       },
+
       // CASE 5
       {
         id: "TH5",
@@ -289,8 +487,67 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu, dụng cụ sửa chữa điện.</p>`,
-          /*html*/ `<h2>Xác định triệu chứng</h2><p>- Quạt dàn lạnh: Không hoạt động ở mọi chế độ.<br>- Bật công tắc A/C: Ly hợp từ hoạt động bình thường.<br>- HTR Relay: Hoạt động bình thường (có tiếng click).</p>`,
+          /*html*/ `<div>
+          <h2>Chuẩn bị dụng cụ</h2>
+          <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul>
+          <img src="./image/TH45.jpeg" style="max-width: 450px; margin: 0 auto;" alt="VOM"/>
+
+          
+          </div>`,
+          /*html*/ `<h2>Xác định triệu chứng</h2><ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal">
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ LO: Không hoạt động.
+      </li>
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ M1: Không hoạt động.
+      </li>
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ M2: Không hoạt động.
+      </li>
+      <li class="before:content-['+'] before:mr-2 text-red-600">
+        Chế độ HI: Không hoạt động.
+      </li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+      <li class="before:content-['+'] before:mr-2">
+        Hoạt động bình thường.
+      </li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    Bật công tắc A/C: Ly hợp từ không hoạt động.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-green-700">
+    HTR Relay: Hoạt động bình thường
+    <span class="text-slate-500">(có tiếng click)</span>.
+  </li>
+</ul>
+`,
           /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) Mất nguồn ắc quy. (KV2) Hư cầu chì 40A HTR. (KV3) Đứt dây từ cầu chì → relay. (KV4) Đứt dây từ relay → mô tơ. (KV5) Hư mô tơ quạt (E4). (KV6) Đứt dây từ mô tơ → điện trở.</p><img class="KVNN" src="NG/5.jpg" alt="Khu vực nghi ngờ 5">`,
           /*html*/ `<div id="contentD-M4" class="hidden-content" style="display: block;">
   <p>Bật công tắc quạt dàn lạnh sang 1 trong 4 vị trí LO, M1, M2, HI.</p>
@@ -326,8 +583,72 @@ function troubleshootingGuide() {
   </div>
 </div>
 `,
-          /*html*/ `<h2>Xác định vị trí hư hỏng</h2><p>Dựa vào kết quả đo kiểm để xác định lỗi từ KV1 đến KV6.</p>`,
-          /*html*/ `<h2>Khắc phục hư hỏng</h2><p>Kiểm tra/thay ắc quy, thay cầu chì, nối lại dây dẫn, thay mô tơ quạt.</p>`,
+
+          /*html*/ `<h2>Xác định vị trí hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Vị trí hư hỏng</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Mất nguồn ắc quy.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Đứt cầu chì 40A HTR.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Đứt dây dẫn từ chân 2 (40A HTR) đến chân 5 (HTR Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Đứt dây dẫn từ chân 3 (HTR Relay) đến chân 2 (E4).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 5</td>
+              <td>Hư mô tơ quạt dàn lạnh (E4).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 6</td>
+              <td>Đứt dây dẫn từ chân 1 (E4) đến chân 4 ((E3).</td>
+            </tr>
+          </table>
+          `,
+
+          /*html*/ `<h2>Khắc phục hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Vị trí hư hỏng</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Kiểm tra nguồn ắc quy hoặc thay ắc quy mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Thay cầu chì 40A mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 2 (40A HTR) đến chân 5 (HTR Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (HTR Relay) đến chân 2 (E4).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 5</td>
+              <td>Thay mô tơ quạt dàn lạnh mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 6</td>
+              <td>Dùng giắc nối lại nơi hư hỏng, dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (E4) đến chân 4 (E3).</td>
+            </tr>
+          </table>
+          `,
         ],
       },
       // CASE 6
@@ -343,8 +664,51 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, sơ đồ chân Amplifier.</p><img class="AC" src="NG/AC SWITCH.png" alt="AC Switch">`,
-          /*html*/ `<h2>Xác định triệu chứng</h2><p>- Quạt dàn lạnh, dàn nóng: Hoạt động bình thường.<br>- Bật A/C: Ly hợp từ và HTR SUB1/AC MG Relay không hoạt động.</p>`,
+          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><img class="AC" src="NG/AC SWITCH.png" alt="AC Switch">`,
+          /*html*/ `<h2>Xác định triệu chứng</h2><ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+      <li class="before:content-['+'] before:mr-2">Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    Bật công tắc A/C: Ly hợp từ không hoạt động.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    HTR SUB/AC MG Relay: Không hoạt động
+    <span class="text-red-500">(không có tiếng click)</span>.
+  </li>
+</ul>
+`,
           /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>Rất nhiều khả năng: Hư cầu chì 7.5A A/C, hư relay, đứt dây, hư công tắc A/C, lỗi bộ khuếch đại (Amplifier), hư công tắc áp suất kép, mất mass.</p><img class="KVNN" src="NG/6.png" alt="Khu vực nghi ngờ 6">`,
           /*html*/ `<div id="contentD-M5" class="hidden-content" style="display: block;">
             <p style="">Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
@@ -406,8 +770,138 @@ function troubleshootingGuide() {
             </div>
         </div>
     </div>`,
-          /*html*/ `<h2>Xác định vị trí hư hỏng</h2><p>Bao gồm 14 trường hợp hư hỏng có thể xảy ra từ cầu chì, dây dẫn, relay, công tắc đến bộ khuếch đại.</p>`,
-          /*html*/ `<h2>Khắc phục hư hỏng</h2><p>Thay thế linh kiện hỏng (cầu chì, relay, công tắc) hoặc nối lại các đường dây bị đứt.</p>`,
+          /*html*/ `<h2>Xác định vị trí hư hỏng</h2>
+          <h2>Xác định vị trí hư hỏng</h2>
+<table class="my-table1">
+  <tr>
+    <td>Vị trí</td>
+    <td>Vị trí hư hỏng</td>
+  </tr>
+  <tr>
+    <td>Khu vực 1</td>
+    <td>Đứt cầu chì 7.5A A/C.</td>
+  </tr>
+  <tr>
+    <td>Khu vực 2</td>
+    <td>Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 1 (HTR SUB1/AC MG Relay).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 3</td>
+    <td>Hư HTR SUB1/AC MG Relay.</td>
+  </tr>
+  <tr>
+    <td>Khu vực 4</td>
+    <td>Đứt dây dẫn từ chân 2 (HTR SUB1/AC MG Relay) đến chân 1 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 5</td>
+    <td>Đứt dây dẫn cầu chì 7.5A A/C đến chân 2 (E5).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 6</td>
+    <td>Hư công tắc A/C (E5).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 7</td>
+    <td>Đứt dây dẫn từ chân 4 (E5) đến chân 27 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 8</td>
+    <td>Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 14 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 9</td>
+    <td>Đứt dây dẫn tín hiệu dàn lạnh chân 21 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 10</td>
+    <td>Đứt dây mass của bộ khuếch đại chân 24 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 11</td>
+    <td>Đứt dây dẫn từ chân 22 (E7) đến chân 23 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 12</td>
+    <td>Đứt dây dẫn từ chân 12 (E7) đến chân 4 (A3).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 13</td>
+    <td>Hư công tắc áp suất kép (A3).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 14</td>
+    <td>Đứt dây dẫn từ chân 1 (A3) đến chân mass (A1).</td>
+  </tr>
+  </table>
+
+            `,
+          /*html*/ `<h2>Khắc phục hư hỏng</h2>
+         <h2>Khắc phục hư hỏng</h2>
+<table class="my-table1">
+  <tr>
+    <td>Vị trí</td>
+    <td>Khắc phục</td>
+  </tr>
+  <tr>
+    <td>Khu vực 1</td>
+    <td>Thay cầu chì 7.5A mới.</td>
+  </tr>
+  <tr>
+    <td>Khu vực 2</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 7.5A A/C đến chân 1 (HTR SUB1/AC MG Relay).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 3</td>
+    <td>Thay Relay 4 chân mới.</td>
+  </tr>
+  <tr>
+    <td>Khu vực 4</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 2 (HTR SUB1/AC MG Relay) đến chân 15 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 5</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 7.5A A/C đến chân 2 (E5).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 6</td>
+    <td>Thay công tắc A/C mới.</td>
+  </tr>
+  <tr>
+    <td>Khu vực 7</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 4 (E5) đến chân 27 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 8</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 7.5A A/C đến chân 14 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 9</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn tín hiệu dàn lạnh chân 21 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 10</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây mass của bộ khuếch đại chân 24 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 11</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 22 (E7) đến chân 23 (E7).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 12</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 12 (E7) đến chân 4 (A3).</td>
+  </tr>
+  <tr>
+    <td>Khu vực 13</td>
+    <td>Thay công tắc áp suất kép (A3) mới.</td>
+  </tr>
+  <tr>
+    <td>Khu vực 14</td>
+    <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (A3) đến chân mass (A1).</td>
+  </tr>
+</table>
+
+          `,
         ],
       },
       // CASE 7
@@ -423,8 +917,58 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, dụng cụ sửa chữa điện.</p>`,
-          /*html*/ `<h2>Xác định triệu chứng</h2><p>- Quạt dàn lạnh, dàn nóng: Hoạt động bình thường.<br>- HTR SUB1/AC MG Relay: Hoạt động (có tiếng click).<br>- Ly hợp từ: Không hoạt động.</p>`,
+          /*html*/ `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><img class="AC" src="NG/AC SWITCH.png" alt="AC Switch">`,
+          /*html*/ `<h2>Xác định triệu chứng</h2><div class="space-y-3">
+  <!-- Tiêu đề -->
+  <div class="font-semibold text-slate-900">
+    Bước 2: Xác định triệu chứng.
+  </div>
+
+  <ul class="space-y-2 text-sm text-slate-800">
+    <!-- Item lớn -->
+    <li class="font-semibold before:content-['-'] before:mr-2">
+      Quạt dàn lạnh:
+      <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+        <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+        <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+        <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+        <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+      </ul>
+    </li>
+
+    <!-- Item lớn -->
+    <li class="font-semibold before:content-['-'] before:mr-2">
+      Quạt dàn nóng:
+      <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+        <li class="before:content-['+'] before:mr-2">Hoạt động bình thường.</li>
+      </ul>
+    </li>
+
+    <!-- Item nhỏ -->
+    <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+      Bật công tắc A/C: Ly hợp từ không hoạt động.
+    </li>
+
+    <li class="before:content-['+'] before:mr-2 pl-6 text-green-700">
+      HTR SUB1/AC MG relay: Hoạt động bình thường
+      <span class="text-slate-500">(có tiếng tạch)</span>.
+    </li>
+  </ul>
+</div>
+`,
           /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 3 (Relay) đến chân 1 (C8).<br>(KV2) - Hư ly hợp từ (C8).<br>(KV3) - Mất mass ly hợp từ (C8).</p><img class="KVNN" src="NG/7.png" alt="Khu vực nghi ngờ 7">`,
           /*html*/ `<div id="contentD-M6" class="hidden-content" style="display: block;">
                 <h2>Trình tự đo kiểm</h2>
@@ -446,7 +990,9 @@ function troubleshootingGuide() {
                     </div>
             </div>`,
           /*html*/ `<h2>Xác định vị trí hư hỏng</h2><table class="my-table1"><tr><td>TH</td><td>VỊ TRÍ HƯ HỎNG</td></tr><tr><td>1</td><td>Đứt dây dẫn từ Relay đến ly hợp từ.</td></tr><tr><td>2</td><td>Hư ly hợp từ (C8).</td></tr><tr><td>3</td><td>Mất mass ly hợp từ.</td></tr></table>`,
-          /*html*/ `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TH</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Nối lại dây dẫn.</td></tr><tr><td>2</td><td>Thay ly hợp từ mới.</td></tr><tr><td>3</td><td>Nối lại dây mass.</td></tr></table>`,
+          /*html*/ `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TH</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (HTR SUB1/AC MG Relay) đến chân 1 (C8).
+
+</td></tr><tr><td>2</td><td>Thay ly hợp từ mới.</td></tr><tr><td>3</td><td>Dùng hàn chì và ống co nhiệt nối lại mass ly hợp từ.</td></tr></table>`,
         ],
       },
       // CASE 8
@@ -463,10 +1009,54 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu.</p>`,
-          `<h2>Xác định triệu chứng</h2><p>- Quạt dàn nóng: Không hoạt động.<br>- FAN NO.1 Relay: Không hoạt động.<br>- Ly hợp từ: Hoạt động bình thường.</p>`,
-          `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) Hư cầu chì 10A ECU-IG. (KV2) Đứt dây từ cầu chì đến relay. (KV3) Hư FAN NO.1 Relay. (KV4) Đứt dây từ relay đến bộ khuếch đại (E7).</p><img class="KVNN" src="NG/8.png" alt="Khu vực nghi ngờ 8">`,
-        /*html*/ `<div id="contentD-M7" class="hidden-content" style="display: block;">
+          `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><img class="AC" src="image/TH8-11.jpeg" alt="AC Switch">`,
+          `<h2>Xác định triệu chứng</h2>
+          <ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2 text-red-600">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-red-600">
+      <li class="before:content-['+'] before:mr-2">Không hoạt động.</li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-green-700">
+    Bật công tắc A/C: Ly hợp từ hoạt động bình thường.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    FAN NO.1 Relay: Không hoạt động
+    <span class="text-red-500">(không có tiếng click)</span>.
+  </li>
+</ul>
+
+          `,`<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) Hư cầu chì 10A ECU-IG. (KV2) Đứt dây từ cầu chì đến relay. (KV3) Hư FAN NO.1 Relay. (KV4) Đứt dây từ relay đến bộ khuếch đại (E7).</p><img class="KVNN" src="NG/8.png" alt="Khu vực nghi ngờ 8">`,
+          /*html*/ `<div id="contentD-M7" class="hidden-content" style="display: block;">
             <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
             Bật công tắc A/C.                
             </p>
@@ -495,8 +1085,54 @@ function troubleshootingGuide() {
             </div>
         </div>
     </div>`,
-          `<h2>Xác định vị trí hư hỏng</h2><p>Xác định lỗi ở 1 trong 4 khu vực nghi ngờ.</p>`,
-          `<h2>Khắc phục hư hỏng</h2><p>Thay cầu chì, nối lại dây hoặc thay relay mới.</p>`,
+          `<h2>Xác định vị trí hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Vị trí hư hỏng</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Đứt cầu chì 10A ECU-IG.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Đứt dây dẫn từ cầu chì 10A ECU-IG đến chân 6 (FAN NO.1 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Hư FAN NO.1 Relay.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Đứt dây dẫn từ chân 7 (FAN NO.1 Relay) đến chân 1 (E7).</td>
+            </tr>
+          </table>
+          `,
+          `<h2>Khắc phục hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Vị trí hư hỏng</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Thay cầu chì 10A mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 10A ECU-IG đến chân 6 (FAN NO.1 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Thay Relay 4 chân mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 7 (FAN NO.1 Relay) đến chân 1 (E7).</td>
+            </tr>
+          </table>
+          `,
         ],
       },
       // CASE 9
@@ -513,10 +1149,53 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu.</p>`,
-          `<h2>Xác định triệu chứng</h2><p>- Quạt dàn nóng: Không hoạt động.<br>- FAN NO.1 Relay: Hoạt động (có tiếng click).<br>- Ly hợp từ: Hoạt động bình thường.</p>`,
+          `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><img class="AC" src="image/TH8-11.jpeg" alt="AC Switch">`,
+          `<h2>Xác định triệu chứng</h2>
+          <ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2 text-red-600">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-red-600">
+      <li class="before:content-['+'] before:mr-2">Không hoạt động.</li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-green-700">
+    Bật công tắc A/C: Ly hợp từ hoạt động bình thường.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-green-700">
+    FAN NO.1 Relay: Hoạt động bình thường
+    <span class="text-slate-500">(có tiếng click)</span>.
+  </li>
+</ul>`,
           `<h2>Xác định khu vực nghi ngờ</h2><p>Hư cầu chì 30A RDI, đứt dây, hư mô tơ quạt, hư điện trở quạt, mất mass.</p><img class="KVNN" src="NG/9.png" alt="Khu vực nghi ngờ 9">`,
-           /*html*/ `<div id="contentD-M8" class="hidden-content" style="display: block;">
+          /*html*/ `<div id="contentD-M8" class="hidden-content" style="display: block;">
             <p>Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
             Bật công tắc A/C.                
             </p>
@@ -558,8 +1237,87 @@ function troubleshootingGuide() {
             </div>
         </div>
     </div>`,
-          `<h2>Xác định vị trí hư hỏng</h2><p>Bao gồm 8 trường hợp từ cầu chì, dây dẫn, mô tơ, điện trở đến điểm mass.</p>`,
-          `<h2>Khắc phục hư hỏng</h2><p>Thay thế linh kiện hỏng hoặc nối lại dây.</p>`,
+
+          `<h2>Xác định vị trí hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Vị trí hư hỏng</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Đứt cầu chì 30A RDI.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Đứt dây dẫn từ cầu chì 30A RDI đến chân 5 (FAN NO.1 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Hư FAN NO.1 Relay.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Hư mô tơ quạt dàn nóng (A7).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 5</td>
+              <td>Đứt dây dẫn từ chân 1 (A7) đến chân 3 (FAN NO.2 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 6</td>
+              <td>Đứt dây dẫn từ chân 4 (FAN NO.2 Relay) đến chân 2 (A13).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 7</td>
+              <td>Hư điện trở quạt dàn lạnh (A13).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 8</td>
+              <td>Đứt dây dẫn từ chân 1 (A13) đến chân mass (A1).</td>
+            </tr>
+          </table>
+          `,
+          `<h2>Khắc phục hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Khắc phục</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Thay cầu chì 30A mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 30A RDI đến chân 5 (FAN NO.1 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 8 (FAN NO.1 Relay) đến chân 2 (A7).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Thay mô tơ quạt dàn nóng mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 5</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (A7) đến chân 3 (FAN NO.2 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 6</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 4 (FAN NO.2 Relay) đến chân 2 (A13).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 7</td>
+              <td>Thay điện trở quạt dàn lạnh.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 8</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (A13) đến chân mass (A1).</td>
+            </tr>
+          </table>
+          `,
         ],
       },
       // CASE 10
@@ -576,8 +1334,54 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu.</p>`,
-          `<h2>Xác định triệu chứng</h2><p>- Quạt dàn nóng: Luôn quay ở tốc độ thấp.<br>- FAN NO.2 Relay: Không hoạt động khi bật công tắc giả lập áp suất.</p>`,
+          `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><img class="AC" src="image/TH8-11.jpeg" alt="AC Switch">`,
+          `<h2>Xác định triệu chứng</h2>
+          <ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2 text-red-600">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-red-600">
+      <li class="before:content-['+'] before:mr-2">
+        Không hoạt động ở tốc độ thấp khi bật công tắc giả lập áp suất trung bình cao.
+      </li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-green-700">
+    Bật công tắc A/C: Ly hợp từ hoạt động bình thường.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    FAN NO.2 Relay: Không hoạt động
+    <span class="text-red-500">(không có tiếng click)</span>.
+  </li>
+</ul>
+`,
           `<h2>Xác định khu vực nghi ngờ</h2><p>Đứt dây, hư FAN NO.2 Relay, hư công tắc áp suất, mất mass.</p><img class="KVNN" src="NG/10.png" alt="Khu vực nghi ngờ 10">`,
           /*html*/ `<div id="contentD-M9" class="hidden-content" style="display: block;">
             <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
@@ -611,8 +1415,42 @@ function troubleshootingGuide() {
         </div>
         </div>
     </div>`,
-          `<h2>Xác định vị trí hư hỏng</h2><p>Xác định lỗi ở 1 trong 5 khu vực nghi ngờ.</p>`,
-          `<h2>Khắc phục hư hỏng</h2><p>Nối lại dây, thay relay hoặc thay công tắc áp suất.</p>`,
+
+
+
+
+          `<h2>Xác định vị trí hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Vị trí hư hỏng</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Đứt dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Đứt dây dẫn từ cầu chì 10A ECU-IG đến chân 6 (FAN NO.1 Relay).</td>
+            </tr>
+          </table>
+          `,
+          `<h2>Khắc phục hư hỏng</h2>
+          <table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Khắc phục</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây mass.</td>
+            </tr>
+          </table>
+          `,
         ],
       },
       // CASE 11
@@ -629,12 +1467,119 @@ function troubleshootingGuide() {
           "Bước 6: Khắc phục",
         ],
         contents: [
-          `<h2>Chuẩn bị dụng cụ</h2><p>- Đồng hồ VOM, sơ đồ mạch điện, phần mềm tra cứu.</p>`,
-          `<h2>Xác định triệu chứng</h2><p>- Quạt dàn nóng: Không quay tốc độ cao.<br>- FAN NO.2 Relay: Hoạt động (có tiếng click).</p>`,
+          `<h2>Chuẩn bị dụng cụ</h2><ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
+ <li>Đồng hồ vạn năng (VOM).</li>
+  <li>Dây điện, băng keo, chì hàn, ống co nhiệt.</li>
+  <li>Kìm điện, cờ-lê nhỏ để xử lý dây và giắc nối.</li>
+  <li>Đèn pin để kiểm tra khu vực tối.</li>
+  <li>
+    Chuẩn bị an toàn.
+   
+  </li>
+
+      <li>Ngắt kết nối ắc-quy để tránh chập điện khi kiểm dây.</li>
+  <li>Sơ đồ mạch điện hệ thống điều hòa không khí Vios 2007.</li>
+  <li>Phần mềm tra cứu về sơ đồ mạch điện điều hòa không khí Toyota Vios 200</li>
+</ul><img class="AC" src="image/TH8-11.jpeg" alt="AC Switch">`,
+          `<h2>Xác định triệu chứng</h2>
+          <ul class="space-y-2 text-sm text-slate-800">
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2">
+    Quạt dàn lạnh:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-green-700">
+      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+    </ul>
+  </li>
+
+  <!-- Item lớn -->
+  <li class="font-semibold before:content-['-'] before:mr-2 text-red-600">
+    Quạt dàn nóng:
+    <ul class="mt-1 space-y-1 pl-6 font-normal text-red-600">
+      <li class="before:content-['+'] before:mr-2">
+        Luôn quay ở tốc độ thấp khi bật công tắc giả lập áp suất trung bình cao.
+      </li>
+    </ul>
+  </li>
+
+  <!-- Item nhỏ -->
+  <li class="before:content-['+'] before:mr-2 pl-6 text-green-700">
+    Bật công tắc A/C: Ly hợp từ hoạt động bình thường.
+  </li>
+
+  <li class="before:content-['+'] before:mr-2 pl-6 text-red-600">
+    FAN NO.2 Relay: Không hoạt động
+    <span class="text-red-500">(không có tiếng click)</span>.
+  </li>
+</ul>
+
+          `,
           `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1).<br>(KV2) - Mất mass (A1).</p><img class="KVNN" src="NG/11.png" alt="Khu vực nghi ngờ 11">`,
-           /*html*/`<h2>Quy trình đo kiểm</h2><p>Bật A/C và công tắc giả lập áp suất.</p><div class="DOKIEMM"><div class="scrollable"><img class="DOKIEM1" src="NG/H32.jpg" alt="Đo kiểm TH11"><div class="ND"><div class="layout"><div class="box" data-image="image48" style="top: 15px; left: 335px; width: 135px; height: 65px;">Đứt dây dẫn: 5 (F2 Relay) → mass (A1)</div><div class="box" data-image="image49" style="top: 225px; left: 10px; max-width: 136px; height: 65px; font-size: 23px;">Mất mass (A1)</div></div></div></div></div><div class="image-popup"><img id="image48" src="pan từng vị trí/Pan số 11/N57-75 12V.png"><img id="image49" src="pan từng vị trí/Pan số 11/N57-75 0V.png"></div>`,
-          `<h2>Xác định vị trí hư hỏng</h2><table class="my-table1"><tr><td>TH</td><td>VỊ TRÍ HƯ HỎNG</td></tr><tr><td>1</td><td>Đứt dây dẫn từ chân 5 (Relay) đến mass (A1).</td></tr><tr><td>2</td><td>Mất mass (A1).</td></tr></table>`,
-          `<h2>Khắc phục hư hỏng</h2><table class="my-table1"><tr><td>TH</td><td>HƯỚNG KHẮC PHỤC</td></tr><tr><td>1</td><td>Dùng hàn chì và ống co nhiệt nối lại dây dẫn.</td></tr><tr><td>2</td><td>Dùng hàn chì và ống co nhiệt nối lại điểm mass.</td></tr></table>`,
+          /*html*/ `<h2>Quy trình đo kiểm</h2><p>Bật A/C và công tắc giả lập áp suất.</p><div class="DOKIEMM"><div class="scrollable"><img class="DOKIEM1" src="NG/H32.jpg" alt="Đo kiểm TH11"><div class="ND"><div class="layout"><div class="box" data-image="image48" style="top: 15px; left: 335px; width: 135px; height: 65px;">Đứt dây dẫn: 5 (F2 Relay) → mass (A1)</div><div class="box" data-image="image49" style="top: 225px; left: 10px; max-width: 136px; height: 65px; font-size: 23px;">Mất mass (A1)</div></div></div></div></div><div class="image-popup"><img id="image48" src="pan từng vị trí/Pan số 11/N57-75 12V.png"><img id="image49" src="pan từng vị trí/Pan số 11/N57-75 0V.png"></div>`,
+        
+       
+         
+          
+          
+          `<h2>Xác định vị trí hư hỏng</h2><table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Vị trí hư hỏng</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Đứt dây dẫn từ cầu chì 10A ECU đến chân 2 (FAN NO.2 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Hư FAN NO.2 Relay.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Đứt dây dẫn từ chân 1 (FAN NO.2 Relay) đến chân 2 (A3).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Hư công tắc áp suất trung bình.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 5</td>
+              <td>Đứt dây dẫn từ chân 3 (A3) đến chân mass (A1).</td>
+            </tr>
+          </table>`
+             
+    
+          ,
+          `<h2>Khắc phục hư hỏng</h2><table class="my-table1">
+            <tr>
+              <td>Vị trí</td>
+              <td>Khắc phục</td>
+            </tr>
+            <tr>
+              <td>Khu vực 1</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ cầu chì 10A ECU đến chân 2 (FAN NO.2 Relay).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 2</td>
+              <td>Thay Relay 5 chân mới.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 3</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 1 (FAN NO.2 Relay) đến chân 2 (A3).</td>
+            </tr>
+            <tr>
+              <td>Khu vực 4</td>
+              <td>Thay công tắc áp suất trung bình.</td>
+            </tr>
+            <tr>
+              <td>Khu vực 5</td>
+              <td>Dùng hàn chì và ống co nhiệt nối dây dẫn từ chân 3 (A3) đến chân mass (A1).</td>
+            </tr>
+          
+
+          </table>`,
         ],
       },
     ],
@@ -645,7 +1590,7 @@ function troubleshootingGuide() {
 document.body.addEventListener("mouseover", function (e) {
   if (e.target.matches(".box")) {
     // nếu có class .spotlight, thêm vào
-    
+
     const imageId = e.target.dataset.image;
     const image = document.getElementById(imageId);
     if (image) image.style.display = "block";
