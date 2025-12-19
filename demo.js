@@ -74,19 +74,40 @@ function troubleshootingGuide() {
 <li>
   <span class="font-medium text-gray-800">Quạt dàn lạnh:</span>
   <ul class="list-disc list-inside ml-6 space-y-1">
-    <li>Chế độ LO: Hoạt động bình thường.</li>
-    <li>Chế độ M1: Hoạt động bình thường.</li>
-    <li>Chế độ M2: Hoạt động bình thường.</li>
-    <li>Chế độ HI: Quay chậm giống như LO.</li>
+    <li class="text-green-700">Chế độ LO: Hoạt động bình thường.</li>
+    <li class="text-green-700">Chế độ M1: Hoạt động bình thường.</li>
+    <li class="text-green-700">Chế độ M2: Hoạt động bình thường.</li>
+    <li class="text-red-600">Chế độ HI: Quay chậm giống như LO.</li>
   </ul>
 </li>
-<li><span class="font-medium text-gray-800">Quạt dàn nóng:</span> Hoạt động bình thường.</li>
-<li><span class="font-medium text-gray-800">Bật công tắc A/C:</span> Ly hợp từ hoạt động bình thường.</li>
-<li><span class="font-medium text-gray-800">HTR Relay:</span> Hoạt động bình thường (có tiếng click).</li>
+<li class="text-green-700"><span class="font-medium text-gray-800">Quạt dàn nóng:</span> Hoạt động bình thường.</li>
+<li class="text-green-700"><span class="font-medium text-gray-800">Bật công tắc A/C:</span> Ly hợp từ hoạt động bình thường.</li>
+<li class="text-green-700"><span class="font-medium text-gray-800">HTR Relay:</span> Hoạt động bình thường (có tiếng click).</li>
 </ul>
 </section>
 `,
-          /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 1 (E4) đến chân 10 (E1).<br>(KV2) - Hư công tắc dàn lạnh ở vị trí HI.</p><img class="KVNN" src="NG/KVNN1.png" alt="Khu vực nghi ngờ 1">`,
+          /*html*/ `
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      (KV1) - Đứt dây dẫn từ chân 1 (E4) đến chân 10 (E1).<br />
+      (KV2) - Hư công tắc dàn lạnh ở vị trí HI.
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/KVNN1.png"
+      alt="Khu vực nghi ngờ 1"
+    />
+  </div>
+</div>
+
+          `,
           /*html*/ `<h2>Quy trình đo kiểm bằng VOM</h2>
 <p>Bật công tắc quạt dàn lạnh vị trí HI.</p>
 <div class="DOKIEMM">
@@ -140,12 +161,12 @@ function troubleshootingGuide() {
   <li class="font-semibold before:content-['-'] before:mr-2">
     Quạt dàn lạnh:
     <ul class="mt-1 space-y-1 pl-6 font-normal text-slate-700">
-      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
-      <li class="before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
-      <li class="before:content-['+'] before:mr-2">
+      <li class="text-green-700 before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="text-green-700 before:content-['+'] before:mr-2">Chế độ M1: Hoạt động bình thường.</li>
+      <li class="text-red-600 before:content-['+'] before:mr-2">
         Chế độ M2: Quay chậm giống như LO.
       </li>
-      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+      <li class="text-green-700 before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
     </ul>
   </li>
 
@@ -170,7 +191,26 @@ function troubleshootingGuide() {
 
 
           `,
-          /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 2 (E3) đến chân 6 (E1).<br>(KV2) - Hư công tắc dàn lạnh ở vị trí M2.</p><img class="KVNN" src="NG/2.png" alt="Khu vực nghi ngờ 2">`,
+          /*html*/ `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      (KV1) - Đứt dây dẫn từ chân 2 (E3) đến chân 6 (E1).<br />
+      (KV2) - Hư công tắc dàn lạnh ở vị trí M2.
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/2.png"
+      alt="Khu vực nghi ngờ 2"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<h2>Quy trình đo kiểm</h2>
 <p>Bật công tắc quạt dàn lạnh vị trí M2.</p>
 <div class="DOKIEMM">
@@ -224,12 +264,12 @@ function troubleshootingGuide() {
   <li class="font-semibold before:content-['-'] before:mr-2">
     Quạt dàn lạnh:
     <ul class="mt-1 space-y-1 pl-6 font-normal text-slate-700">
-      <li class="before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
-      <li class="before:content-['+'] before:mr-2">
+      <li class="text-green-700 before:content-['+'] before:mr-2">Chế độ LO: Hoạt động bình thường.</li>
+      <li class="text-red-600 before:content-['+'] before:mr-2">
         Chế độ M1: Quay chậm giống như LO.
       </li>
-      <li class="before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
-      <li class="before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
+      <li class="text-green-700 before:content-['+'] before:mr-2">Chế độ M2: Hoạt động bình thường.</li>
+      <li class="text-green-700 before:content-['+'] before:mr-2">Chế độ HI: Hoạt động bình thường.</li>
     </ul>
   </li>
 
@@ -252,7 +292,26 @@ function troubleshootingGuide() {
 </ul>
 
           `,
-          /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 3 (E3) đến chân 7 (E1).<br>(KV2) - Hư công tắc dàn lạnh ở vị trí M1.</p><img class="KVNN" src="NG/3.png" alt="Khu vực nghi ngờ 3">`,
+          /*html*/ `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      (KV1) - Đứt dây dẫn từ chân 3 (E3) đến chân 7 (E1).<br />
+      (KV2) - Hư công tắc dàn lạnh ở vị trí M1.
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/3.png"
+      alt="Khu vực nghi ngờ 3"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<h2>Quy trình đo kiểm</h2>
 <p>Bật công tắc quạt dàn lạnh vị trí M1.</p>
 <div class="DOKIEMM">
@@ -348,7 +407,31 @@ function troubleshootingGuide() {
   </li>
 </ul>
 `,
-          /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) Mất nguồn IG. (KV2) Hư cầu chì 10A GAUGE. (KV3) Hư HTR Relay. (KV4) Đứt dây 1 (HTR Relay) → 9 (E1). (KV5) Hư công tắc quạt (E1). (KV6) Đứt dây 5 (E1) → Mass (D1). (KV7) Mất mass (D1).</p><img class="KVNN" src="NG/4.jpg" alt="Khu vực nghi ngờ 4">`,
+          /*html*/ `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      (KV1) Mất nguồn IG.<br />
+      (KV2) Hư cầu chì 10A GAUGE.<br />
+      (KV3) Hư HTR Relay.<br />
+      (KV4) Đứt dây 1 (HTR Relay) → 9 (E1).<br />
+      (KV5) Hư công tắc quạt (E1).<br />
+      (KV6) Đứt dây 5 (E1) → Mass (D1).<br />
+      (KV7) Mất mass (D1).
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/4.jpg"
+      alt="Khu vực nghi ngờ 4"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<div id="contentD-M3" class="hidden-content block">
   <p>Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI).</p>
   <div class="DOKIEM">
@@ -548,7 +631,30 @@ function troubleshootingGuide() {
   </li>
 </ul>
 `,
-          /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) Mất nguồn ắc quy. (KV2) Hư cầu chì 40A HTR. (KV3) Đứt dây từ cầu chì → relay. (KV4) Đứt dây từ relay → mô tơ. (KV5) Hư mô tơ quạt (E4). (KV6) Đứt dây từ mô tơ → điện trở.</p><img class="KVNN" src="NG/5.jpg" alt="Khu vực nghi ngờ 5">`,
+          /*html*/ `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      (KV1) Mất nguồn ắc quy.<br />
+      (KV2) Hư cầu chì 40A HTR.<br />
+      (KV3) Đứt dây từ cầu chì → relay.<br />
+      (KV4) Đứt dây từ relay → mô tơ.<br />
+      (KV5) Hư mô tơ quạt (E4).<br />
+      (KV6) Đứt dây từ mô tơ → điện trở.
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/5.jpg"
+      alt="Khu vực nghi ngờ 5"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<div id="contentD-M4" class="hidden-content" style="display: block;">
   <p>Bật công tắc quạt dàn lạnh sang 1 trong 4 vị trí LO, M1, M2, HI.</p>
   <div class="DOKIEM">
@@ -709,7 +815,38 @@ function troubleshootingGuide() {
   </li>
 </ul>
 `,
-          /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>Rất nhiều khả năng: Hư cầu chì 7.5A A/C, hư relay, đứt dây, hư công tắc A/C, lỗi bộ khuếch đại (Amplifier), hư công tắc áp suất kép, mất mass.</p><img class="KVNN" src="NG/6.png" alt="Khu vực nghi ngờ 6">`,
+          /*html*/ `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2 leading-relaxed">
+      Đứt cầu chì 7.5A A/C (1).<br />
+      Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 1 (HTR SUB1/AC MG Relay) (2).<br />
+      Hư HTR SUB1/AC MG Relay (3).<br />
+      Đứt dây dẫn từ chân 2 (HTR SUB1/AC MG Relay) đến chân 15 (E7) (4).<br />
+      Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 2 (E5) (5).<br />
+      Hư công tắc A/C (E5) (6).<br />
+      Đứt dây dẫn từ chân 4 (E5) đến chân 27 (E7) (7).<br />
+      Đứt dây dẫn từ cầu chì 7.5A A/C đến chân 14 (E7) (8).<br />
+      Đứt dây dẫn tín hiệu dàn lạnh chân 21 (E7) (9).<br />
+      Đứt dây mass của bộ khuếch đại chân 24 (E7) (10).<br />
+      Đứt dây dẫn từ chân 22 (E7) đến chân 23 (E7) (11).<br />
+      Đứt dây dẫn từ chân 12 (E7) đến chân 4 (E3) (12).<br />
+      Hư công tắc áp suất kép (13).<br />
+      Đứt dây dẫn từ chân 1 (A3) đến chân mass (A1) (14).
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/6.png"
+      alt="Khu vực nghi ngờ 6"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<div id="contentD-M5" class="hidden-content" style="display: block;">
             <p style="">Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
             Bật công tắc A/C.
@@ -969,7 +1106,27 @@ function troubleshootingGuide() {
   </ul>
 </div>
 `,
-          /*html*/ `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 3 (Relay) đến chân 1 (C8).<br>(KV2) - Hư ly hợp từ (C8).<br>(KV3) - Mất mass ly hợp từ (C8).</p><img class="KVNN" src="NG/7.png" alt="Khu vực nghi ngờ 7">`,
+          /*html*/ `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      (KV1) - Đứt dây dẫn từ chân 3 (Relay) đến chân 1 (C8).<br />
+      (KV2) - Hư ly hợp từ (C8).<br />
+      (KV3) - Mất mass ly hợp từ (C8).
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/7.png"
+      alt="Khu vực nghi ngờ 7"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<div id="contentD-M6" class="hidden-content" style="display: block;">
                 <h2>Trình tự đo kiểm</h2>
                 <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
@@ -1055,7 +1212,28 @@ function troubleshootingGuide() {
   </li>
 </ul>
 
-          `,`<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) Hư cầu chì 10A ECU-IG. (KV2) Đứt dây từ cầu chì đến relay. (KV3) Hư FAN NO.1 Relay. (KV4) Đứt dây từ relay đến bộ khuếch đại (E7).</p><img class="KVNN" src="NG/8.png" alt="Khu vực nghi ngờ 8">`,
+          `,`<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      (KV1) Hư cầu chì 10A ECU-IG.<br />
+      (KV2) Đứt dây từ cầu chì đến relay.<br />
+      (KV3) Hư FAN NO.1 Relay.<br />
+      (KV4) Đứt dây từ relay đến bộ khuếch đại (E7).
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/8.png"
+      alt="Khu vực nghi ngờ 8"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<div id="contentD-M7" class="hidden-content" style="display: block;">
             <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
             Bật công tắc A/C.                
@@ -1194,7 +1372,32 @@ function troubleshootingGuide() {
     <span class="text-slate-500">(có tiếng click)</span>.
   </li>
 </ul>`,
-          `<h2>Xác định khu vực nghi ngờ</h2><p>Hư cầu chì 30A RDI, đứt dây, hư mô tơ quạt, hư điện trở quạt, mất mass.</p><img class="KVNN" src="NG/9.png" alt="Khu vực nghi ngờ 9">`,
+          `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2 leading-relaxed">
+      Đứt cầu chì 30A RDI (1).<br />
+      Đứt dây dẫn từ cầu chì 30A RDI đến chân 5 (FAN NO.1 Relay) (2).<br />
+      Đứt dây dẫn từ chân 8 (FAN NO.1 Relay) đến chân 2 (A7) (3).<br />
+      Hư mô tơ quạt dàn nóng (A7) (4).<br />
+      Đứt dây dẫn từ chân 1 (A7) đến chân 3 (FAN NO.2 Relay) (5).<br />
+      Đứt dây dẫn từ chân 4 (FAN NO.2 Relay) đến chân 2 (A13) (6).<br />
+      Hư điện trở quạt dàn lạnh (A13) (7).<br />
+      Đứt dây dẫn từ chân 1 (A13) đến chân mass (A1) (8).
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/9.png"
+      alt="Khu vực nghi ngờ 9"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<div id="contentD-M8" class="hidden-content" style="display: block;">
             <p>Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
             Bật công tắc A/C.                
@@ -1382,7 +1585,26 @@ function troubleshootingGuide() {
   </li>
 </ul>
 `,
-          `<h2>Xác định khu vực nghi ngờ</h2><p>Đứt dây, hư FAN NO.2 Relay, hư công tắc áp suất, mất mass.</p><img class="KVNN" src="NG/10.png" alt="Khu vực nghi ngờ 10">`,
+          `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2">
+      Đứt dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1) (1).<br />
+      Mất mass (A1) (2).
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/10.png"
+      alt="Khu vực nghi ngờ 10"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<div id="contentD-M9" class="hidden-content" style="display: block;">
             <p>	Bật công tắc quạt dàn lạnh sang vị trí LO (hoặc M1, M2, HI). <br>
             Bật công tắc A/C và công tắc giả lập áp suất trung bình cao.          
@@ -1516,7 +1738,29 @@ function troubleshootingGuide() {
 </ul>
 
           `,
-          `<h2>Xác định khu vực nghi ngờ</h2><p>(KV1) - Đứt dây dẫn từ chân 5 (FAN NO.2 Relay) đến chân mass (A1).<br>(KV2) - Mất mass (A1).</p><img class="KVNN" src="NG/11.png" alt="Khu vực nghi ngờ 11">`,
+          `<div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mr-10">
+  <!-- Cột trái: tiêu đề + mô tả -->
+  <div>
+    <h2 class="text-xl font-semibold">Xác định khu vực nghi ngờ</h2>
+    <p class="mt-2 leading-relaxed">
+      Đứt dây dẫn từ cầu chì 10A ECU-IG đến chân 2 (FAN NO.2 Relay) (1).<br />
+      Hư FAN NO.2 Relay (2).<br />
+      Đứt dây dẫn từ chân 1 (FAN NO.2 Relay) đến chân 2 (A3) (3).<br />
+      Hư công tắc áp suất trung bình (A3) (4).<br />
+      Đứt dây dẫn từ chân 3 (A3) đến chân mass (A1) (5).
+    </p>
+  </div>
+
+  <!-- Cột phải: ảnh -->
+  <div class="flex md:justify-end">
+    <img
+      class="KVNN max-w-full h-auto"
+      src="NG/11.png"
+      alt="Khu vực nghi ngờ 11"
+    />
+  </div>
+</div>
+`,
           /*html*/ `<h2>Quy trình đo kiểm</h2><p>Bật A/C và công tắc giả lập áp suất.</p><div class="DOKIEMM"><div class="scrollable"><img class="DOKIEM1" src="NG/H32.jpg" alt="Đo kiểm TH11"><div class="ND"><div class="layout"><div class="box" data-image="image48" style="top: 15px; left: 335px; width: 135px; height: 65px;">Đứt dây dẫn: 5 (F2 Relay) → mass (A1)</div><div class="box" data-image="image49" style="top: 225px; left: 10px; max-width: 136px; height: 65px; font-size: 23px;">Mất mass (A1)</div></div></div></div></div><div class="image-popup"><img id="image48" src="pan từng vị trí/Pan số 11/N57-75 12V.png"><img id="image49" src="pan từng vị trí/Pan số 11/N57-75 0V.png"></div>`,
         
        
